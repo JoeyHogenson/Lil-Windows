@@ -10,7 +10,7 @@ public class MovementController : MonoBehaviour
     [Header("References")]
     public HUDManager hudManager;
     public Hammer hammer;
-    public PickAxe pickAxe;
+    //public PickAxe pickAxe;
     public CarScript currentCar;
     public CanvasGroup fade;
     public GameObject rustArm;
@@ -71,7 +71,7 @@ public class MovementController : MonoBehaviour
     private void Start()
     {
         Initialize();
-        SetWeapon(pickAxe);
+        //SetWeapon(pickAxe);
     }
 
     private void Update()

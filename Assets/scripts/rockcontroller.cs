@@ -21,8 +21,8 @@ public class rockcontroller : MonoBehaviour
     {
 
         rb = GetComponent<Rigidbody>();
-        rb.drag = Random.Range(0.01f, 0.05f);
-        transform.localScale = transform.localScale* rb.drag*10;
+        rb.linearDamping = Random.Range(0.01f, 0.05f);
+        transform.localScale = transform.localScale* rb.linearDamping*10;
         hits = 0;
         player = GameObject.FindObjectOfType<MovementController>();  // Find the player in the scene
     }
