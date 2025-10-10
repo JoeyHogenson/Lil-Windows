@@ -48,10 +48,10 @@ public class GameController
         count = daystart+10;
     }
     void SetCommisary(){
-        commisary = daystart +20
+        commisary = daystart +20;
     }
     void SetEnd(){
-        End = daystart+600
+        End = daystart+600;
     }
 }
 
