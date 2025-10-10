@@ -7,6 +7,7 @@ public class GameController
     private float mail;
     private float commisary;
     private float end;
+    private float count;
     ///game days should be 10min
     void Update(){
 
@@ -20,7 +21,7 @@ public class GameController
     void StartDay(){
 
         //called only when the player goes to bed, sets time for next morning, and events for the next day. 
-        daystart = Time.time();
+        daystart = Time.time;
         SetEvents();
     }
     void CheckEvents(){
@@ -38,7 +39,7 @@ public class GameController
         SetCommisary();
         SetEnd();
     }
-    void Count(){
+    void CountEvent(){
         ///the player is forced to be in the 
     }
     void SetMail(){
@@ -51,7 +52,13 @@ public class GameController
         commisary = daystart +20;
     }
     void SetEnd(){
-        End = daystart+600;
+        end = daystart+600;
+    }
+    void CommisaryEvent(){
+
+    }
+    void MailEvent(){
+
     }
 }
 
