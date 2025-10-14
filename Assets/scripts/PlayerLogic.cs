@@ -25,12 +25,16 @@ public class PlayerLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //shoot raycast every frame
+        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
         RaycastHit hit;
+        //handles when raycast hits something
         if(Physics.Raycast(ray, out hit))
         {
-            if(hit.distance <= 2f)
+            if(hit.distance <= 5f)
             {
+                //if the collider is an NPC
                 Collider collider;
                 collider = hit.collider; 
                 if(collider.GetComponent<DialogueController>())
@@ -39,9 +43,20 @@ public class PlayerLogic : MonoBehaviour
                     fToTalkButton.SetActive(true);
                     if(_input.interact)
                     {
+                        if(_input.cursorInputForLook)
+                        {
                         fToTalkButton.SetActive(false);
                         dialoguePanel.SetActive(true);
+                        _input.cursorInputForLook = false;
+                        GetComponent<FirstPersonController>().MoveSpeed = 0f;
                         hit.collider.gameObject.GetComponent<DialogueController>().onClick();
+                        }
+                        else 
+                        {
+                            _input.cursorInputForLook = true;
+                             GetComponent<FirstPersonController>().MoveSpeed = 4f;
+                        }
+                        
                     }
                 
                 }
