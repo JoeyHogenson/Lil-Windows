@@ -75,6 +75,7 @@ namespace StarterAssets
 		{
 			interact = newInteractState;
 			Debug.Log("Henlo");
+			GetComponent<PlayerLogic>().Interact();
 		}
 		private void OnApplicationFocus(bool hasFocus)
 		{

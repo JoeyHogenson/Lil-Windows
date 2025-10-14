@@ -61,8 +61,8 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "interact",
-                    "type": "PassThrough",
+                    "name": "Interact",
+                    "type": "Button",
                     "id": "f9b4e7e9-f1ee-4940-b236-480a3779c6a9",
                     "expectedControlType": "",
                     "processors": "",
@@ -287,7 +287,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";KeyboardMouse",
-                    "action": "interact",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
