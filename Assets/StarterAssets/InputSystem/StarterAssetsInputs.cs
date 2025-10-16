@@ -13,6 +13,7 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 		public bool interact;
+		public bool esc;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -48,6 +49,10 @@ namespace StarterAssets
 		{
 			InteractInput(value.isPressed);	
 		}
+		public void OnEscape(InputValue value)
+		{
+			EscapeInput(value.isPressed);
+		}
 #endif
 
 
@@ -74,8 +79,12 @@ namespace StarterAssets
 		public void InteractInput(bool newInteractState)
 		{
 			interact = newInteractState;
-			Debug.Log("Henlo");
 			GetComponent<PlayerLogic>().Interact();
+		}
+		public void EscapeInput(bool newEscapeState)
+		{
+			esc = newEscapeState;
+			GetComponent<PlayerLogic>().Menu();
 		}
 		private void OnApplicationFocus(bool hasFocus)
 		{

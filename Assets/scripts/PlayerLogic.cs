@@ -11,8 +11,9 @@ public class PlayerLogic : MonoBehaviour
     public float InteractTimeout = 0.1f;
     private float _interactTimeoutDelta;
 
-    public GameObject fToTalkButton;
+    public GameObject eToTalkButton;
     public GameObject dialoguePanel;
+    public GameObject menuPanel;
 
     public bool endDialogue;
 
@@ -27,7 +28,7 @@ public class PlayerLogic : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _interactTimeoutDelta = InteractTimeout;
+        //setting _input variable to starter assets script to get inputs
         _input = GetComponent<StarterAssetsInputs>();
         _playerInput = GetComponent<PlayerInput>();
     }
@@ -43,52 +44,79 @@ public class PlayerLogic : MonoBehaviour
         {
             if(hit.distance <= 5f)
             {
-                //if the collider is an NPC
+                //if the collider is an NPC enable "E to talk" button
                 Collider collider;
                 collider = hit.collider; 
                 if(collider.GetComponent<DialogueController>())
                 {
                     typeInteract = "Dialogue";
-                    fToTalkButton.SetActive(true);
+                    eToTalkButton.SetActive(true);
                 
                 }
             }
             else
             {
-                fToTalkButton.SetActive(false);
+                eToTalkButton.SetActive(false);
                 dialoguePanel.SetActive(false);
             }
             if(!hit.collider.CompareTag("NPC"))
             {
-                fToTalkButton.SetActive(false);
+                eToTalkButton.SetActive(false);
                 dialoguePanel.SetActive(false);
             }
         }
     }
+    /*
+    public void InitiateDialougue()
+    {
+        dialoguePanel.SetActive(true);
+        GetComponent<FirstPersonController>().MoveSpeed = 0f;
+        _input.cursorInputForLook = false;
+        hit.collider.gameObject.GetComponent<DialogueController>().onClick();
+    }
+    */
     public void Interact()
     {
+        //handles starting dialogue when you press "E". Reads off of the NPC dialogue scriptable object
         if(typeInteract == "Dialogue" && endDialogue == false)
         {
-            fToTalkButton.SetActive(false);
+            eToTalkButton.SetActive(false);
             dialoguePanel.SetActive(true);
             GetComponent<FirstPersonController>().MoveSpeed = 0f;
             _input.cursorInputForLook = false;
             hit.collider.gameObject.GetComponent<DialogueController>().onClick();
-            Debug.Log("This happened");
             endDialogue = true;
         }
-        else if(typeInteract == "Dialogue" && endDialogue == true)
+        
+
+
+    }
+    public void Menu()
+    {
+        //Ends dialogue; handles if esc is pressed when dialogue is active 
+        if(typeInteract == "Dialogue" && endDialogue == true)
         {
             GetComponent<FirstPersonController>().MoveSpeed = 4f;
             _input.cursorInputForLook = true;
-            fToTalkButton.SetActive(false);
+            eToTalkButton.SetActive(false);
             dialoguePanel.SetActive(false);
             Debug.Log("This happenbed too");
             endDialogue = false;
 
         }
-
-
+        //Brings up Menu
+        else if(menuPanel.activeSelf == false)
+        {
+            menuPanel.SetActive(true);
+            GetComponent<FirstPersonController>().MoveSpeed = 0f;
+            _input.cursorInputForLook = false;
+        }
+        else if(menuPanel.activeSelf == true)
+        {
+            menuPanel.SetActive(false);
+            GetComponent<FirstPersonController>().MoveSpeed = 4f;
+            _input.cursorInputForLook = true;
+        }
     }
     
 
