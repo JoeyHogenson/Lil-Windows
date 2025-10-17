@@ -19,15 +19,15 @@ public class DialogueController : MonoBehaviour
     {
         
     }
-        public void onClick()
+    public void onClick()
+    {
+        //handle all dialogue
+        if(count < NPC.idleDialogueLines.Length)
         {
-            //handle all dialogue
-            if(count < NPC.idleDialogueLines.Length)
-            {
-            dialogueText.text = NPC.idleDialogueLines[count];
-            count++;
-            }
+        dialogueText.text = NPC.idleDialogueLines[count];
+        count++;
         }
+    }
 
     public void nextLine()
     {
