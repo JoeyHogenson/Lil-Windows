@@ -22,8 +22,11 @@ public class DialogueController : MonoBehaviour
         public void onClick()
         {
             //handle all dialogue
+            if(count < NPC.idleDialogueLines.Length)
+            {
             dialogueText.text = NPC.idleDialogueLines[count];
             count++;
+            }
         }
 
     public void nextLine()
