@@ -3,7 +3,7 @@ using UnityEngine;
 public class SimpleDoor : MonoBehaviour
 {
     public GameObject Door;
-    private bool isOpen;
+    public bool isOpen;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,21 +16,14 @@ public class SimpleDoor : MonoBehaviour
     {
         
     }
-    void OnTriggerEnter(Collider other)
+    public void Open()
     {
-        if(other.CompareTag("Player"))
-        {
-            if(isOpen)
-            {
-                Door.transform.localEulerAngles += new Vector3(0,90,0); 
-                isOpen = !isOpen;
-            }
-            else 
-            {
-                Door.transform.localEulerAngles += new Vector3(0,-90,0); 
-                isOpen = !isOpen;
-            }
-            
-        }
+        Door.transform.localEulerAngles += new Vector3(0,-90,0);   
+        isOpen = !isOpen; 
+    }
+    public void Close()
+    {
+        Door.transform.localEulerAngles += new Vector3(0,90,0); 
+        isOpen = !isOpen;
     }
 }

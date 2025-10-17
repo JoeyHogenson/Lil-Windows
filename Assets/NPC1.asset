@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleDialogueLines:
   - DOOR STUCK
+  - BWAHAHAH
+  - YOU THOUGHT
+  - I WAS DONE WITH YOU???
+  - THINK AGAIN
   commissaryDialogueLines: []
   lockdownDialogueLines: []
   electionDialogueLines: []

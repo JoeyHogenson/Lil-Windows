@@ -12,10 +12,12 @@ public class PlayerLogic : MonoBehaviour
     private float _interactTimeoutDelta;
 
     public GameObject eToTalkButton;
+    public GameObject eToOpenButton;
+    public GameObject eToCloseButton;
     public GameObject dialoguePanel;
     public GameObject menuPanel;
 
-    public bool endDialogue;
+    public bool startDialogue;
 
     public string typeInteract;
 
@@ -29,6 +31,7 @@ public class PlayerLogic : MonoBehaviour
     void Start()
     {
         //setting _input variable to starter assets script to get inputs
+        startDialogue = true;
         _input = GetComponent<StarterAssetsInputs>();
         _playerInput = GetComponent<PlayerInput>();
     }
@@ -53,11 +56,33 @@ public class PlayerLogic : MonoBehaviour
                     eToTalkButton.SetActive(true);
                 
                 }
+                else if(collider.GetComponent<SimpleDoor>())
+                {
+                    if(!collider.GetComponent<SimpleDoor>().isOpen)
+                    {
+                        typeInteract = "Door";
+                        eToOpenButton.SetActive(true);
+                    }
+                    else
+                    {
+                        typeInteract = "Door";
+                        eToCloseButton.SetActive(true);
+                    }
+
+                }
+                else
+                {
+                    typeInteract = "None";
+                    eToCloseButton.SetActive(false);
+                    eToOpenButton.SetActive(false);
+                    
+                }
             }
             else
             {
-                eToTalkButton.SetActive(false);
-                dialoguePanel.SetActive(false);
+                typeInteract = "None";
+                eToCloseButton.SetActive(false);
+                eToOpenButton.SetActive(false);
             }
             if(!hit.collider.CompareTag("NPC"))
             {
@@ -65,6 +90,7 @@ public class PlayerLogic : MonoBehaviour
                 dialoguePanel.SetActive(false);
             }
         }
+        
     }
     /*
     public void InitiateDialougue()
@@ -78,14 +104,28 @@ public class PlayerLogic : MonoBehaviour
     public void Interact()
     {
         //handles starting dialogue when you press "E". Reads off of the NPC dialogue scriptable object
-        if(typeInteract == "Dialogue" && endDialogue == false)
+        if(typeInteract == "Dialogue" && startDialogue == true)
         {
             eToTalkButton.SetActive(false);
             dialoguePanel.SetActive(true);
             GetComponent<FirstPersonController>().MoveSpeed = 0f;
             _input.cursorInputForLook = false;
             hit.collider.gameObject.GetComponent<DialogueController>().onClick();
-            endDialogue = true;
+            startDialogue = false;
+        }
+        else if(typeInteract == "Dialogue" && startDialogue == false)
+        {
+            hit.collider.gameObject.GetComponent<DialogueController>().nextLine();
+        }
+        else if(typeInteract == "Door" && !hit.collider.GetComponent<SimpleDoor>().isOpen)
+        {
+            hit.collider.GetComponent<SimpleDoor>().Open();
+            eToOpenButton.SetActive(false);
+        }
+        else if(typeInteract == "Door" && hit.collider.GetComponent<SimpleDoor>().isOpen)
+        {
+            hit.collider.GetComponent<SimpleDoor>().Close();
+            eToCloseButton.SetActive(false);
         }
         
 
@@ -94,15 +134,13 @@ public class PlayerLogic : MonoBehaviour
     public void Menu()
     {
         //Ends dialogue; handles if esc is pressed when dialogue is active 
-        if(typeInteract == "Dialogue" && endDialogue == true)
+        if(typeInteract == "Dialogue")
         {
-            GetComponent<FirstPersonController>().MoveSpeed = 4f;
+            GetComponent<FirstPersonController>().MoveSpeed = 10f;
             _input.cursorInputForLook = true;
             eToTalkButton.SetActive(false);
             dialoguePanel.SetActive(false);
-            Debug.Log("This happenbed too");
-            endDialogue = false;
-
+            startDialogue = true;
         }
         //Brings up Menu
         else if(menuPanel.activeSelf == false)
@@ -114,7 +152,7 @@ public class PlayerLogic : MonoBehaviour
         else if(menuPanel.activeSelf == true)
         {
             menuPanel.SetActive(false);
-            GetComponent<FirstPersonController>().MoveSpeed = 4f;
+            GetComponent<FirstPersonController>().MoveSpeed = 10f;
             _input.cursorInputForLook = true;
         }
     }
