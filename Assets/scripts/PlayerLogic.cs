@@ -109,6 +109,8 @@ public class PlayerLogic : MonoBehaviour
             eToTalkButton.SetActive(false);
             dialoguePanel.SetActive(true);
             GetComponent<FirstPersonController>().MoveSpeed = 0f;
+            hit.collider.GetComponent<Animator>().SetBool("isWalking", false);
+            hit.collider.GetComponent<NPCController>().NPCspeed = 0f;
             _input.cursorInputForLook = false;
             hit.collider.gameObject.GetComponent<DialogueController>().onClick();
             startDialogue = false;
@@ -137,6 +139,8 @@ public class PlayerLogic : MonoBehaviour
         if(typeInteract == "Dialogue")
         {
             GetComponent<FirstPersonController>().MoveSpeed = 10f;
+            hit.collider.GetComponent<NPCController>().NPCspeed = 0.03f;
+            hit.collider.GetComponent<Animator>().SetBool("isWalking", true);
             _input.cursorInputForLook = true;
             eToTalkButton.SetActive(false);
             dialoguePanel.SetActive(false);
