@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using System;
+using System.IO;
 
 public class DialogueController : MonoBehaviour
 {
@@ -11,7 +13,13 @@ public class DialogueController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        count = 0;
+        NPC.idleDialogueLines = File.ReadAllLines(Path.Combine(Application.streamingAssetsPath, "IdleDialogue.txt"));
+        /*
+        for(int i = 0; i < NPC.idleDialogueLines.Length; i++)
+        {
+            Debug.Log(NPC.idleDialogueLines[i][0]);
+        }
+        */
     }
 
     // Update is called once per frame
@@ -22,11 +30,7 @@ public class DialogueController : MonoBehaviour
     public void onClick()
     {
         //handle all dialogue
-        if(count < NPC.idleDialogueLines.Length)
-        {
-        dialogueText.text = NPC.idleDialogueLines[count];
-        count++;
-        }
+        
     }
 
     public void nextLine()
@@ -37,5 +41,9 @@ public class DialogueController : MonoBehaviour
             count++;
         }
         
+    }
+    public void IdleDialogue()
+    {
+            
     }
 }

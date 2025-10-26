@@ -31,7 +31,7 @@ public class NPCController : MonoBehaviour
     public void moveNPC()
     {
         NPC.transform.position += NPCspeed * transform.forward;
-        if (Physics.Raycast(transform.position+up, transform.forward, out hit) && !hit.collider.CompareTag("Terrain"))
+        if (Physics.Raycast(transform.position+up, transform.forward, out hit) && hit.collider.CompareTag("Wall"))
         {
             if(hit.distance <= 5f)
             {

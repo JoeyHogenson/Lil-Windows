@@ -8,14 +8,17 @@ public class PlayerLogic : MonoBehaviour
     public int troubleMeter;
     public int mentalHealth;
 
-    public float InteractTimeout = 0.1f;
-    private float _interactTimeoutDelta;
-
     public GameObject eToTalkButton;
     public GameObject eToOpenButton;
     public GameObject eToCloseButton;
+    public GameObject eToGrabButton;
     public GameObject dialoguePanel;
     public GameObject menuPanel;
+
+    public GameObject dialogueOption1;
+    public GameObject dialogueOption2;
+    public GameObject dialogueOption3;
+    public GameObject dialogueOption4;
 
     public bool startDialogue;
 
@@ -23,6 +26,8 @@ public class PlayerLogic : MonoBehaviour
 
     private StarterAssetsInputs _input;
     private PlayerInput _playerInput;
+
+    public string currentEvent;
 
     public Ray ray;
     public RaycastHit hit;
@@ -128,6 +133,10 @@ public class PlayerLogic : MonoBehaviour
         {
             hit.collider.GetComponent<SimpleDoor>().Close();
             eToCloseButton.SetActive(false);
+        }
+        else if(typeInteract == "grabbable")
+        {
+            eToGrabButton.SetActive(true);
         }
         
 
