@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 namespace StarterAssets
 {
 public class PlayerLogic : MonoBehaviour
@@ -27,6 +28,8 @@ public class PlayerLogic : MonoBehaviour
     private StarterAssetsInputs _input;
     private PlayerInput _playerInput;
 
+    Collider collider;
+
     public string currentEvent;
 
     public Ray ray;
@@ -53,13 +56,28 @@ public class PlayerLogic : MonoBehaviour
             if(hit.distance <= 5f)
             {
                 //if the collider is an NPC enable "E to talk" button
-                Collider collider;
+                
                 collider = hit.collider; 
                 if(collider.GetComponent<DialogueController>())
                 {
                     typeInteract = "Dialogue";
                     eToTalkButton.SetActive(true);
                 
+                }
+                else if (collider.GetComponent<TransDialogue>())
+                {
+                    typeInteract = "Dialogue";
+                    eToTalkButton.SetActive(true);
+                }
+                else if (collider.GetComponent<ElderDialogue>())
+                {
+                    typeInteract = "Dialogue";
+                    eToTalkButton.SetActive(true);
+                }
+                else if (collider.GetComponent<DisabledMexicanDialogue>())
+                {
+                    typeInteract = "Dialogue";
+                    eToTalkButton.SetActive(true);
                 }
                 else if(collider.GetComponent<SimpleDoor>())
                 {
@@ -97,6 +115,10 @@ public class PlayerLogic : MonoBehaviour
         }
         
     }
+    public void Option1()
+    {
+        collider.GetComponent<DialogueController>().nextLineOption1();
+    }
     /*
     public void InitiateDialougue()
     {
@@ -117,7 +139,7 @@ public class PlayerLogic : MonoBehaviour
             hit.collider.GetComponent<Animator>().SetBool("isWalking", false);
             hit.collider.GetComponent<NPCController>().NPCspeed = 0f;
             _input.cursorInputForLook = false;
-            hit.collider.gameObject.GetComponent<DialogueController>().onClick();
+            hit.collider.gameObject.GetComponent<DialogueController>().nextLine();
             startDialogue = false;
         }
         else if(typeInteract == "Dialogue" && startDialogue == false)
@@ -148,7 +170,7 @@ public class PlayerLogic : MonoBehaviour
         if(typeInteract == "Dialogue")
         {
             GetComponent<FirstPersonController>().MoveSpeed = 10f;
-            hit.collider.GetComponent<NPCController>().NPCspeed = 0.03f;
+            //hit.collider.GetComponent<NPCController>().NPCspeed = 0.03f;
             hit.collider.GetComponent<Animator>().SetBool("isWalking", true);
             _input.cursorInputForLook = true;
             eToTalkButton.SetActive(false);

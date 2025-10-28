@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 public class Sitting : MonoBehaviour
 {
+    Rigidbody playerRigidbody;
     void OnTriggerEnter(Collider other)
     {
         
@@ -11,6 +12,10 @@ public class Sitting : MonoBehaviour
             other.GetComponent<Animator>().SetBool("isSitting", true);
             other.GetComponent<NPCController>().NPCspeed = 0f;
             other.GetComponent<Transform>().Rotate(0f,90f,0f);
+            playerRigidbody = other.GetComponent<Rigidbody>();
+
+            playerRigidbody.constraints = RigidbodyConstraints.FreezeAll;
+
             
         }
     }

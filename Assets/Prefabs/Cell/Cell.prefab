@@ -430,6 +430,10 @@ PrefabInstance:
       value: cell bed
       objectReference: {fileID: 0}
     - target: {fileID: 4110456644779114235, guid: 565be495cd32216499f82c80f12f6be5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.20325775
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110456644779114235, guid: 565be495cd32216499f82c80f12f6be5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.3
       objectReference: {fileID: 0}
