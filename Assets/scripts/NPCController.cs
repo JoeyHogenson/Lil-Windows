@@ -10,6 +10,9 @@ public class NPCController : MonoBehaviour
     public Ray ray;
     public RaycastHit hit;
 
+    public bool isSitting;
+    public string sitDirection;
+
     public Vector3 y_rotation = new Vector3(0,90,0);
     private Vector3 up = new Vector3 ( 0,5,0);
 

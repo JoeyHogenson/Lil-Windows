@@ -137,6 +137,7 @@ public class PlayerLogic : MonoBehaviour
             dialoguePanel.SetActive(true);
             GetComponent<FirstPersonController>().MoveSpeed = 0f;
             hit.collider.GetComponent<Animator>().SetBool("isWalking", false);
+            hit.collider.GetComponent<Animator>().SetBool("sitTalkRight", true);
             hit.collider.GetComponent<NPCController>().NPCspeed = 0f;
             _input.cursorInputForLook = false;
             hit.collider.gameObject.GetComponent<DialogueController>().nextLine();
