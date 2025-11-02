@@ -140,6 +140,7 @@ public class PlayerLogic : MonoBehaviour
             hit.collider.GetComponent<Animator>().SetBool("sitTalkRight", true);
             hit.collider.GetComponent<NPCController>().NPCspeed = 0f;
             _input.cursorInputForLook = false;
+            _input.cursorLocked = false;
             hit.collider.gameObject.GetComponent<DialogueController>().nextLine();
             startDialogue = false;
         }
@@ -174,6 +175,7 @@ public class PlayerLogic : MonoBehaviour
             //hit.collider.GetComponent<NPCController>().NPCspeed = 0.03f;
             hit.collider.GetComponent<Animator>().SetBool("isWalking", true);
             _input.cursorInputForLook = true;
+            _input.cursorLocked = true;
             eToTalkButton.SetActive(false);
             dialoguePanel.SetActive(false);
             startDialogue = true;
