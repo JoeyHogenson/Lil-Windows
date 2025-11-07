@@ -1,6 +1,7 @@
 using UnityEngine;
+using TMPro;
 
-public class GameController
+public class GameController : MonoBehaviour
 {
     public float daystart =0.0f;
     public float[] events = {0.0f};
@@ -8,12 +9,18 @@ public class GameController
     private float commisary;
     private float end;
     private float count;
+    public TextMeshProUGUI eventText;
+    public GameObject eventTextObject;
+
+    public bool isCommissary;
     ///game days should be 10min
-    void Update(){
-
+    void Update()
+    {
+        CheckEvents();
     }
-    void Start(){
-
+    void Start()
+    {
+        StartDay();
     }
     void Awake(){
 
@@ -25,10 +32,12 @@ public class GameController
         SetEvents();
     }
     void CheckEvents(){
-        if(Time.time>=commisary){
+        if(Time.time>=commisary && isCommissary == false)
+        {
             CommisaryEvent();
         }
-        if(Time.time>=mail){
+        if(Time.time>=mail)
+        {
             MailEvent();
         }
     }
@@ -48,17 +57,25 @@ public class GameController
     void SetCount(){
         count = daystart+10;
     }
-    void SetCommisary(){
+    void SetCommisary()
+    {
         commisary = daystart +20;
+        isCommissary = false;
     }
-    void SetEnd(){
+    void SetEnd()
+    {
         end = daystart+600;
     }
-    void CommisaryEvent(){
-
+    void CommisaryEvent()
+    {
+        eventText.text = "Get to the commissary for meal time";
+        eventTextObject.SetActive(true);
+        isCommissary = true;
+        Debug.Log("Henlog");
     }
-    void MailEvent(){
-
+    void MailEvent()
+    {
+        
     }
 }
 

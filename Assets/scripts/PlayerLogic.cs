@@ -42,6 +42,8 @@ public class PlayerLogic : MonoBehaviour
         startDialogue = true;
         _input = GetComponent<StarterAssetsInputs>();
         _playerInput = GetComponent<PlayerInput>();
+        _input.cursorLocked = false;
+        
     }
 
     // Update is called once per frame
@@ -140,9 +142,12 @@ public class PlayerLogic : MonoBehaviour
             hit.collider.GetComponent<Animator>().SetBool("sitTalkRight", true);
             hit.collider.GetComponent<NPCController>().NPCspeed = 0f;
             _input.cursorInputForLook = false;
-            _input.cursorLocked = false;
+            _input.cursorLocked = true;
             hit.collider.gameObject.GetComponent<DialogueController>().nextLine();
             startDialogue = false;
+            Cursor.visible = true;
+            // Unlock the cursor so it can move freely
+            Cursor.lockState = CursorLockMode.None; 
         }
         else if(typeInteract == "Dialogue" && startDialogue == false)
         {
@@ -179,6 +184,9 @@ public class PlayerLogic : MonoBehaviour
             eToTalkButton.SetActive(false);
             dialoguePanel.SetActive(false);
             startDialogue = true;
+             Cursor.visible = false;
+            // Unlock the cursor so it can move freely
+            Cursor.lockState = CursorLockMode.Locked; 
         }
         //Brings up Menu
         else if(menuPanel.activeSelf == false)
