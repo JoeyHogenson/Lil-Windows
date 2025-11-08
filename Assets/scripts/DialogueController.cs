@@ -16,6 +16,11 @@ public class DialogueController : MonoBehaviour
     public NPCDialogue1 NPC;
     public string Character;
     public GameObject PlayerLogic;
+
+    public TextMeshProUGUI option1Text;
+    public TextMeshProUGUI option2Text;
+    public TextMeshProUGUI option3Text;
+    public TextMeshProUGUI option4Text;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

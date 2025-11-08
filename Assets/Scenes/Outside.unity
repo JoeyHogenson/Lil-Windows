@@ -2178,6 +2178,10 @@ MonoBehaviour:
   NPC: {fileID: 11400000, guid: 43ae37ef2804a664399ea0ac80fbce94, type: 2}
   Character: 
   PlayerLogic: {fileID: 0}
+  option1Text: {fileID: 0}
+  option2Text: {fileID: 0}
+  option3Text: {fileID: 0}
+  option4Text: {fileID: 0}
 --- !u!1 &532687706 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d2b22d8d57e30ad429d7b29f8f6ffc4c, type: 3}
@@ -2222,6 +2226,7 @@ MonoBehaviour:
   animator: {fileID: 532687707}
   isSitting: 1
   sitDirection: 
+  startingPosition: {x: 0, y: 0, z: 0}
   y_rotation: {x: 0, y: 90, z: 0}
 --- !u!136 &532687710
 CapsuleCollider:
@@ -2263,6 +2268,10 @@ MonoBehaviour:
   NPC: {fileID: 11400000, guid: 61c88315225ea2541923ba681a0a2061, type: 2}
   Character: Elder
   PlayerLogic: {fileID: 1882949875}
+  option1Text: {fileID: 0}
+  option2Text: {fileID: 0}
+  option3Text: {fileID: 0}
+  option4Text: {fileID: 0}
 --- !u!1001 &551200658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2422,6 +2431,7 @@ MonoBehaviour:
   animator: {fileID: 570946528}
   isSitting: 0
   sitDirection: 
+  startingPosition: {x: 0, y: 0, z: 0}
   y_rotation: {x: 0, y: 90, z: 0}
 --- !u!95 &570946528
 Animator:
@@ -2489,6 +2499,10 @@ MonoBehaviour:
   NPC: {fileID: 11400000, guid: 059fe01012329e441b325447be6efbb2, type: 2}
   Character: DC
   PlayerLogic: {fileID: 1882949875}
+  option1Text: {fileID: 0}
+  option2Text: {fileID: 0}
+  option3Text: {fileID: 0}
+  option4Text: {fileID: 0}
 --- !u!1 &575154591
 GameObject:
   m_ObjectHideFlags: 0
@@ -2669,6 +2683,7 @@ MonoBehaviour:
   animator: {fileID: 592892075}
   isSitting: 0
   sitDirection: 
+  startingPosition: {x: 0, y: 0, z: 0}
   y_rotation: {x: 0, y: 90, z: 0}
 --- !u!136 &592892078
 CapsuleCollider:
@@ -2710,6 +2725,10 @@ MonoBehaviour:
   NPC: {fileID: 11400000, guid: 3c604baf3f470ac46854abae541f30b7, type: 2}
   Character: Riley
   PlayerLogic: {fileID: 1882949875}
+  option1Text: {fileID: 0}
+  option2Text: {fileID: 0}
+  option3Text: {fileID: 0}
+  option4Text: {fileID: 0}
 --- !u!1001 &611688627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4721,6 +4740,7 @@ MonoBehaviour:
   animator: {fileID: 1405125849}
   isSitting: 0
   sitDirection: 
+  startingPosition: {x: 0, y: 0, z: 0}
   y_rotation: {x: 0, y: 90, z: 0}
 --- !u!136 &1405125853
 CapsuleCollider:
@@ -4762,6 +4782,10 @@ MonoBehaviour:
   NPC: {fileID: 11400000, guid: 43ae37ef2804a664399ea0ac80fbce94, type: 2}
   Character: NPC
   PlayerLogic: {fileID: 1882949875}
+  option1Text: {fileID: 0}
+  option2Text: {fileID: 0}
+  option3Text: {fileID: 0}
+  option4Text: {fileID: 0}
 --- !u!1001 &1425192124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6752,7 +6776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3086481586078400184, guid: c79b2dd2b2624874ca465425f408f45a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 554.63
+      value: 555.19
       objectReference: {fileID: 0}
     - target: {fileID: 3086481586078400184, guid: c79b2dd2b2624874ca465425f408f45a, type: 3}
       propertyPath: m_LocalRotation.w
