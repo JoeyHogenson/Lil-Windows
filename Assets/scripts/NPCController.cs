@@ -15,6 +15,8 @@ public class NPCController : MonoBehaviour
 
     private bool isHEWALKING;
 
+    public Vector3 startingPosition;
+
     public Vector3 y_rotation = new Vector3(0,90,0);
     private Vector3 up = new Vector3 ( 0,5,0);
 
@@ -23,6 +25,7 @@ public class NPCController : MonoBehaviour
     {
         Vector3 up = new Vector3 ( 0,5,0);
         animator.SetBool("isWalking", true);
+        startingPosition = NPC.transform.position;
     }
 
     // Update is called once per frame

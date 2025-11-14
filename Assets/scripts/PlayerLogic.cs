@@ -73,6 +73,7 @@ public class PlayerLogic : MonoBehaviour
                 }
                 else if (collider.GetComponent<ElderDialogue>())
                 {
+                    Debug.Log("this is happening");
                     typeInteract = "Dialogue";
                     eToTalkButton.SetActive(true);
                 }

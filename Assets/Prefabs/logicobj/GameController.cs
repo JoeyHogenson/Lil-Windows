@@ -3,12 +3,16 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
-    public float daystart =0.0f;
+    public float daystart;
     public float[] events = {0.0f};
+
+    public GameObject[] Characters;
+
     private float mail;
     private float commisary;
     private float end;
     private float count;
+
     public TextMeshProUGUI eventText;
     public GameObject eventTextObject;
 
@@ -39,6 +43,10 @@ public class GameController : MonoBehaviour
         if(Time.time>=mail)
         {
             MailEvent();
+        }
+        if(Time.time>= end)
+        {
+            EndOfDayEvent();
         }
     }
     void SetEvents(){
@@ -71,11 +79,21 @@ public class GameController : MonoBehaviour
         eventText.text = "Get to the commissary for meal time";
         eventTextObject.SetActive(true);
         isCommissary = true;
-        Debug.Log("Henlog");
     }
     void MailEvent()
     {
         
+    }
+    void EndOfDayEvent()
+    {
+        //teleport characters back to starting position
+        for(int i = 0; i< Characters.Length; i++)
+        {
+            Characters[i].transform.position = Characters[i].GetComponent<NPCController>().startingPosition;
+        }
+
+        StartDay();
+
     }
 }
 
