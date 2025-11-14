@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI eventText;
     public GameObject eventTextObject;
 
+    public GameObject mailObject;
+
     public bool isCommissary;
     ///game days should be 10min
     void Update()
@@ -26,16 +28,19 @@ public class GameController : MonoBehaviour
     {
         StartDay();
     }
-    void Awake(){
+    void Awake()
+    {
 
     }
-    void StartDay(){
+    void StartDay()
+    {
 
         //called only when the player goes to bed, sets time for next morning, and events for the next day. 
         daystart = Time.time;
         SetEvents();
     }
-    void CheckEvents(){
+    void CheckEvents()
+    {
         if(Time.time>=commisary && isCommissary == false)
         {
             CommisaryEvent();
@@ -49,21 +54,53 @@ public class GameController : MonoBehaviour
             EndOfDayEvent();
         }
     }
-    void SetEvents(){
+    void SetEvents()
+    {
         ///sets events to occur over the next ten minutes.
         SetCount();
         SetMail();
         SetCommisary();
         SetEnd();
     }
-    void CountEvent(){
+    void CountEvent()
+    {
         ///the player is forced to be in the 
+        Characters[0].GetComponent<NPCController>().NPCspeed = 0.03f;
+        //Newspaper gets delivered every day 
+        //Manual changes every day 
+
     }
-    void SetMail(){
+    void CommisaryEvent()
+    {
+        eventText.text = "Get to the commissary for meal time";
+        eventTextObject.SetActive(true);
+        isCommissary = true;
+        //path NPC characters to Commissary
+    }
+    void MailEvent()
+    {
+        //mailObject.SetActive(true);
+    }
+    void EndOfDayEvent()
+    {
+        //teleport characters back to starting position
+        for(int i = 0; i< Characters.Length; i++)
+        {
+            Characters[i].transform.position = Characters[i].GetComponent<NPCController>().startingPosition;
+            Characters[i].GetComponent<NPCController>().NPCspeed = 0;
+        }
+
+        StartDay();
+
+    }
+    void SetMail()
+    {
         mail = daystart + 60;
     }
-    void SetCount(){
+    void SetCount()
+    {
         count = daystart+10;
+        Debug.Log("Count happened");
     }
     void SetCommisary()
     {
@@ -72,28 +109,8 @@ public class GameController : MonoBehaviour
     }
     void SetEnd()
     {
-        end = daystart+600;
+        end = daystart+20;
     }
-    void CommisaryEvent()
-    {
-        eventText.text = "Get to the commissary for meal time";
-        eventTextObject.SetActive(true);
-        isCommissary = true;
-    }
-    void MailEvent()
-    {
-        
-    }
-    void EndOfDayEvent()
-    {
-        //teleport characters back to starting position
-        for(int i = 0; i< Characters.Length; i++)
-        {
-            Characters[i].transform.position = Characters[i].GetComponent<NPCController>().startingPosition;
-        }
-
-        StartDay();
-
-    }
+    
 }
 

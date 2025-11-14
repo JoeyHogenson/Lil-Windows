@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8366827144619372243}
   - component: {fileID: 3990970806585784400}
   - component: {fileID: 2339388638097230841}
-  - component: {fileID: -5794727839108879704}
   m_Layer: 0
   m_Name: Front Cell Wall
   m_TagString: Untagged
@@ -89,28 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &-5794727839108879704
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4137786493635866944}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1214038051462388705, guid: 12adf1bbbc4354a4688241f31bcb505a, type: 3}
 --- !u!1 &5445076497013173547
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +100,7 @@ GameObject:
   - component: {fileID: 7836528189295150640}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,8 +114,8 @@ Transform:
   m_GameObject: {fileID: 5445076497013173547}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0.93, y: 1.4, z: 43}
-  m_LocalScale: {x: 1.8302724, y: 86.82685, z: 2.058915}
+  m_LocalPosition: {x: 0.93, y: -1.5, z: 48.3}
+  m_LocalScale: {x: 1.8302724, y: 96.564835, z: 2.058915}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8366827144619372243}

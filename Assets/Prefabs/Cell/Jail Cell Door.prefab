@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2079364821764148521}
   - component: {fileID: 3749560052054988156}
+  - component: {fileID: 315426993940163616}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,6 +54,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &315426993940163616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3799055427536545428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b49e32507242045b9cd953576aaaf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Door: {fileID: 6566082043187496192}
+  isOpen: 0
 --- !u!1001 &6331499249302124625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113,6 +128,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jail Cell Door
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5cca9a525336fb49a982a5ebb411aba, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -124,5 +143,10 @@ PrefabInstance:
 --- !u!4 &5788454250857324474 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a5cca9a525336fb49a982a5ebb411aba, type: 3}
+  m_PrefabInstance: {fileID: 6331499249302124625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6566082043187496192 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a5cca9a525336fb49a982a5ebb411aba, type: 3}
   m_PrefabInstance: {fileID: 6331499249302124625}
   m_PrefabAsset: {fileID: 0}
