@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
     public float daystart;
     public float[] events = {0.0f};
 
-    public GameObject[] Characters;
+    //public GameObject[] Characters;
 
     private float mail;
     private float commisary;
@@ -51,7 +51,7 @@ public class GameController : MonoBehaviour
         }
         if(Time.time>= end)
         {
-            EndOfDayEvent();
+            //EndOfDayEvent();
         }
     }
     void SetEvents()
@@ -65,7 +65,7 @@ public class GameController : MonoBehaviour
     void CountEvent()
     {
         ///the player is forced to be in the 
-        Characters[0].GetComponent<NPCController>().NPCspeed = 0.03f;
+        //Characters[0].GetComponent<NPCController>().NPCspeed = 0.03f;
         //Newspaper gets delivered every day 
         //Manual changes every day 
 
@@ -81,18 +81,19 @@ public class GameController : MonoBehaviour
     {
         //mailObject.SetActive(true);
     }
-    void EndOfDayEvent()
+    /*void EndOfDayEvent()
     {
         //teleport characters back to starting position
         for(int i = 0; i< Characters.Length; i++)
         {
-            Characters[i].transform.position = Characters[i].GetComponent<NPCController>().startingPosition;
-            Characters[i].GetComponent<NPCController>().NPCspeed = 0;
+            //Characters[i].transform.position = Characters[i].GetComponent<NPCController>().startingPosition;
+            //Characters[i].GetComponent<NPCController>().NPCspeed = 0;
         }
 
         StartDay();
 
     }
+    */
     void SetMail()
     {
         mail = daystart + 60;
