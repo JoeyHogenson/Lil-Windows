@@ -1,3 +1,6 @@
+
+
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -176,7 +179,7 @@ public class PlayerLogic : MonoBehaviour
         else if(typeInteract == "Tele")
         {
                 //teleport player to target location
-                transform.position = hit.collider.GetComponent<InteractTele>().targetLocation.transform.position;
+                transform.position = hit.collider.GetComponentInParent<InteractTele>().targetLocation.transform.position;
             }
 
 
