@@ -55,7 +55,7 @@ public class PlayerLogic : MonoBehaviour
         //handles when raycast hits something
         if(Physics.Raycast(ray, out hit))
         {
-            if(hit.distance <= 5f)
+            if(hit.distance <= 15f)
             {
                 //if the collider is an NPC enable "E to talk" button
                 
