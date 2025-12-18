@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
     public GameObject mailObject;
 
     public bool isCommissary;
+    public bool isCount;
     ///game days should be 10min
     void Update()
     {
@@ -41,6 +42,10 @@ public class GameController : MonoBehaviour
     }
     void CheckEvents()
     {
+        if(Time.time >= count && isCount == false)
+        {
+            CountEvent();
+        }
         if(Time.time>=commisary && isCommissary == false)
         {
             CommisaryEvent();
