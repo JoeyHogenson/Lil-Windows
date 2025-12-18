@@ -72,6 +72,7 @@ public class GameController : MonoBehaviour
         ///the player is forced to be in the 
         Characters[0].GetComponent<NPCController>().NPCspeed = 0.03f;
         eventText.text = "Count is occuring";
+        eventTextObject.SetActive(true);
         //Newspaper gets delivered every day 
         //Manual changes every day 
 
