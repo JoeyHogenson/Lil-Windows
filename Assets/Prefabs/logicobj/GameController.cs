@@ -73,6 +73,7 @@ public class GameController : MonoBehaviour
         Characters[0].GetComponent<NPCController>().NPCspeed = 0.03f;
         eventText.text = "Count is occuring";
         eventTextObject.SetActive(true);
+        //check if player is in cell at door for count
         //Newspaper gets delivered every day 
         //Manual changes every day 
 
