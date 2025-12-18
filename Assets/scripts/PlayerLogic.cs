@@ -82,7 +82,12 @@ public class PlayerLogic : MonoBehaviour
                     typeInteract = "Dialogue";
                     eToTalkButton.SetActive(true);
                 }
-                else if(collider.GetComponent<SimpleDoor>())
+                else if(collider.GetComponent<InteractTele>())
+                {
+                    typeInteract = "Tele";
+                    eToOpenButton.SetActive(true);
+                 }
+                    else if(collider.GetComponent<SimpleDoor>())
                 {
                     if(!collider.GetComponent<SimpleDoor>().isOpen)
                     {
@@ -168,10 +173,15 @@ public class PlayerLogic : MonoBehaviour
         {
             eToGrabButton.SetActive(true);
         }
-        
+        else if(typeInteract == "Tele")
+        {
+                //teleport player to target location
+                transform.position = hit.collider.GetComponent<InteractTele>().targetLocation.transform.position;
+            }
 
 
-    }
+
+        }
     public void Menu()
     {
         //Ends dialogue; handles if esc is pressed when dialogue is active 
