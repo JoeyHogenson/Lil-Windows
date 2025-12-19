@@ -56,16 +56,20 @@ public class PlayerLogic : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         //setting _input variable to starter assets script to get inputs
         startDialogue = true;
         _input = GetComponent<StarterAssetsInputs>();
         _playerInput = GetComponent<PlayerInput>();
-        _input.cursorLocked = false;
         isManualOpen = false;
         count = 0;
         leftCount = 1;
         rightCount = 2;
         Debug.Log(ManualText.Length);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        _input.cursorInputForLook = true;
+        _input.cursorLocked = true;
         
     }
 
