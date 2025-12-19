@@ -63,7 +63,7 @@ public class PlayerLogic : MonoBehaviour
                 //if the collider is an NPC enable "E to talk" button
                 
                 collider = hit.collider; 
-                if(collider.GetComponent<Dialogue>())
+                if(collider.GetComponent<DialogueController>())
                 {
                     typeInteract = "Dialogue";
                 }
