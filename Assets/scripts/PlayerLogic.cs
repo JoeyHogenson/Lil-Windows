@@ -82,7 +82,7 @@ public class PlayerLogic : MonoBehaviour
             {
                 
                 collider = hit.collider; 
-                if(collider.GetComponent<DialogueController>())
+                if(collider.GetComponent<Dialogue>())
                 {
                     typeInteract = "Dialogue";
                 }
