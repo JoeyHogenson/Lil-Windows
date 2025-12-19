@@ -146,7 +146,7 @@ public class GameController : MonoBehaviour
             if (anim != null) anim.SetBool("isWalking", true);
         }
 
-        if (eventText != null) eventText.text = "Count is occurring";
+        if (eventText != null) eventText.text = "Count is occurring. Stand at your cell door.";
         if (eventTextObject != null) eventTextObject.SetActive(true);
 
         Debug.Log("[GameController] CountEvent triggered at " + Time.time);

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    public GameController GameController;
     public bool IsOpen = false;
     [SerializeField]
     private bool IsRotatingDoor = true;
@@ -146,4 +147,6 @@ public class Door : MonoBehaviour
             time += Time.deltaTime * Speed;
         }
     }
+    ///disabvle all doors until after count
+   
 }
