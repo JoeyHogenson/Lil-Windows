@@ -1,6 +1,3 @@
-
-
-
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
@@ -60,7 +57,15 @@ public class PlayerLogic : MonoBehaviour
         startDialogue = true;
         _input = GetComponent<StarterAssetsInputs>();
         _playerInput = GetComponent<PlayerInput>();
-        _input.cursorLocked = false;
+        // Ensure cursor starts hidden and locked
+        if (_input != null)
+        {
+            _input.cursorLocked = true;
+            _input.cursorInputForLook = true;
+        }
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
         isManualOpen = false;
         count = 0;
         leftCount = 1;
