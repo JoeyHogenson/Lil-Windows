@@ -3455,7 +3455,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -7819,7 +7819,7 @@ MonoBehaviour:
   eventTextObject: {fileID: 777451012}
   mailObject: {fileID: 0}
   isCommissary: 0
-  isCount: 0
+  isCount: 1
 --- !u!1 &2103793520
 GameObject:
   m_ObjectHideFlags: 0
