@@ -2479,7 +2479,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3592057131020172049, guid: 0270534c72e5da94fb6020b9a71c9774, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0270534c72e5da94fb6020b9a71c9774, type: 3}
@@ -3136,7 +3137,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3592057131020172049, guid: 0270534c72e5da94fb6020b9a71c9774, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0270534c72e5da94fb6020b9a71c9774, type: 3}
@@ -4919,7 +4921,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3592057131020172049, guid: 0270534c72e5da94fb6020b9a71c9774, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0270534c72e5da94fb6020b9a71c9774, type: 3}
@@ -8070,7 +8073,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3592057131020172049, guid: 0270534c72e5da94fb6020b9a71c9774, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0270534c72e5da94fb6020b9a71c9774, type: 3}
@@ -8731,6 +8735,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7853120362946791194, guid: 294fdd3f732b46b4280dc9b4cfca04c3, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2601552257854514524, guid: 294fdd3f732b46b4280dc9b4cfca04c3, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 294fdd3f732b46b4280dc9b4cfca04c3, type: 3}
       propertyPath: m_Name
       value: Books (1)
@@ -8794,7 +8806,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3592057131020172049, guid: 0270534c72e5da94fb6020b9a71c9774, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0270534c72e5da94fb6020b9a71c9774, type: 3}
