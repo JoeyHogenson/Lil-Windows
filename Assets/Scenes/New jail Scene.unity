@@ -5193,7 +5193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_overrideName: 
   m_overrideUseMessage: 
-  maxUseDistance: 10
+  maxUseDistance: 20
   events:
     onSelect:
       m_PersistentCalls:
@@ -6274,12 +6274,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624654ff0a68ee844994f728ddf3d991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectAt: 1
+  selectAt: 0
   layerMask:
     serializedVersion: 2
     m_Bits: 1
-  distanceFrom: 0
-  maxSelectionDistance: 30
+  distanceFrom: 1
+  maxSelectionDistance: 20
   runRaycasts: 1
   raycastAll: 0
   selectBehindUIObjects: 0
@@ -7428,7 +7428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_overrideName: 
   m_overrideUseMessage: 
-  maxUseDistance: 5
+  maxUseDistance: 100
   events:
     onSelect:
       m_PersistentCalls:
