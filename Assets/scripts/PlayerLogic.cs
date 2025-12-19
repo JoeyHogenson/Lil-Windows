@@ -3,6 +3,7 @@
 
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 namespace StarterAssets
 {
@@ -16,7 +17,6 @@ public class PlayerLogic : MonoBehaviour
     public GameObject eToOpenButton;
     public GameObject eToCloseButton;
     public GameObject eToGrabButton;
-    public GameObject dialoguePanel;
     public GameObject menuPanel;
 
     public GameObject dialogueOption1;
@@ -63,34 +63,16 @@ public class PlayerLogic : MonoBehaviour
                 //if the collider is an NPC enable "E to talk" button
                 
                 collider = hit.collider; 
-                if(collider.GetComponent<DialogueController>())
+                if(collider.GetComponent<Dialogue>())
                 {
                     typeInteract = "Dialogue";
-                    eToTalkButton.SetActive(true);
-                
-                }
-                else if (collider.GetComponent<TransDialogue>())
-                {
-                    typeInteract = "Dialogue";
-                    eToTalkButton.SetActive(true);
-                }
-                else if (collider.GetComponent<ElderDialogue>())
-                {
-                    Debug.Log("this is happening");
-                    typeInteract = "Dialogue";
-                    eToTalkButton.SetActive(true);
-                }
-                else if (collider.GetComponent<DisabledMexicanDialogue>())
-                {
-                    typeInteract = "Dialogue";
-                    eToTalkButton.SetActive(true);
                 }
                 else if(collider.GetComponent<InteractTele>())
                 {
                     typeInteract = "Tele";
                     eToOpenButton.SetActive(true);
-                 }
-                    else if(collider.GetComponent<SimpleDoor>())
+                }
+                else if(collider.GetComponent<SimpleDoor>())
                 {
                     if(!collider.GetComponent<SimpleDoor>().isOpen)
                     {
@@ -121,7 +103,6 @@ public class PlayerLogic : MonoBehaviour
             if(!hit.collider.CompareTag("NPC"))
             {
                 eToTalkButton.SetActive(false);
-                dialoguePanel.SetActive(false);
             }
         }
         
@@ -145,14 +126,12 @@ public class PlayerLogic : MonoBehaviour
         if(typeInteract == "Dialogue" && startDialogue == true)
         {
             eToTalkButton.SetActive(false);
-            dialoguePanel.SetActive(true);
             GetComponent<FirstPersonController>().MoveSpeed = 0f;
             hit.collider.GetComponent<Animator>().SetBool("isWalking", false);
             hit.collider.GetComponent<Animator>().SetBool("sitTalkRight", true);
             hit.collider.GetComponent<NPCController>().NPCspeed = 0f;
             _input.cursorInputForLook = false;
             _input.cursorLocked = true;
-            hit.collider.gameObject.GetComponent<DialogueController>().nextLine();
             startDialogue = false;
             Cursor.visible = true;
             // Unlock the cursor so it can move freely
@@ -196,7 +175,6 @@ public class PlayerLogic : MonoBehaviour
             _input.cursorInputForLook = true;
             _input.cursorLocked = true;
             eToTalkButton.SetActive(false);
-            dialoguePanel.SetActive(false);
             startDialogue = true;
              Cursor.visible = false;
             // Unlock the cursor so it can move freely

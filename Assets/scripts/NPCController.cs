@@ -24,7 +24,6 @@ public class NPCController : MonoBehaviour
     void Start()
     {
         Vector3 up = new Vector3 ( 0,5,0);
-        animator.SetBool("isWalking", true);
         startingPosition = NPC.transform.position;
     }
 

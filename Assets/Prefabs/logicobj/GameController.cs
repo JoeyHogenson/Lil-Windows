@@ -71,6 +71,7 @@ public class GameController : MonoBehaviour
     {
         ///the player is forced to be in the 
         Characters[0].GetComponent<NPCController>().NPCspeed = 0.03f;
+        Characters[0].GetComponent<Animator>().SetBool("isWalking", true);
         eventText.text = "Count is occuring";
         eventTextObject.SetActive(true);
         //check if player is in cell at door for count
@@ -109,7 +110,6 @@ public class GameController : MonoBehaviour
     void SetCount()
     {
         count = daystart+10;
-        Debug.Log("Count happened");
     }
     void SetCommisary()
     {

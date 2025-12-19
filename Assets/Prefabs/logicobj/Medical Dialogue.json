@@ -1,0 +1,64 @@
+{
+  "passages": [
+    {
+      "text": "[[access medical]] \n[[Goodbye]] ",
+      "links": [
+        {
+          "name": "access medical",
+          "link": "access medical",
+          "pid": "2"
+        },
+        {
+          "name": "Goodbye",
+          "link": "Goodbye",
+          "pid": "3"
+        }
+      ],
+      "name": "Untitled Passage",
+      "pid": "1",
+      "position": {
+        "x": "1075",
+        "y": "475"
+      }
+    },
+    {
+      "text": "I need to access medical for my angina pills\n\n[[guard response to medical 1]] ",
+      "links": [
+        {
+          "name": "guard response to medical 1",
+          "link": "guard response to medical 1",
+          "pid": "4"
+        }
+      ],
+      "name": "access medical",
+      "pid": "2",
+      "position": {
+        "x": "900",
+        "y": "700"
+      }
+    },
+    {
+      "text": "Goodbye",
+      "name": "Goodbye",
+      "pid": "3",
+      "position": {
+        "x": "1200",
+        "y": "700"
+      }
+    },
+    {
+      "text": "Go to the infirmary and talk to the nurse. ",
+      "name": "guard response to medical 1",
+      "pid": "4",
+      "position": {
+        "x": "800",
+        "y": "900"
+      }
+    }
+  ],
+  "name": "Access Medical Quest Dialogue",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.0",
+  "ifid": "CC43CD55-307E-4073-9858-A5204BE39AE5"
+}

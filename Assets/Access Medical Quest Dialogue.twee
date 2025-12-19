@@ -1,0 +1,31 @@
+:: StoryTitle
+Access Medical Quest Dialogue
+
+
+:: StoryData
+{
+  "ifid": "CC43CD55-307E-4073-9858-A5204BE39AE5",
+  "format": "Twison",
+  "format-version": "0.0.1",
+  "start": "Untitled Passage",
+  "zoom": 1
+}
+
+
+:: Goodbye {"position":"1200,700","size":"100,100"}
+Goodbye
+
+
+:: Untitled Passage {"position":"1075,475","size":"100,100"}
+[[access medical]] 
+[[Goodbye]] 
+
+
+:: access medical {"position":"900,700","size":"100,100"}
+I need to access medical for my angina pills
+
+[[guard response to medical 1]] 
+
+
+:: guard response to medical 1 {"position":"800,900","size":"100,100"}
+Go to the infirmary and talk to the nurse. 
