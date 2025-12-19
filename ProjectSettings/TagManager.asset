@@ -9,6 +9,7 @@ TagManager:
   - Terrain
   - Wall
   - Manual
+  - Newspaper
   layers:
   - Default
   - TransparentFX

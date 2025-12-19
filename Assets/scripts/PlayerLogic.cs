@@ -4,6 +4,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using TMPro;
 
 namespace StarterAssets
 {
@@ -17,11 +18,22 @@ public class PlayerLogic : MonoBehaviour
     public GameObject eToOpenButton;
     public GameObject eToCloseButton;
     public GameObject eToGrabButton;
-    public GameObject eToOpenManual;
     public GameObject menuPanel;
+
+    public GameObject[] Newspaper;
+    public int count;
 
     public GameObject manualObject;
     public bool isManualOpen;
+    public string[] ManualText;
+
+    public TextMeshProUGUI leftPage;
+    public TextMeshProUGUI rightPage;
+
+    private int leftCount;
+    public TextMeshProUGUI leftPageNumber;
+    private int rightCount;
+    public TextMeshProUGUI rightPageNumber;
 
     public bool startDialogue;
 
@@ -46,6 +58,9 @@ public class PlayerLogic : MonoBehaviour
         _playerInput = GetComponent<PlayerInput>();
         _input.cursorLocked = false;
         isManualOpen = false;
+        count = 0;
+        leftCount = 1;
+        rightCount = 2;
         
     }
 
@@ -60,7 +75,6 @@ public class PlayerLogic : MonoBehaviour
         {
             if(hit.distance <= 15f)
             {
-                //if the collider is an NPC enable "E to talk" button
                 
                 collider = hit.collider; 
                 if(collider.GetComponent<Dialogue>())
@@ -89,7 +103,13 @@ public class PlayerLogic : MonoBehaviour
                 else if (collider.CompareTag("Manual"))
                 {
                     typeInteract = "Manual";
-                    eToOpenManual.SetActive(true);
+                    eToOpenButton.SetActive(true);
+                }
+                else if (collider.CompareTag("Newspaper"))
+                {
+                    typeInteract = "Newspaper";
+                    Newspaper[count].SetActive(true);
+                    count++;
                 }
                 else
                 {
@@ -165,10 +185,10 @@ public class PlayerLogic : MonoBehaviour
                 //teleport player to target location
                 transform.position = hit.collider.GetComponentInParent<InteractTele>().targetLocation.transform.position;
             }
-        else if (typeInteract == "Manual" && isManualOpen == false)
+        else if (typeInteract == "Manual")
         {
             manualObject.SetActive(true);
-            isManualOpen = true;
+            _input.cursorInputForLook = false;
         }
 
 
@@ -194,7 +214,12 @@ public class PlayerLogic : MonoBehaviour
         else if(manualObject.activeSelf == true)
         {
            manualObject.SetActive(false); 
-           isManualOpen = false;
+           _input.cursorInputForLook = true;
+        }
+        else if(Newspaper[count].activeSelf == true)
+        {
+            Newspaper[count].SetActive(false);
+
         }
         //Brings up Menu
         else if(menuPanel.activeSelf == false)
@@ -209,6 +234,24 @@ public class PlayerLogic : MonoBehaviour
             GetComponent<FirstPersonController>().MoveSpeed = 10f;
             _input.cursorInputForLook = true;
         }
+    }
+    public void NextPage()
+    {
+        rightCount = rightCount + 2;
+        leftCount = leftCount +2;
+        leftPageNumber.text = leftCount.ToString();
+        rightPageNumber.text = rightCount.ToString();
+    }
+    public void PrevPage()
+    {
+        if(leftCount >= 3)
+        {
+            leftCount = leftCount - 2;
+            rightCount = rightCount - 2;
+        }
+        leftPageNumber.text = leftCount.ToString();
+        rightPageNumber.text = rightCount.ToString();
+
     }
     
 
