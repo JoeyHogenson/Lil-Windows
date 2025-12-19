@@ -1,6 +1,3 @@
-
-
-
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
@@ -213,7 +210,7 @@ public class PlayerLogic : MonoBehaviour
         {
             GetComponent<FirstPersonController>().MoveSpeed = 10f;
             //hit.collider.GetComponent<NPCController>().NPCspeed = 0.03f;
-            hit.collider.GetComponent<Animator>().SetBool("isWalking", true);
+            //hit.collider.GetComponent<Animator>().SetBool("isWalking", true);
             _input.cursorInputForLook = true;
             _input.cursorLocked = true;
             eToTalkButton.SetActive(false);
@@ -270,6 +267,7 @@ public class PlayerLogic : MonoBehaviour
         rightPage.text = ManualText[rightCount]; 
 
     }
+    
     
 
 }

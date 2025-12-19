@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using System.Collections;
 using TMPro;
-
 public class GameController : MonoBehaviour
 {
     public float daystart;
@@ -150,6 +151,7 @@ public class GameController : MonoBehaviour
         if (eventTextObject != null) eventTextObject.SetActive(true);
 
         Debug.Log("[GameController] CountEvent triggered at " + Time.time);
+        StartCoroutine(StopWalkingAfterSeconds());
     }
 
     //script that checks if player is in the count zone
@@ -207,7 +209,7 @@ public class GameController : MonoBehaviour
     }
     void SetCommisary()
     {
-        commisary = daystart + 20;
+        commisary = daystart + 180;
         isCommissary = false;
     }
     void SetEnd()
@@ -218,6 +220,17 @@ public class GameController : MonoBehaviour
     void HideEventText()
     {
         if (eventTextObject != null) eventTextObject.SetActive(false);
+    }
+    IEnumerator StopWalkingAfterSeconds()
+    {
+        yield return new WaitForSeconds(8f);
+        var anim = Characters[0].GetComponent<Animator>();
+            if (anim != null) anim.SetBool("isWalking", false);
+        var npc = Characters[0].GetComponent<NPCController>();
+            if (npc != null) npc.NPCspeed = 0f;
+        Characters[0].transform.Rotate(0f,180f,0f);
+        
+
     }
 }
 
