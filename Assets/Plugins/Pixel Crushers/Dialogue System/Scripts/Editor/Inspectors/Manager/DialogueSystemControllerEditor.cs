@@ -403,7 +403,7 @@ namespace PixelCrushers.DialogueSystem
                 try
                 {
                     EditorWindowTools.EditorGUILayoutBeginGroup();
-                    EditorGUILayout.PropertyField(persistentDataSettingsProperty.FindPropertyRelative("invokeOnQuestStateChangeForEntries"), true);
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("invokeOnQuestStateChangeForEntries"), true);
                 }
                 finally
                 {

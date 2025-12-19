@@ -601,15 +601,17 @@ namespace PixelCrushers.DialogueSystem
                 m_uiLocalizationManager = GetComponent<UILocalizationManager>() ?? PixelCrushers.GameObjectUtility.FindFirstObjectByType<UILocalizationManager>();
                 if (m_uiLocalizationManager == null)
                 {
-                    m_uiLocalizationManager = gameObject.AddComponent<UILocalizationManager>();
-
+                    if (gameObject != null)
+                    {
+                        m_uiLocalizationManager = gameObject.AddComponent<UILocalizationManager>();
+                    }
                 }
-                if (m_uiLocalizationManager.textTable == null)
+                if (m_uiLocalizationManager != null && m_uiLocalizationManager.textTable == null)
                 {
                     m_uiLocalizationManager.textTable = displaySettings.localizationSettings.textTable;
                 }
             }
-            m_uiLocalizationManager.currentLanguage = language;
+            if (m_uiLocalizationManager != null) m_uiLocalizationManager.currentLanguage = language;
             displaySettings.localizationSettings.language = language;
             Localization.language = language;
         }

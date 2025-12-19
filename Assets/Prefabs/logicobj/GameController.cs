@@ -118,7 +118,7 @@ public class GameController : MonoBehaviour
     }
     void SetEnd()
     {
-        end = daystart+20;
+        end = daystart+600;
     }
     
 }

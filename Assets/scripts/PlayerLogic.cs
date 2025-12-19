@@ -17,12 +17,11 @@ public class PlayerLogic : MonoBehaviour
     public GameObject eToOpenButton;
     public GameObject eToCloseButton;
     public GameObject eToGrabButton;
+    public GameObject eToOpenManual;
     public GameObject menuPanel;
 
-    public GameObject dialogueOption1;
-    public GameObject dialogueOption2;
-    public GameObject dialogueOption3;
-    public GameObject dialogueOption4;
+    public GameObject manualObject;
+    public bool isManualOpen;
 
     public bool startDialogue;
 
@@ -46,6 +45,7 @@ public class PlayerLogic : MonoBehaviour
         _input = GetComponent<StarterAssetsInputs>();
         _playerInput = GetComponent<PlayerInput>();
         _input.cursorLocked = false;
+        isManualOpen = false;
         
     }
 
@@ -86,6 +86,11 @@ public class PlayerLogic : MonoBehaviour
                     }
 
                 }
+                else if (collider.CompareTag("Manual"))
+                {
+                    typeInteract = "Manual";
+                    eToOpenManual.SetActive(true);
+                }
                 else
                 {
                     typeInteract = "None";
@@ -125,11 +130,11 @@ public class PlayerLogic : MonoBehaviour
         //handles starting dialogue when you press "E". Reads off of the NPC dialogue scriptable object
         if(typeInteract == "Dialogue" && startDialogue == true)
         {
-            eToTalkButton.SetActive(false);
-            GetComponent<FirstPersonController>().MoveSpeed = 0f;
+            eToTalkButton.SetActive(false);         
             hit.collider.GetComponent<Animator>().SetBool("isWalking", false);
             hit.collider.GetComponent<Animator>().SetBool("sitTalkRight", true);
             hit.collider.GetComponent<NPCController>().NPCspeed = 0f;
+            GetComponent<FirstPersonController>().MoveSpeed = 0f;
             _input.cursorInputForLook = false;
             _input.cursorLocked = true;
             startDialogue = false;
@@ -160,6 +165,12 @@ public class PlayerLogic : MonoBehaviour
                 //teleport player to target location
                 transform.position = hit.collider.GetComponentInParent<InteractTele>().targetLocation.transform.position;
             }
+        else if (typeInteract == "Manual" && isManualOpen == false)
+        {
+            manualObject.SetActive(true);
+            isManualOpen = true;
+        }
+
 
 
 
@@ -179,6 +190,11 @@ public class PlayerLogic : MonoBehaviour
              Cursor.visible = false;
             // Unlock the cursor so it can move freely
             Cursor.lockState = CursorLockMode.Locked; 
+        }
+        else if(manualObject.SetActive(true))
+        {
+           manualObject.SetActive(true); 
+           isManualOpen = false;
         }
         //Brings up Menu
         else if(menuPanel.activeSelf == false)

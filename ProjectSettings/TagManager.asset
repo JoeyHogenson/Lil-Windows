@@ -8,6 +8,7 @@ TagManager:
   - NPC
   - Terrain
   - Wall
+  - Manual
   layers:
   - Default
   - TransparentFX
