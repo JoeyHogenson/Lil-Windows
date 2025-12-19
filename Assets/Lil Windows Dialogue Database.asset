@@ -1116,7 +1116,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Continue()
+        value: 
         type: 0
         typeString: 
       conversationID: 5
