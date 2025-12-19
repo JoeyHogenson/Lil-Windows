@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
 
 public class GameController : MonoBehaviour
 {
@@ -22,6 +21,14 @@ public class GameController : MonoBehaviour
 
     public bool isCommissary;
     public bool isCount;
+
+    // runtime flags so each event fires once per day
+    private bool _countEventFired;
+    private bool _countDeadlineFired;
+    private bool _mailFired;
+    private bool _commisaryFired;
+    private bool _endFired;
+
     ///game days should be 10min
     void Update()
     {
@@ -37,32 +44,63 @@ public class GameController : MonoBehaviour
     }
     void StartDay()
     {
-
-        //called only when the player goes to bed, sets time for next morning, and events for the next day. 
+        // called only when the player goes to bed, sets time for next morning, and events for the next day. 
         daystart = Time.time;
+        ResetDayFlags();
         SetEvents();
+
+        if (eventTextObject != null) eventTextObject.SetActive(false);
+        if (mailObject != null) mailObject.SetActive(false);
+
+        Debug.Log("[GameController] StartDay: daystart=" + daystart + " count=" + count);
     }
+
+    void ResetDayFlags()
+    {
+        _countEventFired = false;
+        _countDeadlineFired = false;
+        _mailFired = false;
+        _commisaryFired = false;
+        _endFired = false;
+        isCommissary = false;
+        isCount = false;
+    }
+
     void CheckEvents()
     {
-        if(Time.time >= count -5 && Time.time <=count)
+        // Count "incoming" window: trigger once when Time.time enters the 5s before deadline
+        if (!_countEventFired && Time.time >= count - 5f && Time.time < count)
         {
             CountEvent();
+            _countEventFired = true;
         }
-        if (Time.time == count)
+
+        // Count deadline: trigger once when time reaches or passes count
+        if (!_countDeadlineFired && Time.time >= count)
         {
             CountDeadline();
+            _countDeadlineFired = true;
         }
-        if(Time.time>=commisary && isCommissary == false)
+
+        // Commissary event
+        if (!_commisaryFired && Time.time >= commisary)
         {
             CommisaryEvent();
+            _commisaryFired = true;
         }
-        if(Time.time ==mail)
+
+        // Mail event
+        if (!_mailFired && Time.time >= mail)
         {
             MailEvent();
+            _mailFired = true;
         }
-        if(Time.time>= end)
+
+        // End of day
+        if (!_endFired && Time.time >= end)
         {
             EndOfDayEvent();
+            _endFired = true;
         }
     }
     void SetEvents()
@@ -76,94 +114,110 @@ public class GameController : MonoBehaviour
     void CountDeadline()
     {
         CountZoneCheck();
-        eventTextObject.SetActive(true);
+
+            if (eventTextObject != null) eventTextObject.SetActive(true);
+
         //check if player is in cell at door for count
         if (isCount == true)
         {
             //proceed with count
-            eventText.text = "Count complete";
-            eventTextObject.SetActive(true);
+            if (eventText != null) eventText.text = "Count complete";
+            Debug.Log("[GameController] CountDeadline: player IN zone -> Count complete");
             //freeze text and after 5 seconds hide 
-            Invoke("HideEventText", 5f);
-
+            Invoke(nameof(HideEventText), 5f);
         }
         else
         {
             //fail count, get punished
-            eventText.text = "You failed count and have been punished";
-            eventTextObject.SetActive(true);
+            if (eventText != null) eventText.text = "You failed count and have been punished";
+            Debug.Log("[GameController] CountDeadline: player NOT in zone -> Failed count");
+            Invoke(nameof(HideEventText), 5f);
         }
-        
-
     }
     void CountEvent()
     {
-     
         ///the player is forced to be in the 
-        Characters[0].GetComponent<NPCController>().NPCspeed = 0.03f;
-        Characters[0].GetComponent<Animator>().SetBool("isWalking", true);
-        eventText.text = "Count is occuring";
-        eventTextObject.SetActive(true);
+        if (Characters != null && Characters.Length > 0 && Characters[0] != null)
+        {
+            var npc = Characters[0].GetComponent<NPCController>();
+            if (npc != null) npc.NPCspeed = 0.03f;
 
+            var anim = Characters[0].GetComponent<Animator>();
+            if (anim != null) anim.SetBool("isWalking", true);
+        }
 
+        if (eventText != null) eventText.text = "Count is occurring";
+        if (eventTextObject != null) eventTextObject.SetActive(true);
 
+        Debug.Log("[GameController] CountEvent triggered at " + Time.time);
     }
 
     //script that checks if player is in the count zone
-
     void CountZoneCheck()
     {
-                if (countzone.bounds.Contains(player.transform.position))
-        {
-            isCount = true;
-        }
-        else
+        if (countzone == null || player == null)
         {
             isCount = false;
+            Debug.LogWarning("[GameController] CountZoneCheck: countzone or player not assigned.");
+            return;
         }
+
+        // Bounds.Contains uses world-space bounds; ensure player's pivot is compared (may need offset)
+        isCount = countzone.bounds.Contains(player.transform.position);
+        Debug.Log("[GameController] CountZoneCheck: player position=" + player.transform.position + " countzone.bounds=" + countzone.bounds + " isCount=" + isCount);
     }
 
     void CommisaryEvent()
     {
-        eventText.text = "Get to the commissary for meal time";
-        eventTextObject.SetActive(true);
+        if (eventText != null) eventText.text = "Get to the commissary for meal time";
+        if (eventTextObject != null) eventTextObject.SetActive(true);
         isCommissary = true;
+        Debug.Log("[GameController] CommisaryEvent triggered at " + Time.time);
         //path NPC characters to Commissary
     }
     void MailEvent()
     {
-        mailObject.SetActive(true);
+        if (mailObject != null) mailObject.SetActive(true);
+        Debug.Log("[GameController] MailEvent triggered at " + Time.time);
     }
     void EndOfDayEvent()
     {
         //teleport characters back to starting position
-        for(int i = 0; i< Characters.Length; i++)
+        for (int i = 0; i < Characters.Length; i++)
         {
-            Characters[i].transform.position = Characters[i].GetComponent<NPCController>().startingPosition;
-            Characters[i].GetComponent<NPCController>().NPCspeed = 0;
+            var npc = Characters[i].GetComponent<NPCController>();
+            if (npc != null)
+            {
+                Characters[i].transform.position = npc.startingPosition;
+                npc.NPCspeed = 0;
+            }
         }
 
+        Debug.Log("[GameController] EndOfDayEvent triggered at " + Time.time);
         StartDay();
-
     }
-    
+
     void SetMail()
     {
         mail = daystart + 60;
     }
     void SetCount()
     {
-        count = daystart+10;
+        count = daystart + 10;
     }
     void SetCommisary()
     {
-        commisary = daystart +20;
+        commisary = daystart + 20;
         isCommissary = false;
     }
     void SetEnd()
     {
-        end = daystart+600;
+        end = daystart + 600;
     }
-    
+
+    void HideEventText()
+    {
+        if (eventTextObject != null) eventTextObject.SetActive(false);
+    }
 }
 
