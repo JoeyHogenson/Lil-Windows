@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     public Collider countzone;
 
     public GameObject[] Characters;
-
+    public GameObject player;
     private float mail;
     private float commisary;
     private float end;
@@ -71,6 +71,7 @@ public class GameController : MonoBehaviour
     }
     void CountEvent()
     {
+        CountZoneCheck();
         ///the player is forced to be in the 
         Characters[0].GetComponent<NPCController>().NPCspeed = 0.03f;
         Characters[0].GetComponent<Animator>().SetBool("isWalking", true);
@@ -93,16 +94,16 @@ public class GameController : MonoBehaviour
         //Manual changes every day 
 
     }
-    private void OnCollisionStay(Collision collision)
+
+    //script that checks if player is in the count zone
+    
+    void CountZoneCheck()
     {
-        if(collision.collider == countzone && isCount == true)
+                if (countzone.bounds.Contains(player.transform.position))
         {
             isCount = true;
         }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if(collision.collider == countzone)
+        else
         {
             isCount = false;
         }
