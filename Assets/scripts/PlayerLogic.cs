@@ -25,7 +25,10 @@ public class PlayerLogic : MonoBehaviour
 
     public GameObject manualObject;
     public bool isManualOpen;
-    public string[] ManualText;
+    private string[] ManualText = 
+    {"Page 0 text",
+    "Welcome to Lil' Windows! \n\nYour Current Quests are: Talk to OG about needing medication\n\nExplore media materials in law library",
+    "Come back when you have completed your quests","","","","",""};
 
     public TextMeshProUGUI leftPage;
     public TextMeshProUGUI rightPage;
@@ -61,6 +64,7 @@ public class PlayerLogic : MonoBehaviour
         count = 0;
         leftCount = 1;
         rightCount = 2;
+        Debug.Log(ManualText.Length);
         
     }
 
@@ -189,6 +193,8 @@ public class PlayerLogic : MonoBehaviour
         {
             manualObject.SetActive(true);
             _input.cursorInputForLook = false;
+            leftPage.text = ManualText[leftCount];
+            rightPage.text = ManualText[rightCount];
         }
 
 
@@ -241,6 +247,8 @@ public class PlayerLogic : MonoBehaviour
         leftCount = leftCount +2;
         leftPageNumber.text = leftCount.ToString();
         rightPageNumber.text = rightCount.ToString();
+        leftPage.text = ManualText[leftCount];
+        rightPage.text = ManualText[rightCount];
     }
     public void PrevPage()
     {
