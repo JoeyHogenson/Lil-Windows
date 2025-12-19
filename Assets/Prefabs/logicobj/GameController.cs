@@ -1,10 +1,12 @@
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class GameController : MonoBehaviour
 {
     public float daystart;
     public float[] events = {0.0f};
+    public Collider countzone;
 
     public GameObject[] Characters;
 
@@ -75,10 +77,37 @@ public class GameController : MonoBehaviour
         eventText.text = "Count is occuring";
         eventTextObject.SetActive(true);
         //check if player is in cell at door for count
+        if (isCount == true)
+        {
+            //proceed with count
+            eventText.text = "Count complete";
+            eventTextObject.SetActive(true);
+        }
+        else
+        {
+            //fail count, get punished
+            eventText.text = "You failed count and have been punished";
+            eventTextObject.SetActive(true);
+        }
         //Newspaper gets delivered every day 
         //Manual changes every day 
 
     }
+    private void OnCollisionStay(Collision collision)
+    {
+        if(collision.collider == countzone && isCount == true)
+        {
+            isCount = true;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.collider == countzone)
+        {
+            isCount = false;
+        }
+    }
+
     void CommisaryEvent()
     {
         eventText.text = "Get to the commissary for meal time";
