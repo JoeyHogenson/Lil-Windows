@@ -44,15 +44,19 @@ public class GameController : MonoBehaviour
     }
     void CheckEvents()
     {
-        if(Time.time >= count && isCount == false)
+        if(Time.time <= count -5 && Time.time >=count)
         {
             CountEvent();
+        }
+        if (Time.time == count)
+        {
+            CountDeadline();
         }
         if(Time.time>=commisary && isCommissary == false)
         {
             CommisaryEvent();
         }
-        if(Time.time>=mail)
+        if(Time.time ==mail)
         {
             MailEvent();
         }
@@ -69,13 +73,9 @@ public class GameController : MonoBehaviour
         SetCommisary();
         SetEnd();
     }
-    void CountEvent()
+    void CountDeadline()
     {
         CountZoneCheck();
-        ///the player is forced to be in the 
-        Characters[0].GetComponent<NPCController>().NPCspeed = 0.03f;
-        Characters[0].GetComponent<Animator>().SetBool("isWalking", true);
-        eventText.text = "Count is occuring";
         eventTextObject.SetActive(true);
         //check if player is in cell at door for count
         if (isCount == true)
@@ -83,6 +83,9 @@ public class GameController : MonoBehaviour
             //proceed with count
             eventText.text = "Count complete";
             eventTextObject.SetActive(true);
+            //freeze text and after 5 seconds hide 
+            Invoke("HideEventText", 5f);
+
         }
         else
         {
@@ -90,13 +93,24 @@ public class GameController : MonoBehaviour
             eventText.text = "You failed count and have been punished";
             eventTextObject.SetActive(true);
         }
-        //Newspaper gets delivered every day 
-        //Manual changes every day 
+        
+
+    }
+    void CountEvent()
+    {
+     
+        ///the player is forced to be in the 
+        Characters[0].GetComponent<NPCController>().NPCspeed = 0.03f;
+        Characters[0].GetComponent<Animator>().SetBool("isWalking", true);
+        eventText.text = "Count is occuring";
+        eventTextObject.SetActive(true);
+
+
 
     }
 
     //script that checks if player is in the count zone
-    
+
     void CountZoneCheck()
     {
                 if (countzone.bounds.Contains(player.transform.position))
