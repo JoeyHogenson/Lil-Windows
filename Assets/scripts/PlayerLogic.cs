@@ -191,9 +191,9 @@ public class PlayerLogic : MonoBehaviour
             // Unlock the cursor so it can move freely
             Cursor.lockState = CursorLockMode.Locked; 
         }
-        else if(manualObject.SetActive(true))
+        else if(manualObject.activeSelf == true)
         {
-           manualObject.SetActive(true); 
+           manualObject.SetActive(false); 
            isManualOpen = false;
         }
         //Brings up Menu
