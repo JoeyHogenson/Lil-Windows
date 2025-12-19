@@ -10053,11 +10053,11 @@ MonoBehaviour:
   daystart: 0
   events:
   - 0
-  countzone: {fileID: 0}
+  countzone: {fileID: 784328905}
   Characters:
   - {fileID: 1550969233}
   - {fileID: 2125396579}
-  player: {fileID: 0}
+  player: {fileID: 1863547448}
   eventText: {fileID: 777451014}
   eventTextObject: {fileID: 777451012}
   mailObject: {fileID: 0}
