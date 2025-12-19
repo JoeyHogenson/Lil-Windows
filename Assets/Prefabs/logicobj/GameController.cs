@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour
     }
     void CheckEvents()
     {
-        if(Time.time <= count -5 && Time.time >=count)
+        if(Time.time >= count -5 && Time.time <=count)
         {
             CountEvent();
         }
