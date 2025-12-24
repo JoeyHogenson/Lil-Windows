@@ -1,0 +1,62 @@
+{
+  "passages": [
+    {
+      "text": "[[Hi, Riley]] \n[[Can you Help me with my quest?]]\n[[Goodbye]] ",
+      "links": [
+        {
+          "name": "Hi, Riley",
+          "link": "Hi, Riley",
+          "pid": "2"
+        },
+        {
+          "name": "Can you Help me with my quest?",
+          "link": "Can you Help me with my quest?",
+          "pid": "3"
+        },
+        {
+          "name": "Goodbye",
+          "link": "Goodbye",
+          "pid": "4"
+        }
+      ],
+      "name": "Hi, I'm Riley",
+      "pid": "1",
+      "position": {
+        "x": "225",
+        "y": "125"
+      }
+    },
+    {
+      "text": "Hi, there's more to this dialogue that needs to be programmed. I'll teach you twine, its really simple. ",
+      "name": "Hi, Riley",
+      "pid": "2",
+      "position": {
+        "x": "75",
+        "y": "275"
+      }
+    },
+    {
+      "text": "Go around collecting pages for DC.",
+      "name": "Can you Help me with my quest?",
+      "pid": "3",
+      "position": {
+        "x": "250",
+        "y": "275"
+      }
+    },
+    {
+      "text": "Rude. I was going to help you with your quest\n",
+      "name": "Goodbye",
+      "pid": "4",
+      "position": {
+        "x": "425",
+        "y": "275"
+      }
+    }
+  ],
+  "name": "Riley's Dialogue for Pilot",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.0",
+  "ifid": "204BE39A-E555-4AF9-970E-75268450DC8E"
+}
