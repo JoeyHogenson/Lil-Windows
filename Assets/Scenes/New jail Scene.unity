@@ -2299,7 +2299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d4b441063aa72604ebe0d3fee6e015cf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.016098
+      value: -18.22
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d4b441063aa72604ebe0d3fee6e015cf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9723,9 +9723,9 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: 
-  conversationConversant: {fileID: 0}
-  conversationActor: {fileID: 0}
+  conversation: Riley's Dialogue for Pilot
+  conversationConversant: {fileID: 1987265588}
+  conversationActor: {fileID: 1863547450}
   startConversationEntryID: -1
   startConversationEntryTitle: 
   overrideDialogueUI: {fileID: 0}
@@ -9735,9 +9735,9 @@ MonoBehaviour:
   queue: 0
   skipIfNoValidEntries: 0
   preventRestartOnSameFrameEnded: 0
-  stopConversationOnTriggerExit: 0
+  stopConversationOnTriggerExit: 1
   marginToAllowTriggerExit: 0.2
-  stopConversationIfTooFar: 0
+  stopConversationIfTooFar: 1
   maxConversationDistance: 5
   monitorConversationDistanceFrequency: 1
   showCursorDuringConversation: 0
