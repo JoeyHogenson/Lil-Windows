@@ -6828,7 +6828,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: Access Medical Quest Dialogue
+  conversation: OG
   conversationConversant: {fileID: 983010256}
   conversationActor: {fileID: 1863547450}
   startConversationEntryID: -1
