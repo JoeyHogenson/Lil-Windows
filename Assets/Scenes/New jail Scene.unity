@@ -4558,6 +4558,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 53761c42dca4ea849aa871729bd46f0d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1429876898}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 53761c42dca4ea849aa871729bd46f0d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1429876904}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 53761c42dca4ea849aa871729bd46f0d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1429876903}
   m_SourcePrefab: {fileID: 100100000, guid: 53761c42dca4ea849aa871729bd46f0d, type: 3}
 --- !u!4 &447983124 stripped
 Transform:
@@ -12129,6 +12135,54 @@ MonoBehaviour:
   useBarkTitlePicker: 1
   useQuestNamePicker: 1
   selectedDatabase: {fileID: 11400000, guid: 37fc37d5ab29e814cbb8fd60e0a34c69, type: 2}
+--- !u!65 &1429876903
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429876897}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2.8116434, z: 183.96606}
+  m_Center: {x: 1.5914947e-16, y: 0.4058202, z: -7.7456503}
+--- !u!54 &1429876904
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429876897}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &1443122597 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6589175924616598499, guid: cef09209d95cdd3468e35a8ac2dfd4c9, type: 3}
@@ -14795,8 +14849,8 @@ MonoBehaviour:
   color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   textStyle: 1
   textStyleColor: {r: 0, g: 0, b: 0, a: 1}
-  m_defaultUseMessage: (spacebar to interact)
-  useKey: 32
+  m_defaultUseMessage: (E to interact)
+  useKey: 101
   useButton: Fire2
   enableTouch: 0
   touchArea:
@@ -16260,7 +16314,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: Riley's Dialogue for Pilot
+  conversation: Riley
   conversationConversant: {fileID: 1987265588}
   conversationActor: {fileID: 1863547450}
   startConversationEntryID: -1
