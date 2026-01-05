@@ -194,7 +194,15 @@ public class GameController : MonoBehaviour
                 npc.NPCspeed = 0;
             }
         }
-
+        //teleport player to starting position
+        if (player != null)
+        {
+            var playerNPC = player.GetComponent<NPCController>();
+            if (playerNPC != null)
+            {
+                player.transform.position = playerNPC.startingPosition;
+            }
+        }
         Debug.Log("[GameController] EndOfDayEvent triggered at " + Time.time);
         StartDay();
     }
