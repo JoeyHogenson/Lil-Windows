@@ -20,7 +20,6 @@ public class PlayerLogic : MonoBehaviour
     public GameObject[] Newspaper;
     public int count;
 
-    public GameObject manualObject;
     public bool isManualOpen;
     private string[] ManualText = 
     {"Page 0 text",
@@ -106,11 +105,6 @@ public class PlayerLogic : MonoBehaviour
                     }
 
                 }
-                else if (collider.CompareTag("Manual"))
-                {
-                    typeInteract = "Manual";
-                    eToOpenButton.SetActive(true);
-                }
                 else if (collider.CompareTag("Newspaper"))
                 {
                     typeInteract = "Newspaper";
@@ -160,8 +154,8 @@ public class PlayerLogic : MonoBehaviour
             hit.collider.GetComponent<Animator>().SetBool("isWalking", false);
             hit.collider.GetComponent<Animator>().SetBool("sitTalkRight", true);
             hit.collider.GetComponent<NPCController>().NPCspeed = 0f;
-            GetComponent<FirstPersonController>().MoveSpeed = 0f;
-            _input.cursorInputForLook = false;
+            //GetComponent<FirstPersonController>().MoveSpeed = 0f;
+            //_input.cursorInputForLook = false;
             _input.cursorLocked = true;
             startDialogue = false;
             Cursor.visible = true;
@@ -191,13 +185,6 @@ public class PlayerLogic : MonoBehaviour
                 //teleport player to target location
                 transform.position = hit.collider.GetComponentInParent<InteractTele>().targetLocation.transform.position;
             }
-        else if (typeInteract == "Manual")
-        {
-            manualObject.SetActive(true);
-            _input.cursorInputForLook = false;
-            leftPage.text = ManualText[leftCount];
-            rightPage.text = ManualText[rightCount];
-        }
 
 
 
@@ -219,11 +206,6 @@ public class PlayerLogic : MonoBehaviour
             // Unlock the cursor so it can move freely
             Cursor.lockState = CursorLockMode.Locked; 
         }
-        else if(manualObject.activeSelf == true)
-        {
-           manualObject.SetActive(false); 
-           _input.cursorInputForLook = true;
-        }
         else if(Newspaper[count].activeSelf == true)
         {
             Newspaper[count].SetActive(false);
@@ -242,30 +224,6 @@ public class PlayerLogic : MonoBehaviour
             GetComponent<FirstPersonController>().MoveSpeed = 10f;
             _input.cursorInputForLook = true;
         }
-    }
-    public void NextPage()
-    {
-        rightCount = rightCount + 2;
-        leftCount = leftCount +2;
-        leftPageNumber.text = leftCount.ToString();
-        rightPageNumber.text = rightCount.ToString();
-
-        leftPage.text = ManualText[leftCount];
-        rightPage.text = ManualText[rightCount];
-    }
-    public void PrevPage()
-    {
-        if(leftCount >= 3)
-        {
-            leftCount = leftCount - 2;
-            rightCount = rightCount - 2;
-        }
-        leftPageNumber.text = leftCount.ToString();
-        rightPageNumber.text = rightCount.ToString();
-
-        leftPage.text = ManualText[leftCount];
-        rightPage.text = ManualText[rightCount]; 
-
     }
     
     
