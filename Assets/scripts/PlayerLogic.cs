@@ -162,10 +162,6 @@ public class PlayerLogic : MonoBehaviour
             // Unlock the cursor so it can move freely
             Cursor.lockState = CursorLockMode.None; 
         }
-        else if(typeInteract == "Dialogue" && startDialogue == false)
-        {
-            hit.collider.gameObject.GetComponent<DialogueController>().nextLine();
-        }
         else if(typeInteract == "Door" && !hit.collider.GetComponent<SimpleDoor>().isOpen)
         {
             hit.collider.GetComponent<SimpleDoor>().Open();
