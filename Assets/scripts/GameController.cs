@@ -242,7 +242,6 @@ public class GameController : MonoBehaviour
     {
         thoughtsObject.SetActive(true);
         ThoughtsText.text = "You think about your mother... and vow to see her again.";
-        Debug.Log("I did it");
 
     }
 

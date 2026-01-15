@@ -2350,6 +2350,12 @@ MonoBehaviour:
         destinationDialogueID: 12
         isConnector: 0
         priority: 2
+      - originConversationID: 13
+        originDialogueID: 1
+        destinationConversationID: 13
+        destinationDialogueID: 9
+        isConnector: 0
+        priority: 2
       conditionsString: Variable["dayNumber"] == 0
       userScript: SetQuestState("Look at Manual", "success")
       onExecute:
