@@ -8,7 +8,8 @@ public class IntakeControls : MonoBehaviour
     //fade to black
     public GameObject GameController;
     public GameObject blackSquare;
-    public Transform player;
+    public GameObject player;
+    public Transform startingPosition;
     //fade into cell
     void Start()
     {
@@ -22,9 +23,12 @@ public class IntakeControls : MonoBehaviour
     IEnumerator WaitForSeconds(float audioLength)
     {
         yield return new WaitForSeconds(audioLength);
-
+        player.SetActive(false);
+        player.transform.position = startingPosition.position;
+        player.SetActive(true);
         blackSquare.SetActive(true);
         StartCoroutine(WaitForController(2));
+        
         
     }
     IEnumerator WaitForController(float audioLengths)

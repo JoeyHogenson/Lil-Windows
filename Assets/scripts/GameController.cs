@@ -10,13 +10,12 @@ public class GameController : MonoBehaviour
 
     public GameObject[] Characters;
     public GameObject player;
+    public Transform playerStartingPosition;
     private float mail;
     private float commisary;
     private float end;
     private float count;
     private float thoughts;
-
-    public Transform Player;
 
     public GameObject blackSquare;
 
@@ -46,14 +45,13 @@ public class GameController : MonoBehaviour
     }
     void Start()
     {
-        StartDay();
-        blackSquare.SetActive(false);
-        Debug.Log("did this");
-        Player.position = new Vector3(620.3f,82.3f,448.9f);
+        
     }
     void Awake()
     {       
-        
+        StartDay();
+        blackSquare.SetActive(false);
+        Debug.Log("did this");
     }
     void StartDay()
     {
@@ -64,6 +62,7 @@ public class GameController : MonoBehaviour
 
         if (eventTextObject != null) eventTextObject.SetActive(false);
         if (mailObject != null) mailObject.SetActive(false);
+        blackSquare.SetActive(false);
 
         Debug.Log("[GameController] StartDay: daystart=" + daystart + " count=" + count);
     }
@@ -203,6 +202,7 @@ public class GameController : MonoBehaviour
     }
     void EndOfDayEvent()
     {
+        blackSquare.SetActive(true);
         //teleport characters back to starting position
         for (int i = 0; i < Characters.Length; i++)
         {
@@ -213,17 +213,8 @@ public class GameController : MonoBehaviour
                 npc.NPCspeed = 0;
             }
         }
-        //teleport player to starting position
-        if (player != null)
-        {
-            var playerNPC = player.GetComponent<NPCController>();
-            if (playerNPC != null)
-            {
-                player.transform.position = playerNPC.startingPosition;
-            }
-        }
         Debug.Log("[GameController] EndOfDayEvent triggered at " + Time.time);
-        StartDay();
+        StartCoroutine(FadeToBlack());
     }
 
     void SetMail()
@@ -241,7 +232,7 @@ public class GameController : MonoBehaviour
     }
     void SetEnd()
     {
-        end = daystart + 600;
+        end = daystart + 30;
     }
     void SetThoughts()
     {
@@ -269,6 +260,14 @@ public class GameController : MonoBehaviour
         Characters[0].transform.Rotate(0f,180f,0f);
         
 
+    }
+    IEnumerator FadeToBlack()
+    {
+        yield return new WaitForSeconds(3f);
+        player.SetActive(false);
+        player.transform.position = playerStartingPosition.position;
+        player.SetActive(true);
+        StartDay();
     }
 }
 
