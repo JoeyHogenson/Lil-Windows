@@ -30,11 +30,6 @@ public class PlayerLogic : MonoBehaviour
     public TextMeshProUGUI leftPage;
     public TextMeshProUGUI rightPage;
 
-    private int leftCount;
-    public TextMeshProUGUI leftPageNumber;
-    private int rightCount;
-    public TextMeshProUGUI rightPageNumber;
-
     public bool startDialogue;
 
     public string typeInteract;
@@ -42,7 +37,7 @@ public class PlayerLogic : MonoBehaviour
     private StarterAssetsInputs _input;
     private PlayerInput _playerInput;
 
-    Collider collider;
+    new Collider collider;
 
     public string currentEvent;
 
@@ -59,8 +54,6 @@ public class PlayerLogic : MonoBehaviour
         _playerInput = GetComponent<PlayerInput>();
         isManualOpen = false;
         count = 0;
-        leftCount = 1;
-        rightCount = 2;
         Debug.Log(ManualText.Length);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -220,6 +213,14 @@ public class PlayerLogic : MonoBehaviour
             GetComponent<FirstPersonController>().MoveSpeed = 10f;
             _input.cursorInputForLook = true;
         }
+    }
+    public void LockCursor()
+    {
+         _input.cursorInputForLook = false;
+    }
+    public void UnlockCursor()
+    {
+         _input.cursorInputForLook = true;
     }
     
     

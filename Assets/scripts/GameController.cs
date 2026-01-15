@@ -14,6 +14,14 @@ public class GameController : MonoBehaviour
     private float commisary;
     private float end;
     private float count;
+    private float thoughts;
+
+    public Transform Player;
+
+    public GameObject blackSquare;
+
+    public GameObject thoughtsObject;
+    public TextMeshProUGUI ThoughtsText;
 
     public TextMeshProUGUI eventText;
     public GameObject eventTextObject;
@@ -29,6 +37,7 @@ public class GameController : MonoBehaviour
     private bool _mailFired;
     private bool _commisaryFired;
     private bool _endFired;
+    private bool _thoughtsFired;
 
     ///game days should be 10min
     void Update()
@@ -38,10 +47,13 @@ public class GameController : MonoBehaviour
     void Start()
     {
         StartDay();
+        blackSquare.SetActive(false);
+        Debug.Log("did this");
+        Player.position = new Vector3(620.3f,82.3f,448.9f);
     }
     void Awake()
-    {
-
+    {       
+        
     }
     void StartDay()
     {
@@ -63,6 +75,7 @@ public class GameController : MonoBehaviour
         _mailFired = false;
         _commisaryFired = false;
         _endFired = false;
+        _thoughtsFired = false;
         isCommissary = false;
         isCount = false;
     }
@@ -103,6 +116,11 @@ public class GameController : MonoBehaviour
             EndOfDayEvent();
             _endFired = true;
         }
+        if (!_thoughtsFired && Time.time >= thoughts)
+        {
+            Thoughts();
+            _thoughtsFired = true;
+        }
     }
     void SetEvents()
     {
@@ -111,6 +129,7 @@ public class GameController : MonoBehaviour
         SetMail();
         SetCommisary();
         SetEnd();
+        SetThoughts();
     }
     void CountDeadline()
     {
@@ -223,6 +242,17 @@ public class GameController : MonoBehaviour
     void SetEnd()
     {
         end = daystart + 600;
+    }
+    void SetThoughts()
+    {
+        thoughts = daystart + 20;
+    }
+    void Thoughts()
+    {
+        thoughtsObject.SetActive(true);
+        ThoughtsText.text = "You think about your mother... and vow to see her again.";
+        Debug.Log("I did it");
+
     }
 
     void HideEventText()
