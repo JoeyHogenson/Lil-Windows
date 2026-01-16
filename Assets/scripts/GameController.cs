@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     public GameObject[] Characters;
     public GameObject player;
     public Transform playerStartingPosition;
+
     private float mail;
     private float commisary;
     private float end;
