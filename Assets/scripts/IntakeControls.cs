@@ -13,7 +13,7 @@ public class IntakeControls : MonoBehaviour
     //fade into cell
     void Start()
     {
-        StartCoroutine(WaitForSeconds(5));
+        StartCoroutine(WaitForSeconds(24));
     }
 
     void Update()
