@@ -11,6 +11,8 @@ public class PlayerLogic : MonoBehaviour
     public int troubleMeter;
     public int mentalHealth;
 
+    public GameObject DialogueManager;
+
     public GameObject eToTalkButton;
     public GameObject eToOpenButton;
     public GameObject eToCloseButton;
@@ -181,27 +183,10 @@ public class PlayerLogic : MonoBehaviour
         }
     public void Menu()
     {
-        //Ends dialogue; handles if esc is pressed when dialogue is active 
-        if(typeInteract == "Dialogue")
-        {
-            GetComponent<FirstPersonController>().MoveSpeed = 10f;
-            //hit.collider.GetComponent<NPCController>().NPCspeed = 0.03f;
-            //hit.collider.GetComponent<Animator>().SetBool("isWalking", true);
-            _input.cursorInputForLook = true;
-            _input.cursorLocked = true;
-            eToTalkButton.SetActive(false);
-            startDialogue = true;
-             Cursor.visible = false;
-            // Unlock the cursor so it can move freely
-            Cursor.lockState = CursorLockMode.Locked; 
-        }
-        else if(Newspaper[count].activeSelf == true)
-        {
-            Newspaper[count].SetActive(false);
-
-        }
-        //Brings up Menu
-        else if(menuPanel.activeSelf == false)
+        PixelCrushers.DialogueSystem.DialogueManager.StopConversation();
+        _input.cursorInputForLook = true;
+        /*Brings up Menu
+        if(menuPanel.activeSelf == false)
         {
             menuPanel.SetActive(true);
             GetComponent<FirstPersonController>().MoveSpeed = 0f;
@@ -213,6 +198,7 @@ public class PlayerLogic : MonoBehaviour
             GetComponent<FirstPersonController>().MoveSpeed = 10f;
             _input.cursorInputForLook = true;
         }
+        */
     }
     public void LockCursor()
     {
@@ -224,6 +210,6 @@ public class PlayerLogic : MonoBehaviour
     }
     
     
+}
+}
 
-}
-}

@@ -203,7 +203,8 @@ public class GameController : MonoBehaviour
     }
     void EndOfDayEvent()
     {
-        blackSquare.SetActive(true);
+        eventTextObject.SetActive(true);
+        eventText.text = "The end of the day is nearing. Get to your cell or you will be teleported there.";
         //teleport characters back to starting position
         for (int i = 0; i < Characters.Length; i++)
         {
@@ -233,7 +234,7 @@ public class GameController : MonoBehaviour
     }
     void SetEnd()
     {
-        end = daystart + 30;
+        end = daystart + 360;
     }
     void SetThoughts()
     {
@@ -243,6 +244,7 @@ public class GameController : MonoBehaviour
     {
         thoughtsObject.SetActive(true);
         ThoughtsText.text = "You think about your mother... and vow to see her again.";
+        StartCoroutine(HideTextAfterSeconds());
 
     }
 
@@ -263,11 +265,19 @@ public class GameController : MonoBehaviour
     }
     IEnumerator FadeToBlack()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(10f);
+        eventTextObject.SetActive(false);
+        blackSquare.SetActive(true);
         player.SetActive(false);
         player.transform.position = playerStartingPosition.position;
         player.SetActive(true);
         StartDay();
     }
+    IEnumerator HideTextAfterSeconds()
+    {
+        yield return new WaitForSeconds(5f);
+        eventTextObject.SetActive(false);
+    }
+    
 }
 
