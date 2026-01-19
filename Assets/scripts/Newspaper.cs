@@ -11,14 +11,16 @@ public class Newspaper : MonoBehaviour
     public GameObject[] newspaper = new GameObject[5];
     private int count;
     private int finalPage;
+
+    public GameObject NewspaperController;
+
+    public GameObject Buttons;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         count = 0;
         finalPage = newspaper.Length;
-        Debug.Log(finalPage);
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -38,6 +40,7 @@ public class Newspaper : MonoBehaviour
             for(int i = 0; i < finalPage; i++)
             {
                 newspaper[i].SetActive(false);
+                Buttons.SetActive(false);
                 player.GetComponent<StarterAssetsInputs>().cursorInputForLook = true;
             }
         }
@@ -56,6 +59,8 @@ public class Newspaper : MonoBehaviour
             for(int i = 0; i < finalPage; i++)
             {
                 newspaper[i].SetActive(false);
+                Buttons.SetActive(false);
+                count = 0;
                 player.GetComponent<StarterAssetsInputs>().cursorInputForLook = true;
             }
         }

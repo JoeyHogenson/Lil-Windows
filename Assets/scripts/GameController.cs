@@ -17,6 +17,9 @@ public class GameController : MonoBehaviour
     private float end;
     private float count;
     private float thoughts;
+    private float bookBan;
+
+    private int dayCount;
 
     public GameObject blackSquare;
 
@@ -38,6 +41,7 @@ public class GameController : MonoBehaviour
     private bool _commisaryFired;
     private bool _endFired;
     private bool _thoughtsFired;
+    private bool _bookBanFired;
 
     ///game days should be 10min
     void Update()
@@ -46,7 +50,7 @@ public class GameController : MonoBehaviour
     }
     void Start()
     {
-        
+        dayCount = 1;
     }
     void Awake()
     {       
@@ -66,6 +70,7 @@ public class GameController : MonoBehaviour
         blackSquare.SetActive(false);
 
         Debug.Log("[GameController] StartDay: daystart=" + daystart + " count=" + count);
+
     }
 
     void ResetDayFlags()
@@ -76,6 +81,7 @@ public class GameController : MonoBehaviour
         _commisaryFired = false;
         _endFired = false;
         _thoughtsFired = false;
+        _bookBanFired = false;
         isCommissary = false;
         isCount = false;
     }
@@ -121,6 +127,11 @@ public class GameController : MonoBehaviour
             Thoughts();
             _thoughtsFired = true;
         }
+        if(!_bookBanFired&&Time.time>=bookBan && dayCount == 2)
+        {
+            BookBan();
+            _bookBanFired = true;
+        }
     }
     void SetEvents()
     {
@@ -130,6 +141,7 @@ public class GameController : MonoBehaviour
         SetCommisary();
         SetEnd();
         SetThoughts();
+        SetBookBan();
     }
     void CountDeadline()
     {
@@ -217,6 +229,14 @@ public class GameController : MonoBehaviour
         }
         Debug.Log("[GameController] EndOfDayEvent triggered at " + Time.time);
         StartCoroutine(FadeToBlack());
+        dayCount++;
+    }
+    void BookBan()
+    {
+        eventTextObject.SetActive(true);
+        eventText.text = "A book ban has now been instated";
+        StartCoroutine(HideTextAfterSeconds());
+
     }
 
     void SetMail()
@@ -239,6 +259,10 @@ public class GameController : MonoBehaviour
     void SetThoughts()
     {
         thoughts = daystart + 20;
+    }
+    void SetBookBan()
+    {
+        bookBan = daystart + 120;
     }
     void Thoughts()
     {
