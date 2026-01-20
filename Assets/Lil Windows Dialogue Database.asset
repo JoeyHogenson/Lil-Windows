@@ -233,6 +233,28 @@ MonoBehaviour:
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
+  - id: 10
+    fields:
+    - title: Name
+      value: Prisoner
+      type: 0
+      typeString: 
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
   items:
   - id: 1
     fields:
@@ -5683,7 +5705,7 @@ MonoBehaviour:
       type: 5
       typeString: CustomFieldType_Actor
     - title: Conversant
-      value: 5
+      value: 10
       type: 5
       typeString: CustomFieldType_Actor
     overrideSettings:
@@ -5729,7 +5751,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 5
+        value: 10
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -5780,7 +5802,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 5
+        value: 10
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -5829,7 +5851,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 5
+        value: 10
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -5894,7 +5916,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 5
+        value: 10
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -5945,7 +5967,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 5
+        value: 10
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -6004,7 +6026,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 5
+        value: 10
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -6061,7 +6083,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 5
+        value: 10
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -6119,7 +6141,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 5
+        value: 10
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -6180,7 +6202,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 5
+        value: 10
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant

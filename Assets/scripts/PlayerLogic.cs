@@ -13,24 +13,12 @@ public class PlayerLogic : MonoBehaviour
 
     public GameObject DialogueManager;
 
-    public GameObject eToTalkButton;
     public GameObject eToOpenButton;
     public GameObject eToCloseButton;
     public GameObject eToGrabButton;
     public GameObject menuPanel;
-
-    public GameObject[] Newspaper;
+    public GameObject[] CanvasObjects;
     public int count;
-
-    public bool isManualOpen;
-    private string[] ManualText = 
-    {"Page 0 text",
-    "Welcome to Lil' Windows! \n\nYour Current Quests are: Talk to OG about needing medication\n\nExplore media materials in law library",
-    "Come back when you have completed your quests",
-    "","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""};
-
-    public TextMeshProUGUI leftPage;
-    public TextMeshProUGUI rightPage;
 
     public bool startDialogue;
 
@@ -54,9 +42,7 @@ public class PlayerLogic : MonoBehaviour
         startDialogue = true;
         _input = GetComponent<StarterAssetsInputs>();
         _playerInput = GetComponent<PlayerInput>();
-        isManualOpen = false;
         count = 0;
-        Debug.Log(ManualText.Length);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _input.cursorInputForLook = true;
@@ -77,11 +63,7 @@ public class PlayerLogic : MonoBehaviour
             {
                 
                 collider = hit.collider; 
-                if(collider.GetComponent<Dialogue>())
-                {
-                    typeInteract = "Dialogue";
-                }
-                else if(collider.GetComponent<InteractTele>())
+                if(collider.GetComponent<InteractTele>())
                 {
                     typeInteract = "Tele";
                     eToOpenButton.SetActive(true);
@@ -100,12 +82,6 @@ public class PlayerLogic : MonoBehaviour
                     }
 
                 }
-                else if (collider.CompareTag("Newspaper"))
-                {
-                    typeInteract = "Newspaper";
-                    Newspaper[count].SetActive(true);
-                    count++;
-                }
                 else
                 {
                     typeInteract = "None";
@@ -119,10 +95,6 @@ public class PlayerLogic : MonoBehaviour
                 typeInteract = "None";
                 eToCloseButton.SetActive(false);
                 eToOpenButton.SetActive(false);
-            }
-            if(!hit.collider.CompareTag("NPC"))
-            {
-                eToTalkButton.SetActive(false);
             }
         }
         
@@ -143,21 +115,7 @@ public class PlayerLogic : MonoBehaviour
     public void Interact()
     {
         //handles starting dialogue when you press "E". Reads off of the NPC dialogue scriptable object
-        if(typeInteract == "Dialogue" && startDialogue == true)
-        {
-            eToTalkButton.SetActive(false);         
-            hit.collider.GetComponent<Animator>().SetBool("isWalking", false);
-            hit.collider.GetComponent<Animator>().SetBool("sitTalkRight", true);
-            hit.collider.GetComponent<NPCController>().NPCspeed = 0f;
-            //GetComponent<FirstPersonController>().MoveSpeed = 0f;
-            //_input.cursorInputForLook = false;
-            _input.cursorLocked = true;
-            startDialogue = false;
-            Cursor.visible = true;
-            // Unlock the cursor so it can move freely
-            Cursor.lockState = CursorLockMode.None; 
-        }
-        else if(typeInteract == "Door" && !hit.collider.GetComponent<SimpleDoor>().isOpen)
+        if(typeInteract == "Door" && !hit.collider.GetComponent<SimpleDoor>().isOpen)
         {
             hit.collider.GetComponent<SimpleDoor>().Open();
             eToOpenButton.SetActive(false);
@@ -185,6 +143,7 @@ public class PlayerLogic : MonoBehaviour
     {
         PixelCrushers.DialogueSystem.DialogueManager.StopConversation();
         _input.cursorInputForLook = true;
+        ClearCanvas();
         /*Brings up Menu
         if(menuPanel.activeSelf == false)
         {
@@ -207,6 +166,13 @@ public class PlayerLogic : MonoBehaviour
     public void UnlockCursor()
     {
          _input.cursorInputForLook = true;
+    }
+    public void ClearCanvas()
+    {
+        for(int i = 0; i < CanvasObjects.Length; i++)
+        {
+            CanvasObjects[i].SetActive(false);
+        }
     }
     
     

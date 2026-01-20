@@ -4089,11 +4089,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c79b2dd2b2624874ca465425f408f45a, type: 3}
---- !u!1 &269692774 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 545fe149c9c33b7448ec4b2bab69b544, type: 3}
-  m_PrefabInstance: {fileID: 1187578188}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &269692775 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 545fe149c9c33b7448ec4b2bab69b544, type: 3}
@@ -4303,6 +4298,10 @@ MonoBehaviour:
   - {fileID: 1987757394}
   - {fileID: 337434169}
   - {fileID: 1553358792}
+  - {fileID: 617590390}
+  - {fileID: 1831692974}
+  - {fileID: 1163029308}
+  - {fileID: 856202963}
   NewspaperController: {fileID: 278576171}
   Buttons: {fileID: 1848517139}
 --- !u!1001 &278963621
@@ -6718,7 +6717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 230415a7bf46aae4ca8255ea0c607b51, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.95
+      value: -17.67
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 230415a7bf46aae4ca8255ea0c607b51, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22579,19 +22578,21 @@ MonoBehaviour:
   troubleMeter: 0
   mentalHealth: 0
   DialogueManager: {fileID: 0}
-  eToTalkButton: {fileID: 788641247}
   eToOpenButton: {fileID: 1424184505}
   eToCloseButton: {fileID: 1309557766}
   eToGrabButton: {fileID: 1424184505}
   menuPanel: {fileID: 1376089272}
-  Newspaper:
-  - {fileID: 269692774}
-  - {fileID: 269692774}
-  - {fileID: 269692774}
+  CanvasObjects:
+  - {fileID: 1438867868}
+  - {fileID: 1987757394}
+  - {fileID: 1553358792}
+  - {fileID: 617590390}
+  - {fileID: 1831692974}
+  - {fileID: 1163029308}
+  - {fileID: 856202963}
+  - {fileID: 1848517139}
+  - {fileID: 1848517139}
   count: 0
-  isManualOpen: 0
-  leftPage: {fileID: 0}
-  rightPage: {fileID: 0}
   startDialogue: 0
   typeInteract: 
   currentEvent: 
@@ -25426,6 +25427,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b00f3fcff659d564da8181a9461c19e5, type: 3}
       propertyPath: m_Name
       value: DC
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b00f3fcff659d564da8181a9461c19e5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

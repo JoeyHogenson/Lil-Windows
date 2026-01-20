@@ -8,7 +8,7 @@ namespace StarterAssets
 public class Newspaper : MonoBehaviour
 {
     public GameObject player;
-    public GameObject[] newspaper = new GameObject[5];
+    public GameObject[] newspaper;
     private int count;
     private int finalPage;
 
