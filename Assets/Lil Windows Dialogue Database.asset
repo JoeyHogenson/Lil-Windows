@@ -3945,7 +3945,10 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: SetQuestState("Help Riley file a grievance", "success")
+      userScript: 'SetQuestState("Help Riley file a grievance", "success");
+
+        ShowAlert("Quest
+        Completed: Help Riley FIle a Grievance")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4640,7 +4643,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 684.0902, y: 558.90967}
+    canvasScrollPosition: {x: 989.0082, y: 486.7785}
     canvasZoom: 0.60999995
   - id: 16
     fields:

@@ -7,6 +7,7 @@ public class Cutscenecontroller : MonoBehaviour
 
     public GameObject DC;
     public GameObject door;
+
     private bool moveDC;
 
 
@@ -40,6 +41,7 @@ public class Cutscenecontroller : MonoBehaviour
         DC.transform.Rotate(0,90,0);
         animator.SetBool("rightTurn",false);
         animator.SetBool("startWalking",true);
+        Debug.Log("This happened");
         moveDC = true;
         door.transform.Rotate(0,0,-90);
         

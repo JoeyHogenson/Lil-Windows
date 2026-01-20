@@ -3945,7 +3945,10 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: SetQuestState("Help Riley file a grievance", "success")
+      userScript: 'SetQuestState("Help Riley file a grievance", "success");
+
+        ShowAlert("Quest
+        Completed: Help Riley FIle a Grievance")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4640,7 +4643,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 684.0902, y: 558.90967}
+    canvasScrollPosition: {x: 989.0082, y: 486.7785}
     canvasZoom: 0.60999995
   - id: 16
     fields:
@@ -5762,8 +5765,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 156.11652
-        y: 33.236244
+        x: 295.357
+        y: 66.14758
         width: 160
         height: 30
     - id: 1
@@ -5811,8 +5814,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 611.5934
-        y: 357.5729
+        x: 755.0529
+        y: 393.0159
         width: 160
         height: 30
     - id: 2
@@ -5872,8 +5875,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 152.89311
-        y: 190.51569
+        x: 296.35303
+        y: 225.95868
         width: 160
         height: 30
     - id: 3
@@ -5927,8 +5930,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 154.37556
-        y: 277.59656
+        x: 297.83545
+        y: 313.03955
         width: 160
         height: 30
     - id: 4
@@ -5982,8 +5985,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 156.15208
-        y: 353.8407
+        x: 299.612
+        y: 389.2837
         width: 160
         height: 30
     - id: 5
@@ -6043,8 +6046,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 149.48483
-        y: 419.29996
+        x: 292.94473
+        y: 454.74295
         width: 160
         height: 30
     - id: 6
@@ -6097,8 +6100,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 37.250366
-        y: 500.77496
+        x: 180.71027
+        y: 536.21796
         width: 160
         height: 30
     - id: 7
@@ -6162,8 +6165,8 @@ MonoBehaviour:
             m_CallState: 2
       canvasRect:
         serializedVersion: 2
-        x: 365.77185
-        y: 279.90958
+        x: 509.23175
+        y: 315.35257
         width: 160
         height: 30
     - id: 8
@@ -6215,8 +6218,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 243.56824
-        y: 500.36063
+        x: 387.02814
+        y: 535.8036
         width: 160
         height: 30
     entryGroups: []
