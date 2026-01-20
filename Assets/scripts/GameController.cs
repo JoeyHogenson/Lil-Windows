@@ -300,6 +300,11 @@ public class GameController : MonoBehaviour
     IEnumerator HideTextAfterSeconds()
     {
         yield return new WaitForSeconds(5f);
+        thoughtsObject.SetActive(false);
+    }
+    IEnumerator HideEventTextAfterSeconds()
+    {
+        yield return new WaitForSeconds(5f);
         eventTextObject.SetActive(false);
     }
     
