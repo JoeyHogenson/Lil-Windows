@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public float daystart;
@@ -19,7 +20,7 @@ public class GameController : MonoBehaviour
     private float thoughts;
     private float bookBan;
 
-    private int dayCount;
+    public int dayCount;
 
     public GameObject blackSquare;
 
@@ -34,6 +35,8 @@ public class GameController : MonoBehaviour
     public bool isCommissary;
     public bool isCount;
 
+    public bool daystarted;
+
     // runtime flags so each event fires once per day
     private bool _countEventFired;
     private bool _countDeadlineFired;
@@ -46,19 +49,20 @@ public class GameController : MonoBehaviour
     ///game days should be 10min
     void Update()
     {
-        CheckEvents();
+        if(daystarted == true)
+        {
+            CheckEvents();
+        }
+        
     }
     void Start()
     {
-        dayCount = 1;
+        if(dayCount != 1)
+        {
+            StartDay();
+        }
     }
-    void Awake()
-    {       
-        StartDay();
-        blackSquare.SetActive(false);
-        Debug.Log("did this");
-    }
-    void StartDay()
+    public void StartDay()
     {
         // called only when the player goes to bed, sets time for next morning, and events for the next day. 
         daystart = Time.time;
@@ -68,6 +72,7 @@ public class GameController : MonoBehaviour
         if (eventTextObject != null) eventTextObject.SetActive(false);
         if (mailObject != null) mailObject.SetActive(false);
         blackSquare.SetActive(false);
+        daystarted = true;
 
         Debug.Log("[GameController] StartDay: daystart=" + daystart + " count=" + count);
 
@@ -218,23 +223,14 @@ public class GameController : MonoBehaviour
         eventTextObject.SetActive(true);
         eventText.text = "The end of the day is nearing. Get to your cell or you will be teleported there.";
         //teleport characters back to starting position
-        for (int i = 0; i < Characters.Length; i++)
-        {
-            var npc = Characters[i].GetComponent<NPCController>();
-            if (npc != null)
-            {
-                Characters[i].transform.position = npc.startingPosition;
-                npc.NPCspeed = 0;
-            }
-        }
         Debug.Log("[GameController] EndOfDayEvent triggered at " + Time.time);
         StartCoroutine(FadeToBlack());
         dayCount++;
     }
     void BookBan()
     {
-        eventTextObject.SetActive(true);
-        eventText.text = "A book ban has now been instated";
+        //eventTextObject.SetActive(true);
+        //eventText.text = "A book ban has now been instated";
         StartCoroutine(HideTextAfterSeconds());
 
     }
@@ -266,10 +262,18 @@ public class GameController : MonoBehaviour
     }
     void Thoughts()
     {
-        thoughtsObject.SetActive(true);
-        ThoughtsText.text = "You think about your mother... and vow to see her again.";
+        //thoughtsObject.SetActive(true);
+        //ThoughtsText.text = "You think about your mother... and vow to see her again.";
         StartCoroutine(HideTextAfterSeconds());
 
+    }
+    public void LoadScene()
+    {
+        SceneManager.LoadScene("New Jail Scene");
+    }
+    public void Quit()
+    {
+        Application.Quit();
     }
 
     void HideEventText()
@@ -292,6 +296,15 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(10f);
         eventTextObject.SetActive(false);
         blackSquare.SetActive(true);
+        for (int i = 0; i < Characters.Length; i++)
+        {
+            var npc = Characters[i].GetComponent<NPCController>();
+            if (npc != null)
+            {
+                Characters[i].transform.position = npc.startingPosition;
+                npc.NPCspeed = 0;
+            }
+        }
         player.SetActive(false);
         player.transform.position = playerStartingPosition.position;
         player.SetActive(true);

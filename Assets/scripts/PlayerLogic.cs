@@ -18,9 +18,13 @@ public class PlayerLogic : MonoBehaviour
     public GameObject eToGrabButton;
     public GameObject menuPanel;
     public GameObject[] CanvasObjects;
+    public GameObject saveSlots;
+    public GameObject loadSlots;
     public int count;
 
     public bool startDialogue;
+
+    private bool canvasCleared;
 
     public string typeInteract;
 
@@ -133,31 +137,24 @@ public class PlayerLogic : MonoBehaviour
         {
                 //teleport player to target location
                 transform.position = hit.collider.GetComponentInParent<InteractTele>().targetLocation.transform.position;
-            }
-
-
-
-
         }
+    }
     public void Menu()
     {
         PixelCrushers.DialogueSystem.DialogueManager.StopConversation();
         _input.cursorInputForLook = true;
-        ClearCanvas();
-        /*Brings up Menu
-        if(menuPanel.activeSelf == false)
+        if(menuPanel.activeSelf == false && canvasCleared == true)
         {
             menuPanel.SetActive(true);
-            GetComponent<FirstPersonController>().MoveSpeed = 0f;
             _input.cursorInputForLook = false;
         }
         else if(menuPanel.activeSelf == true)
         {
             menuPanel.SetActive(false);
-            GetComponent<FirstPersonController>().MoveSpeed = 10f;
             _input.cursorInputForLook = true;
         }
-        */
+        ClearCanvas();
+        
     }
     public void LockCursor()
     {
@@ -172,6 +169,7 @@ public class PlayerLogic : MonoBehaviour
         for(int i = 0; i < CanvasObjects.Length; i++)
         {
             CanvasObjects[i].SetActive(false);
+            canvasCleared = true;
         }
     }
     

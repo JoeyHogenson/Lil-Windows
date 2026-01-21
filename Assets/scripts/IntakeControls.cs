@@ -15,6 +15,8 @@ public class IntakeControls : MonoBehaviour
     public GameObject player;
     public GameObject moveText;
 
+    public GameObject Door;
+
     public Transform startingPosition;
 
     public AudioSource audioObject;
@@ -22,13 +24,26 @@ public class IntakeControls : MonoBehaviour
     public AudioClip audioClip2;
 
     private bool didAudioPlay;
+    public bool didFirstPlay;
 
     //fade into cell
     void Start()
     {
-        StartCoroutine(WaitForFirstAudio(23));
-        player.GetComponent<FirstPersonController>().MoveSpeed = 0;
-        player.GetComponent<FirstPersonController>().SprintSpeed = 0;
+        if(GameController.GetComponent<GameController>().dayCount == 1)
+        {
+            StartCoroutine(WaitForFirstAudio(23));
+            if(didFirstPlay == false)
+            {
+                
+            player.GetComponent<FirstPersonController>().MoveSpeed = 0;
+            player.GetComponent<FirstPersonController>().SprintSpeed = 0;
+            audioObject.PlayOneShot(audioClip1);
+            didFirstPlay = true;
+            Debug.Log("I did this");
+            }
+        }
+        
+        
     }
 
     void Update()
@@ -67,8 +82,8 @@ public class IntakeControls : MonoBehaviour
     IEnumerator WaitForController(float audioLengths)
     {
         yield return new WaitForSeconds(audioLengths);
+        GameController.GetComponent<GameController>().StartDay();
 
-        GameController.SetActive(true);
 
     }
 }

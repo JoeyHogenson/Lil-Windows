@@ -86,6 +86,7 @@ PlayerSettings:
   muteOtherAudioSources: 0
   Prepare IOS For Recording: 0
   Force IOS Speakers When Recording: 0
+  audioSpatialExperience: 0
   deferSystemGesturesMode: 0
   hideHomeButton: 0
   submitAnalytics: 1
@@ -163,7 +164,8 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   androidMinAspectRatio: 1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.DefaultCompany.Lil--WIndows
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -760,7 +762,22 @@ PlayerSettings:
   webGLCloseOnQuit: 0
   webWasm2023: 0
   scriptingDefineSymbols:
-    Standalone: TMP_PRESENT;USE_NEW_INPUT;USE_TWINE
+    Android: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
+    EmbeddedLinux: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
+    LinuxHeadlessSimulation: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
+    Nintendo Switch: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
+    Nintendo Switch 2: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
+    PS4: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
+    PS5: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
+    QNX: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
+    Server: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
+    Standalone: TMP_PRESENT;USE_NEW_INPUT;USE_TWINE;UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
+    VisionOS: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
+    WebGL: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
+    Windows Store Apps: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
+    XboxOne: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
+    iPhone: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
+    tvOS: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

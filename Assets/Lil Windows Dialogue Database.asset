@@ -2140,8 +2140,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "Welcome to the Lil' Windows manual. Here you will find everything
-          you ned to know and where to find it. \n"
+        value: 'Welcome to the Lil'' Windows manual. Here you will find everything
+          you ned to know and where to find it.
+
+
+          There will be a newspaper
+          with reading materials everyday in the common area.
+
+'
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -2187,7 +2193,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["dayNumber"] == 0
-      userScript: SetQuestState("Look at Manual", "success")
+      userScript: 'SetQuestState("Look at Manual", "success")
+
+        ;
+
+        ShowAlert("New
+        Quest: Look at Newspaper");
+
+        SetQuestState("Look at newspaper", "active")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2949,8 +2962,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.7600002
+    canvasScrollPosition: {x: 4.8301105, y: 3.43104}
+    canvasZoom: 0.7900002
   - id: 14
     fields:
     - title: Title
@@ -6245,8 +6258,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 98.29509, y: 0}
-    canvasZoom: 0.7900002
+    canvasScrollPosition: {x: 121.36937, y: 59.808205}
+    canvasZoom: 0.85000014
   syncInfo:
     syncActors: 0
     syncItems: 0
