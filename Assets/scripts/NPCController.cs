@@ -31,8 +31,6 @@ public class NPCController : MonoBehaviour
     void Update()
     { 
         
-        moveNPC();
-        
         
     }
     public void moveNPC()

@@ -31,13 +31,14 @@ public class IntakeControls : MonoBehaviour
     {
         if(GameController.GetComponent<GameController>().dayCount == 1)
         {
-            StartCoroutine(WaitForFirstAudio(23));
+            StartCoroutine(WaitForSecondAudio(23));
             if(didFirstPlay == false)
             {
                 
-            player.GetComponent<FirstPersonController>().MoveSpeed = 0;
-            player.GetComponent<FirstPersonController>().SprintSpeed = 0;
-            audioObject.PlayOneShot(audioClip1);
+            //player.GetComponent<FirstPersonController>().MoveSpeed = 0;
+            //player.GetComponent<FirstPersonController>().SprintSpeed = 0;
+            //player.GetComponent<StarterAssetsInputs>().cursorLocked = false;
+            audioObject.PlayOneShot(audioClip2);
             didFirstPlay = true;
             Debug.Log("I did this");
             }
@@ -50,7 +51,7 @@ public class IntakeControls : MonoBehaviour
     {
         
     }
-    public void OnTriggerEnter(Collider other)
+    /*public void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player") && didAudioPlay == false)
         {
@@ -59,13 +60,14 @@ public class IntakeControls : MonoBehaviour
             StartCoroutine(WaitForSecondAudio(22));
             didAudioPlay = true;
         }
-    }
+    }*/
     IEnumerator WaitForFirstAudio(float firstLength)
     {
         yield return new WaitForSeconds(firstLength);
         moveText.SetActive(true);
         player.GetComponent<FirstPersonController>().MoveSpeed = 10;
         player.GetComponent<FirstPersonController>().SprintSpeed = 12;
+        player.GetComponent<StarterAssetsInputs>().cursorLocked = true;
                
     }
     IEnumerator WaitForSecondAudio(float audioLength)
@@ -73,6 +75,7 @@ public class IntakeControls : MonoBehaviour
         yield return new WaitForSeconds(audioLength);
         player.SetActive(false);
         player.transform.position = startingPosition.position;
+        player.transform.rotation = startingPosition.rotation;
         player.SetActive(true);
         blackSquare.SetActive(true);
         StartCoroutine(WaitForController(2));

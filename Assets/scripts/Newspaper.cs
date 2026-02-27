@@ -65,5 +65,13 @@ public class Newspaper : MonoBehaviour
             }
         }
     }
+    public void ShutNewspaper()
+    {
+        for(int i = 0; i < finalPage; i++)
+        {
+            newspaper[i].SetActive(false);
+            Buttons.SetActive(false);
+        }
+    }
 }
 }

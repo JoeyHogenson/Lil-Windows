@@ -1,0 +1,926 @@
+{
+  "passages": [
+    {
+      "text": "[[Stay calm and try to communicate in sign language.]]\n[[Physically push back.]]\n[[Attempt to walk away quickly.]]\n",
+      "links": [
+        {
+          "name": "Stay calm and try to communicate in sign language.",
+          "link": "Stay calm and try to communicate in sign language.",
+          "pid": "2"
+        },
+        {
+          "name": "Physically push back.",
+          "link": "Physically push back.",
+          "pid": "3"
+        },
+        {
+          "name": "Attempt to walk away quickly.",
+          "link": "Attempt to walk away quickly.",
+          "pid": "4"
+        }
+      ],
+      "name": "IP - HEY, YOU STUPID MOTHERFUCKER! WHEN YOU HEAR ME COMING, YOU GET OUT OF MY WAY. *shoves DC*  ",
+      "pid": "1",
+      "position": {
+        "x": "675",
+        "y": "325"
+      }
+    },
+    {
+      "text": "WHAT THE FUCK ARE YOU DOING WITH YOUR HANDS? YOU MAKING FUN OF ME?\n[[Continue signing. ]]\n[[ Gesture “no trouble” and back away.]]\n[[Attempt to get the attention of the nearest CO.]]\n[[Write “I’m deaf” in the dust.]]\n\n\n",
+      "links": [
+        {
+          "name": "Continue signing. ",
+          "link": "Continue signing. ",
+          "pid": "5"
+        },
+        {
+          "name": " Gesture “no trouble” and back away.",
+          "link": " Gesture “no trouble” and back away.",
+          "pid": "6"
+        },
+        {
+          "name": "Attempt to get the attention of the nearest CO.",
+          "link": "Attempt to get the attention of the nearest CO.",
+          "pid": "7"
+        },
+        {
+          "name": "Write “I’m deaf” in the dust.",
+          "link": "Write “I’m deaf” in the dust.",
+          "pid": "8"
+        }
+      ],
+      "name": "Stay calm and try to communicate in sign language.",
+      "pid": "2",
+      "position": {
+        "x": "400",
+        "y": "500"
+      }
+    },
+    {
+      "text": "IP: “YOU GOT A DEATH WISH? YOU’RE DEAD AFTER LIGHTS OUT!”\n[[Stand ground, fists clenched.]] \n[[Sign “I’m deaf” and “stop.”]] \n[[Shout for the CO’s help.]] \n[[Wait for IP to move.]]",
+      "links": [
+        {
+          "name": "Stand ground, fists clenched.",
+          "link": "Stand ground, fists clenched.",
+          "pid": "36"
+        },
+        {
+          "name": "Sign “I’m deaf” and “stop.”",
+          "link": "Sign “I’m deaf” and “stop.”",
+          "pid": "37"
+        },
+        {
+          "name": "Shout for the CO’s help.",
+          "link": "Shout for the CO’s help.",
+          "pid": "38"
+        },
+        {
+          "name": "Wait for IP to move.",
+          "link": "Wait for IP to move.",
+          "pid": "60"
+        }
+      ],
+      "name": "Physically push back.",
+      "pid": "3",
+      "position": {
+        "x": "900",
+        "y": "300"
+      }
+    },
+    {
+      "text": "",
+      "name": "Attempt to walk away quickly.",
+      "pid": "4",
+      "position": {
+        "x": "700",
+        "y": "500"
+      }
+    },
+    {
+      "text": "IC's face gets redder. He swats your hands away.\n[[ Hand CO your ID. (CO takes it and frowns, noticing the “hearing impaired” notation)]]\n[[Wait silently]]\n[[Keep signing and try to lip read, opening your stance and showing you’re harmless.]]\n\n\n",
+      "links": [
+        {
+          "name": " Hand CO your ID. (CO takes it and frowns, noticing the “hearing impaired” notation)",
+          "link": " Hand CO your ID. (CO takes it and frowns, noticing the “hearing impaired” notation)",
+          "pid": "13"
+        },
+        {
+          "name": "Wait silently",
+          "link": "Wait silently",
+          "pid": "9"
+        },
+        {
+          "name": "Keep signing and try to lip read, opening your stance and showing you’re harmless.",
+          "link": "Keep signing and try to lip read, opening your stance and showing you’re harmless.",
+          "pid": "10"
+        }
+      ],
+      "name": "Continue signing. ",
+      "pid": "5",
+      "position": {
+        "x": "0",
+        "y": "700"
+      }
+    },
+    {
+      "text": "[[Go to cell. (Lockdown door closes behind you) Inside, your cellmate asks hesitantly: “What happened?”]]\n[[Signal distress to CO 2. (CO 2 makes eye contact and signs: Later.) After lights out, a note (crudely signed) is slipped under your door: “You good?”]]\n[[Ignore and try to leave. (CO 1 blocks you).]]\n",
+      "links": [
+        {
+          "name": "Go to cell. (Lockdown door closes behind you) Inside, your cellmate asks hesitantly: “What happened?”",
+          "link": "Go to cell. (Lockdown door closes behind you) Inside, your cellmate asks hesitantly: “What happened?”",
+          "pid": "16"
+        },
+        {
+          "name": "Signal distress to CO 2. (CO 2 makes eye contact and signs: Later.) After lights out, a note (crudely signed) is slipped under your door: “You good?”",
+          "link": "Signal distress to CO 2. (CO 2 makes eye contact and signs: Later.) After lights out, a note (crudely signed) is slipped under your door: “You good?”",
+          "pid": "19"
+        },
+        {
+          "name": "Ignore and try to leave. (CO 1 blocks you).",
+          "link": "Ignore and try to leave. (CO 1 blocks you).",
+          "pid": "22"
+        }
+      ],
+      "name": " Gesture “no trouble” and back away.",
+      "pid": "6",
+      "position": {
+        "x": "350",
+        "y": "700"
+      }
+    },
+    {
+      "text": "You wave for the CO. IP sees as disrespect.\n\n[[Stand ground, refuse to react.]]\n[[Apologize in sign language.]] \n\n",
+      "links": [
+        {
+          "name": "Stand ground, refuse to react.",
+          "link": "Stand ground, refuse to react.",
+          "pid": "23"
+        },
+        {
+          "name": "Apologize in sign language.",
+          "link": "Apologize in sign language.",
+          "pid": "24"
+        }
+      ],
+      "name": "Attempt to get the attention of the nearest CO.",
+      "pid": "7",
+      "position": {
+        "x": "775",
+        "y": "700"
+      }
+    },
+    {
+      "text": "IP rolls his eyes and storms off. \nCO 2 discreetly signs again, clearly “Back to cell.”\n\n[[Thank CO 2 in sign language]]\n[[Brush off, head to cell.]]\n[[Stay in place.]]\n",
+      "links": [
+        {
+          "name": "Thank CO 2 in sign language",
+          "link": "Thank CO 2 in sign language",
+          "pid": "29"
+        },
+        {
+          "name": "Brush off, head to cell.",
+          "link": "Brush off, head to cell.",
+          "pid": "30"
+        },
+        {
+          "name": "Stay in place.",
+          "link": "Stay in place.",
+          "pid": "31"
+        }
+      ],
+      "name": "Write “I’m deaf” in the dust.",
+      "pid": "8",
+      "position": {
+        "x": "1025",
+        "y": "700"
+      }
+    },
+    {
+      "text": "CO: “WHAT IS WRONG WITH YOU?”\n[[Remain silent.]]\n[[Try to sign again, risking escalation. CO eventually throws up his hands and dismisses you both, but you can feel eyes on you.]]\n",
+      "links": [
+        {
+          "name": "Remain silent.",
+          "link": "Remain silent.",
+          "pid": "11"
+        },
+        {
+          "name": "Try to sign again, risking escalation. CO eventually throws up his hands and dismisses you both, but you can feel eyes on you.",
+          "link": "Try to sign again, risking escalation. CO eventually throws up his hands and dismisses you both, but you can feel eyes on you.",
+          "pid": "12"
+        }
+      ],
+      "name": "Wait silently",
+      "pid": "9",
+      "position": {
+        "x": "125",
+        "y": "800"
+      }
+    },
+    {
+      "text": "The aggression escalates as IP turns to the crowd: ''“Look! He thinks he’s smart!” ''\nSome snicker.\n\nCO 1 notices the commotion and yanks both of you apart, barking orders\nDC tries to lip-read CO 1, but he’s talking too quickly and looking away.\n\n[[You sign deaf and point at your ear and mouth, mouthing \"Can’t hear\".]]\n[[Frustrated, you gesture for a pen and paper. CO ignores you, assumes you’re refusing to cooperate, and writes you up. News of your “attitude” spreads.]]\n\n",
+      "links": [
+        {
+          "name": "You sign deaf and point at your ear and mouth, mouthing \"Can’t hear\".",
+          "link": "You sign deaf and point at your ear and mouth, mouthing \"Can’t hear\".",
+          "pid": "15"
+        },
+        {
+          "name": "Frustrated, you gesture for a pen and paper. CO ignores you, assumes you’re refusing to cooperate, and writes you up. News of your “attitude” spreads.",
+          "link": "Frustrated, you gesture for a pen and paper. CO ignores you, assumes you’re refusing to cooperate, and writes you up. News of your “attitude” spreads.",
+          "pid": "14"
+        }
+      ],
+      "name": "Keep signing and try to lip read, opening your stance and showing you’re harmless.",
+      "pid": "10",
+      "position": {
+        "x": "0",
+        "y": "900"
+      }
+    },
+    {
+      "text": "",
+      "name": "Remain silent.",
+      "pid": "11",
+      "position": {
+        "x": "250",
+        "y": "825"
+      }
+    },
+    {
+      "text": "",
+      "name": "Try to sign again, risking escalation. CO eventually throws up his hands and dismisses you both, but you can feel eyes on you.",
+      "pid": "12",
+      "position": {
+        "x": "225",
+        "y": "950"
+      }
+    },
+    {
+      "text": "CO: “NEXT TIME, MOVE WHEN YOU’RE TOLD.”\nCO waves DC away but makes IP stay for questioning.\n[Consequence: IP resents you, tension increases.]\n\n",
+      "name": " Hand CO your ID. (CO takes it and frowns, noticing the “hearing impaired” notation)",
+      "pid": "13",
+      "position": {
+        "x": "100",
+        "y": "1000"
+      }
+    },
+    {
+      "text": "",
+      "name": "Frustrated, you gesture for a pen and paper. CO ignores you, assumes you’re refusing to cooperate, and writes you up. News of your “attitude” spreads.",
+      "pid": "14",
+      "position": {
+        "x": "0",
+        "y": "1150"
+      }
+    },
+    {
+      "text": "",
+      "name": "You sign deaf and point at your ear and mouth, mouthing \"Can’t hear\".",
+      "pid": "15",
+      "position": {
+        "x": "0",
+        "y": "1025"
+      }
+    },
+    {
+      "text": "[[Share the incident in sign.]]\n[[Shrug it off, hiding stress.]]\n\n",
+      "links": [
+        {
+          "name": "Share the incident in sign.",
+          "link": "Share the incident in sign.",
+          "pid": "17"
+        },
+        {
+          "name": "Shrug it off, hiding stress.",
+          "link": "Shrug it off, hiding stress.",
+          "pid": "18"
+        }
+      ],
+      "name": "Go to cell. (Lockdown door closes behind you) Inside, your cellmate asks hesitantly: “What happened?”",
+      "pid": "16",
+      "position": {
+        "x": "375",
+        "y": "825"
+      }
+    },
+    {
+      "text": "",
+      "name": "Share the incident in sign.",
+      "pid": "17",
+      "position": {
+        "x": "375",
+        "y": "950"
+      }
+    },
+    {
+      "text": "",
+      "name": "Shrug it off, hiding stress.",
+      "pid": "18",
+      "position": {
+        "x": "375",
+        "y": "1075"
+      }
+    },
+    {
+      "text": "[[Ignore the note.]]\n[[Respond, risking someone else noticing.]]\n",
+      "links": [
+        {
+          "name": "Ignore the note.",
+          "link": "Ignore the note.",
+          "pid": "20"
+        },
+        {
+          "name": "Respond, risking someone else noticing.",
+          "link": "Respond, risking someone else noticing.",
+          "pid": "21"
+        }
+      ],
+      "name": "Signal distress to CO 2. (CO 2 makes eye contact and signs: Later.) After lights out, a note (crudely signed) is slipped under your door: “You good?”",
+      "pid": "19",
+      "position": {
+        "x": "500",
+        "y": "800"
+      }
+    },
+    {
+      "text": "",
+      "name": "Ignore the note.",
+      "pid": "20",
+      "position": {
+        "x": "500",
+        "y": "925"
+      }
+    },
+    {
+      "text": "",
+      "name": "Respond, risking someone else noticing.",
+      "pid": "21",
+      "position": {
+        "x": "500",
+        "y": "1050"
+      }
+    },
+    {
+      "text": "CO: ''“WHERE YOU GOING?”''\nYou shake your head, try to get away, but get written up for “noncompliance.”\n[Consequence: Privileges are revoked for a week.]\n",
+      "name": "Ignore and try to leave. (CO 1 blocks you).",
+      "pid": "22",
+      "position": {
+        "x": "650",
+        "y": "825"
+      }
+    },
+    {
+      "text": "CO 2 later drags you aside.\nCO 2: (signs) You need to lay low. “They” are trouble.\n\n[[Explain you just want to be safe.]]\n[[Tell CO 2 you need protection.]]\n",
+      "links": [
+        {
+          "name": "Explain you just want to be safe.",
+          "link": "Explain you just want to be safe.",
+          "pid": "25"
+        },
+        {
+          "name": "Tell CO 2 you need protection.",
+          "link": "Tell CO 2 you need protection.",
+          "pid": "26"
+        }
+      ],
+      "name": "Stand ground, refuse to react.",
+      "pid": "23",
+      "position": {
+        "x": "775",
+        "y": "825"
+      }
+    },
+    {
+      "text": "IP spits: “Whatever, coward.”\n\n[[Walk away, humiliated.]]\n[[Stand still and let CO resolve it.]]\n",
+      "links": [
+        {
+          "name": "Walk away, humiliated.",
+          "link": "Walk away, humiliated.",
+          "pid": "27"
+        },
+        {
+          "name": "Stand still and let CO resolve it.",
+          "link": "Stand still and let CO resolve it.",
+          "pid": "28"
+        }
+      ],
+      "name": "Apologize in sign language.",
+      "pid": "24",
+      "position": {
+        "x": "900",
+        "y": "850"
+      }
+    },
+    {
+      "text": "",
+      "name": "Explain you just want to be safe.",
+      "pid": "25",
+      "position": {
+        "x": "775",
+        "y": "950"
+      }
+    },
+    {
+      "text": "",
+      "name": "Tell CO 2 you need protection.",
+      "pid": "26",
+      "position": {
+        "x": "650",
+        "y": "950"
+      }
+    },
+    {
+      "text": "",
+      "name": "Walk away, humiliated.",
+      "pid": "27",
+      "position": {
+        "x": "900",
+        "y": "925"
+      }
+    },
+    {
+      "text": "Later, rumors spread you folded—may affect standing with others.\n",
+      "name": "Stand still and let CO resolve it.",
+      "pid": "28",
+      "position": {
+        "x": "1025",
+        "y": "925"
+      }
+    },
+    {
+      "text": "CO 2 nods subtly. That evening, CO 2 leaves a packet—notecards and a card with alphabet in signs.\n\n[[Accept quietly.]]\n[[Refuse, worried IP might see.]]\n\n",
+      "links": [
+        {
+          "name": "Accept quietly.",
+          "link": "Accept quietly.",
+          "pid": "32"
+        },
+        {
+          "name": "Refuse, worried IP might see.",
+          "link": "Refuse, worried IP might see.",
+          "pid": "33"
+        }
+      ],
+      "name": "Thank CO 2 in sign language",
+      "pid": "29",
+      "position": {
+        "x": "1150",
+        "y": "650"
+      }
+    },
+    {
+      "text": "Cell quiet. Later, a food tray is left at your door. IP walked past your cell, glaring.\n\n[[Confront IP tomorrow.]]\n[[Stay quiet and alert.]]\n",
+      "links": [
+        {
+          "name": "Confront IP tomorrow.",
+          "link": "Confront IP tomorrow.",
+          "pid": "34"
+        },
+        {
+          "name": "Stay quiet and alert.",
+          "link": "Stay quiet and alert.",
+          "pid": "35"
+        }
+      ],
+      "name": "Brush off, head to cell.",
+      "pid": "30",
+      "position": {
+        "x": "1150",
+        "y": "775"
+      }
+    },
+    {
+      "text": "CO 1 yells:'' “MOVE!'\"''\nYou get shoved along; your back hurts for hours.\n",
+      "name": "Stay in place.",
+      "pid": "31",
+      "position": {
+        "x": "1075",
+        "y": "900"
+      }
+    },
+    {
+      "text": "",
+      "name": "Accept quietly.",
+      "pid": "32",
+      "position": {
+        "x": "1200",
+        "y": "500"
+      }
+    },
+    {
+      "text": "",
+      "name": "Refuse, worried IP might see.",
+      "pid": "33",
+      "position": {
+        "x": "1375",
+        "y": "600"
+      }
+    },
+    {
+      "text": "",
+      "name": "Confront IP tomorrow.",
+      "pid": "34",
+      "position": {
+        "x": "1300",
+        "y": "725"
+      }
+    },
+    {
+      "text": "",
+      "name": "Stay quiet and alert.",
+      "pid": "35",
+      "position": {
+        "x": "1350",
+        "y": "825"
+      }
+    },
+    {
+      "text": "[[Sign “I was defending myself.”]]\n[[Hang your head.]]\n[[Spit blood, glare.]]\n\n",
+      "links": [
+        {
+          "name": "Sign “I was defending myself.”",
+          "link": "Sign “I was defending myself.”",
+          "pid": "39"
+        },
+        {
+          "name": "Hang your head.",
+          "link": "Hang your head.",
+          "pid": "40"
+        },
+        {
+          "name": "Spit blood, glare.",
+          "link": "Spit blood, glare.",
+          "pid": "41"
+        }
+      ],
+      "name": "Stand ground, fists clenched.",
+      "pid": "36",
+      "position": {
+        "x": "900",
+        "y": "100"
+      }
+    },
+    {
+      "text": "[[Obey, head to your cell.]]\n[[Pause, look for IP’s move.]]\n[[Try to make eye contact for help.]]\n\n",
+      "links": [
+        {
+          "name": "Obey, head to your cell.",
+          "link": "Obey, head to your cell.",
+          "pid": "47"
+        },
+        {
+          "name": "Pause, look for IP’s move.",
+          "link": "Pause, look for IP’s move.",
+          "pid": "48"
+        },
+        {
+          "name": "Try to make eye contact for help.",
+          "link": "Try to make eye contact for help.",
+          "pid": "49"
+        }
+      ],
+      "name": "Sign “I’m deaf” and “stop.”",
+      "pid": "37",
+      "position": {
+        "x": "1000",
+        "y": "175"
+      }
+    },
+    {
+      "text": "[[Try to explain in writing.]]\n[[Stay silent.]]\n[[Sign, hope for understanding.]]\n\n",
+      "links": [
+        {
+          "name": "Try to explain in writing.",
+          "link": "Try to explain in writing.",
+          "pid": "54"
+        },
+        {
+          "name": "Stay silent.",
+          "link": "Stay silent.",
+          "pid": "55"
+        },
+        {
+          "name": "Sign, hope for understanding.",
+          "link": "Sign, hope for understanding.",
+          "pid": "56"
+        }
+      ],
+      "name": "Shout for the CO’s help.",
+      "pid": "38",
+      "position": {
+        "x": "1100",
+        "y": "250"
+      }
+    },
+    {
+      "text": "(CO looks confused, grunts, and shoves you toward your cell). That night, your cellmate warns: IP wants payback. \n\n[[Try to make peace with IP.]]\n[[Ask for a transfer.]]\n",
+      "links": [
+        {
+          "name": "Try to make peace with IP.",
+          "link": "Try to make peace with IP.",
+          "pid": "42"
+        },
+        {
+          "name": "Ask for a transfer.",
+          "link": "Ask for a transfer.",
+          "pid": "43"
+        }
+      ],
+      "name": "Sign “I was defending myself.”",
+      "pid": "39",
+      "position": {
+        "x": "600",
+        "y": "75"
+      }
+    },
+    {
+      "text": "CO scoffs: “Knew you were soft.” \nIP grins. \n\n[[Try to win back dignity by standing tall tomorrow.]]\n[[Avoid common areas for next few days.]]\n\n",
+      "links": [
+        {
+          "name": "Try to win back dignity by standing tall tomorrow.",
+          "link": "Try to win back dignity by standing tall tomorrow.",
+          "pid": "44"
+        },
+        {
+          "name": "Avoid common areas for next few days.",
+          "link": "Avoid common areas for next few days.",
+          "pid": "45"
+        }
+      ],
+      "name": "Hang your head.",
+      "pid": "40",
+      "position": {
+        "x": "500",
+        "y": "0"
+      }
+    },
+    {
+      "text": "[[CO cuffs you and hauls you to solitary for “aggression.”]]\n",
+      "links": [
+        {
+          "name": "CO cuffs you and hauls you to solitary for “aggression.”",
+          "link": "CO cuffs you and hauls you to solitary for “aggression.”",
+          "pid": "46"
+        }
+      ],
+      "name": "Spit blood, glare.",
+      "pid": "41",
+      "position": {
+        "x": "750",
+        "y": "0"
+      }
+    },
+    {
+      "text": "",
+      "name": "Try to make peace with IP.",
+      "pid": "42",
+      "position": {
+        "x": "500",
+        "y": "225"
+      }
+    },
+    {
+      "text": "",
+      "name": "Ask for a transfer.",
+      "pid": "43",
+      "position": {
+        "x": "650",
+        "y": "225"
+      }
+    },
+    {
+      "text": "",
+      "name": "Try to win back dignity by standing tall tomorrow.",
+      "pid": "44",
+      "position": {
+        "x": "325",
+        "y": "0"
+      }
+    },
+    {
+      "text": "",
+      "name": "Avoid common areas for next few days.",
+      "pid": "45",
+      "position": {
+        "x": "350",
+        "y": "100"
+      }
+    },
+    {
+      "text": "",
+      "name": "CO cuffs you and hauls you to solitary for “aggression.”",
+      "pid": "46",
+      "position": {
+        "x": "750",
+        "y": "125"
+      }
+    },
+    {
+      "text": "IP follows, menacing. CO 2 intercepts and holds him back.\n\n[[Thank CO 2 next chance you get.]]\n[[Avoid all contact with IP and CO 2.]]\n",
+      "links": [
+        {
+          "name": "Thank CO 2 next chance you get.",
+          "link": "Thank CO 2 next chance you get.",
+          "pid": "50"
+        },
+        {
+          "name": "Avoid all contact with IP and CO 2.",
+          "link": "Avoid all contact with IP and CO 2.",
+          "pid": "51"
+        }
+      ],
+      "name": "Obey, head to your cell.",
+      "pid": "47",
+      "position": {
+        "x": "1200",
+        "y": "100"
+      }
+    },
+    {
+      "text": "IP backs off, wary of CO 2. \n[Consequence: Tension simmers.]\n",
+      "name": "Pause, look for IP’s move.",
+      "pid": "48",
+      "position": {
+        "x": "1100",
+        "y": "0"
+      }
+    },
+    {
+      "text": "CO 2 nods, later checks on you. \n\n[[Request to speak (write) to advocate.]]\n[[Decline, don’t draw attention.]]\n",
+      "links": [
+        {
+          "name": "Request to speak (write) to advocate.",
+          "link": "Request to speak (write) to advocate.",
+          "pid": "52"
+        },
+        {
+          "name": "Decline, don’t draw attention.",
+          "link": "Decline, don’t draw attention.",
+          "pid": "53"
+        }
+      ],
+      "name": "Try to make eye contact for help.",
+      "pid": "49",
+      "position": {
+        "x": "1300",
+        "y": "200"
+      }
+    },
+    {
+      "text": "",
+      "name": "Thank CO 2 next chance you get.",
+      "pid": "50",
+      "position": {
+        "x": "1300",
+        "y": "0"
+      }
+    },
+    {
+      "text": "",
+      "name": "Avoid all contact with IP and CO 2.",
+      "pid": "51",
+      "position": {
+        "x": "1400",
+        "y": "25"
+      }
+    },
+    {
+      "text": "",
+      "name": "Request to speak (write) to advocate.",
+      "pid": "52",
+      "position": {
+        "x": "1600",
+        "y": "225"
+      }
+    },
+    {
+      "text": "",
+      "name": "Decline, don’t draw attention.",
+      "pid": "53",
+      "position": {
+        "x": "1525",
+        "y": "125"
+      }
+    },
+    {
+      "text": "CO briefly skims your words, shakes head, files report. You get minimal assistance; incident is labeled a “mutual fight.” \n\n[[Challenge the write-up.]]\n[[Accept write-up to avoid more trouble]].\n",
+      "links": [
+        {
+          "name": "Challenge the write-up.",
+          "link": "Challenge the write-up.",
+          "pid": "57"
+        },
+        {
+          "name": "Accept write-up to avoid more trouble",
+          "link": "Accept write-up to avoid more trouble",
+          "pid": "58"
+        }
+      ],
+      "name": "Try to explain in writing.",
+      "pid": "54",
+      "position": {
+        "x": "1250",
+        "y": "325"
+      }
+    },
+    {
+      "text": "CO: Cat got your tongue?\n[[You’re put in isolation overnight.]]\n",
+      "links": [
+        {
+          "name": "You’re put in isolation overnight.",
+          "link": "You’re put in isolation overnight.",
+          "pid": "59"
+        }
+      ],
+      "name": "Stay silent.",
+      "pid": "55",
+      "position": {
+        "x": "1575",
+        "y": "375"
+      }
+    },
+    {
+      "text": "CO ignores sign, pushes you into holding.\n",
+      "name": "Sign, hope for understanding.",
+      "pid": "56",
+      "position": {
+        "x": "1750",
+        "y": "325"
+      }
+    },
+    {
+      "text": "",
+      "name": "Challenge the write-up.",
+      "pid": "57",
+      "position": {
+        "x": "1400",
+        "y": "400"
+      }
+    },
+    {
+      "text": "",
+      "name": "Accept write-up to avoid more trouble",
+      "pid": "58",
+      "position": {
+        "x": "1400",
+        "y": "500"
+      }
+    },
+    {
+      "text": "",
+      "name": "You’re put in isolation overnight.",
+      "pid": "59",
+      "position": {
+        "x": "1550",
+        "y": "550"
+      }
+    },
+    {
+      "text": "[[Refuse to move.]]",
+      "links": [
+        {
+          "name": "Refuse to move.",
+          "link": "Refuse to move.",
+          "pid": "61"
+        }
+      ],
+      "name": "Wait for IP to move.",
+      "pid": "60",
+      "position": {
+        "x": "900",
+        "y": "425"
+      }
+    },
+    {
+      "text": "[[CO shoves you harder, mutters about “head cases.”]]\n",
+      "links": [
+        {
+          "name": "CO shoves you harder, mutters about “head cases.”",
+          "link": "CO shoves you harder, mutters about “head cases.”",
+          "pid": "62"
+        }
+      ],
+      "name": "Refuse to move.",
+      "pid": "61",
+      "position": {
+        "x": "900",
+        "y": "550"
+      }
+    },
+    {
+      "text": "",
+      "name": "CO shoves you harder, mutters about “head cases.”",
+      "pid": "62",
+      "position": {
+        "x": "1025",
+        "y": "400"
+      }
+    }
+  ],
+  "name": "Lockdown Script",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.0",
+  "ifid": "0BD30378-96A5-4019-8CDD-FC458F6CA438"
+}

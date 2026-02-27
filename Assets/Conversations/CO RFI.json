@@ -1,0 +1,128 @@
+{
+  "passages": [
+    {
+      "text": "\"Look, inmate, my kid's got a school thing tonight. I already missed the last one. What do you actually need right now?\"\n\n[[What do I need to be using this for?]]",
+      "links": [
+        {
+          "name": "What do I need to be using this for?",
+          "link": "What do I need to be using this for?",
+          "pid": "6"
+        }
+      ],
+      "name": "\"I don't want to mess this up.\"",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "375"
+      }
+    },
+    {
+      "text": "You state clearly that RFIs are how people who are incarcerated protect themselves. Without them, rights exist only on paper. You're not asking permission --you're asking for the form. \n\nHe looks at the clock. \n\n\"I've got a kid who thinks I don't want to be home. And a supervisor who thinks paperwork solves everything. So let's not pretend this is personal.\" \n\nHe walks toward the RFI paper on the desk in the common room. \"This form is how you ask. It's not how you argue. You fill it out wrong, it gets kicked back. You fill it out vague, it goes nowhere. You don't get a response, that's a response.\"\n\nHe pushes a pen across the desk.\n\n[[Write]]",
+      "links": [
+        {
+          "name": "Write",
+          "link": "Write",
+          "pid": "7"
+        }
+      ],
+      "name": "\"I'm requesting information related to my confinement. That's a protected right. If there's any delay or obstruction, I'll need the reason documented.\"",
+      "pid": "2",
+      "position": {
+        "x": "1000",
+        "y": "375"
+      }
+    },
+    {
+      "text": "CO leans back against the desk, arms crossed. The posture is tired.\n\n\"Ahh, so you want a cop-out\"\n\nCO looks at watch. \"Most people don't ask for that on their first day.\"\n\n[[Take the RFI]]",
+      "links": [
+        {
+          "name": "Take the RFI",
+          "link": "Take the RFI",
+          "pid": "4"
+        }
+      ],
+      "name": "I don't want to cause any trouble, I just need to understand the rules and do things the right way.",
+      "pid": "3",
+      "position": {
+        "x": "800",
+        "y": "375"
+      }
+    },
+    {
+      "text": "",
+      "name": "Take the RFI",
+      "pid": "4",
+      "position": {
+        "x": "800",
+        "y": "550"
+      }
+    },
+    {
+      "text": "\"What do you need?\" \n\n\"I need a cop-out. An RFI\"\n\n\"RFI, what for?\"\n\n[[\"I don't want to mess this up.\"]]\n[[I don't want to cause any trouble, I just need to understand the rules and do things the right way.]]\n[[\"I'm requesting information related to my confinement. That's a protected right. If there's any delay or obstruction, I'll need the reason documented.\"]]",
+      "links": [
+        {
+          "name": "\"I don't want to mess this up.\"",
+          "link": "\"I don't want to mess this up.\"",
+          "pid": "1"
+        },
+        {
+          "name": "I don't want to cause any trouble, I just need to understand the rules and do things the right way.",
+          "link": "I don't want to cause any trouble, I just need to understand the rules and do things the right way.",
+          "pid": "3"
+        },
+        {
+          "name": "\"I'm requesting information related to my confinement. That's a protected right. If there's any delay or obstruction, I'll need the reason documented.\"",
+          "link": "\"I'm requesting information related to my confinement. That's a protected right. If there's any delay or obstruction, I'll need the reason documented.\"",
+          "pid": "2"
+        }
+      ],
+      "name": "Untitled Passage",
+      "pid": "5",
+      "position": {
+        "x": "800",
+        "y": "175"
+      }
+    },
+    {
+      "text": "\"Everybody thinks this is asking permission. It's not. It's creating a record.\"\n\n \"You don't have to be polite. You just have to be precise and consistent. Systems don't respond to anger. They respond to paperwork.\"",
+      "name": "What do I need to be using this for?",
+      "pid": "6",
+      "position": {
+        "x": "600",
+        "y": "550"
+      }
+    },
+    {
+      "text": "",
+      "name": "Write",
+      "pid": "7",
+      "position": {
+        "x": "1000",
+        "y": "550"
+      }
+    },
+    {
+      "text": "",
+      "name": "Yea, and I need information about my rights.\"",
+      "pid": "8",
+      "position": {
+        "x": "450",
+        "y": "450"
+      }
+    },
+    {
+      "text": "",
+      "name": "stay calm and procedural",
+      "pid": "9",
+      "position": {
+        "x": "300",
+        "y": "450"
+      }
+    }
+  ],
+  "name": "CO to Prisoner",
+  "startnode": "5",
+  "creator": "Twine",
+  "creator-version": "2.11.0",
+  "ifid": "6EECF691-25CC-4ABB-A194-1D224B9E07C8"
+}

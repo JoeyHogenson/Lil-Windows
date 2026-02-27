@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using System.Collections;
 using TMPro;
 using UnityEngine.SceneManagement;
+using PixelCrushers.DialogueSystem;
 public class GameController : MonoBehaviour
 {
     public float daystart;
@@ -13,12 +14,15 @@ public class GameController : MonoBehaviour
     public GameObject player;
     public Transform playerStartingPosition;
 
+    public Animator lockdownPrisonerAnimator;
+
     private float mail;
     private float commisary;
-    private float end;
+    public float end;
     private float count;
     private float thoughts;
     private float bookBan;
+    private float lockdown;
 
     public int dayCount;
 
@@ -30,10 +34,16 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI eventText;
     public GameObject eventTextObject;
 
+    public GameObject bookBanNewspaper;
+    public GameObject intakeNewspaper;
+    //public GameObject lockdownNewspaper;
+    public GameObject[] Books;
+
     public GameObject mailObject;
 
     public bool isCommissary;
     public bool isCount;
+    public bool isLockdown;
 
     public bool daystarted;
 
@@ -45,6 +55,7 @@ public class GameController : MonoBehaviour
     private bool _endFired;
     private bool _thoughtsFired;
     private bool _bookBanFired;
+    private bool _lockdownFired;
 
     ///game days should be 10min
     void Update()
@@ -87,8 +98,11 @@ public class GameController : MonoBehaviour
         _endFired = false;
         _thoughtsFired = false;
         _bookBanFired = false;
+        _lockdownFired = false;
         isCommissary = false;
         isCount = false;
+        DialogueLua.SetVariable("bookBan", false);
+        DialogueLua.SetVariable("lockdown", false);
     }
 
     void CheckEvents()
@@ -132,10 +146,15 @@ public class GameController : MonoBehaviour
             Thoughts();
             _thoughtsFired = true;
         }
-        if(!_bookBanFired&&Time.time>=bookBan && dayCount == 2)
+        if(!_bookBanFired&&Time.time>=bookBan && (dayCount == 2|| dayCount == 4))
         {
-            BookBan();
+            //BookBan();
             _bookBanFired = true;
+        }
+        if(!_lockdownFired && Time.time >= lockdown && dayCount == 2)
+        {
+            Lockdown();
+            _lockdownFired = true;
         }
     }
     void SetEvents()
@@ -147,6 +166,7 @@ public class GameController : MonoBehaviour
         SetEnd();
         SetThoughts();
         SetBookBan();
+        SetLockdown();
     }
     void CountDeadline()
     {
@@ -207,7 +227,7 @@ public class GameController : MonoBehaviour
 
     void CommisaryEvent()
     {
-        if (eventText != null) eventText.text = "Get to the commissary for meal time";
+        //if (eventText != null) eventText.text = "Get to the commissary for meal time";
         if (eventTextObject != null) eventTextObject.SetActive(true);
         isCommissary = true;
         Debug.Log("[GameController] CommisaryEvent triggered at " + Time.time);
@@ -229,12 +249,55 @@ public class GameController : MonoBehaviour
     }
     void BookBan()
     {
-        //eventTextObject.SetActive(true);
-        //eventText.text = "A book ban has now been instated";
+        if(dayCount == 2)
+        {    
+            bookBanNewspaper.SetActive(true);
+            //lockdownNewspaper.SetActive(false);
+            intakeNewspaper.SetActive(false);
+            DialogueLua.SetVariable("bookBan", true);
+            eventTextObject.SetActive(true);
+            eventText.text = "A book ban has now been instated";
+            for(int i = 0; i < Books.Length; i++)
+            {
+                Books[i].SetActive(false);
+            }
+            StartCoroutine(HideTextAfterSeconds());
+        }
+        else if(dayCount == 3)
+        {
+            eventTextObject.SetActive(true);
+            bookBanNewspaper.SetActive(false);
+            eventText.text = "A book ban has now been removed";
+            DialogueLua.SetVariable("bookBan", false);
+            StartCoroutine(HideTextAfterSeconds());
+            for(int i = 0; i < Books.Length; i++)
+            {
+                Books[i].SetActive(true);
+            }
+        }
+        
+
+    }
+    void Thoughts()
+    {
+        //thoughtsObject.SetActive(true);
+        //ThoughtsText.text = "You think about your mother... and vow to see her again.";
         StartCoroutine(HideTextAfterSeconds());
 
     }
-
+    void Lockdown()
+    {
+        isLockdown = true;
+        //lockdownNewspaper.SetActive(true);
+        bookBanNewspaper.SetActive(false);
+        intakeNewspaper.SetActive(false);
+        DialogueLua.SetVariable("lockdown", true);
+        lockdownPrisonerAnimator.SetBool("getUp", true);
+        lockdownPrisonerAnimator.SetBool("isSitting", false);
+        eventTextObject.SetActive(true);
+        //eventText.text = "There is now a lockdown. Get to your cell immediately.";
+        StartCoroutine(HideTextAfterSeconds());
+    }
     void SetMail()
     {
         mail = daystart + 60;
@@ -250,7 +313,7 @@ public class GameController : MonoBehaviour
     }
     void SetEnd()
     {
-        end = daystart + 360;
+        end = daystart + 600;
     }
     void SetThoughts()
     {
@@ -258,14 +321,11 @@ public class GameController : MonoBehaviour
     }
     void SetBookBan()
     {
-        bookBan = daystart + 120;
+        bookBan = daystart + 20;
     }
-    void Thoughts()
+    void SetLockdown()
     {
-        //thoughtsObject.SetActive(true);
-        //ThoughtsText.text = "You think about your mother... and vow to see her again.";
-        StartCoroutine(HideTextAfterSeconds());
-
+        lockdown = daystart + 20;
     }
     public void LoadScene()
     {

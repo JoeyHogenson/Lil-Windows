@@ -1,0 +1,87 @@
+{
+  "passages": [
+    {
+      "text": "Mail Call Confusion --- It’s mail call. You can’t tell if staff are hollering for you, and you have no envelopes.\n[[Ask a CO after mail call, mouthing Did I get mail? Need envelope.]]\n[[Give up, sit alone, feeling isolated.]]\n",
+      "links": [
+        {
+          "name": "Ask a CO after mail call, mouthing Did I get mail? Need envelope.",
+          "link": "Ask a CO after mail call, mouthing Did I get mail? Need envelope.",
+          "pid": "2"
+        },
+        {
+          "name": "Give up, sit alone, feeling isolated.",
+          "link": "Give up, sit alone, feeling isolated.",
+          "pid": "3"
+        }
+      ],
+      "name": "Untitled Passage",
+      "pid": "1",
+      "position": {
+        "x": "575",
+        "y": "275"
+      }
+    },
+    {
+      "text": "SHADOW: Shrugged off: CO- “You’ll get it if your name’s called.”\n\nLIL WINDOW: That evening, the prison librarian passes through on rec time and—after a quiet gesture from you—slips you an envelope from her cart, no questions asked.\n",
+      "name": "Ask a CO after mail call, mouthing Did I get mail? Need envelope.",
+      "pid": "2",
+      "position": {
+        "x": "425",
+        "y": "450"
+      }
+    },
+    {
+      "text": "SHADOW Only: An ache of loneliness sets in.\n\nLIL WINDOW: Later, a passing counselor notices and leaves you a pamphlet on “resources for new arrivals.” Inside: instructions for requesting family phone calls.\n\n[[ Try to keep calm, show your notepad, and quietly sign “help.”]]\n\n[[Withdraw, avoid interactions.]]\n",
+      "links": [
+        {
+          "name": " Try to keep calm, show your notepad, and quietly sign “help.”",
+          "link": " Try to keep calm, show your notepad, and quietly sign “help.”",
+          "pid": "6"
+        },
+        {
+          "name": "Withdraw, avoid interactions.",
+          "link": "Withdraw, avoid interactions.",
+          "pid": "5"
+        }
+      ],
+      "name": "Give up, sit alone, feeling isolated.",
+      "pid": "3",
+      "position": {
+        "x": "675",
+        "y": "450"
+      }
+    },
+    {
+      "text": "SHADOW: Someone mocks your gestures or tries to take advantage because you can’t hear. \n\nLIL WINDOW: A ''peer'' who’s seen you before steps in to de-escalate: “He’s deaf, man. Chill.” For the first time, someone has your back.\n",
+      "name": " Try to keep calm, show your intake paper, and quietly sign “help.”",
+      "pid": "4",
+      "position": {
+        "x": "525",
+        "y": "625"
+      }
+    },
+    {
+      "text": "SHADOW: Isolation builds, stress meter rises. \n\nLIL WINDOW: Over time, your patience pays off, the peer support group meets, and while it’s awkward, you’re able to both sign and write. This time, people listen.\n",
+      "name": "Withdraw, avoid interactions.",
+      "pid": "5",
+      "position": {
+        "x": "1025",
+        "y": "425"
+      }
+    },
+    {
+      "text": "",
+      "name": " Try to keep calm, show your notepad, and quietly sign “help.”",
+      "pid": "6",
+      "position": {
+        "x": "750",
+        "y": "650"
+      }
+    }
+  ],
+  "name": "Mail Drama",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.0",
+  "ifid": "FABF9B08-9CB9-4C87-81E8-08D42F8CDE96"
+}

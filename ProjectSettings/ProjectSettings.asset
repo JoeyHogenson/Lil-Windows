@@ -171,7 +171,7 @@ PlayerSettings:
     VisionOS: 0
     iPhone: 0
     tvOS: 0
-  overrideDefaultApplicationIdentifier: 0
+  overrideDefaultApplicationIdentifier: 1
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 0
@@ -773,7 +773,7 @@ PlayerSettings:
     Server: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
     Standalone: TMP_PRESENT;USE_NEW_INPUT;USE_TWINE;UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
     VisionOS: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
-    WebGL: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
+    WebGL: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI;USE_TWINE
     Windows Store Apps: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
     XboxOne: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI
     iPhone: UNITY_VISUAL_SCRIPTING;ES3_TMPRO;ES3_UGUI

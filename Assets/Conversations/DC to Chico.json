@@ -1,0 +1,114 @@
+{
+  "passages": [
+    {
+      "text": "Cellmate (speaking slowly, making sure DC can read his lips, and handing him his notebook and pen) - First time in?\n\n[DC nods and writes in the notebook. He then shows it to Cellmate.]\n\n[[Yes. I’m DC. Deaf. You…?]]\n",
+      "links": [
+        {
+          "name": "Yes. I’m DC. Deaf. You…?",
+          "link": "Yes. I’m DC. Deaf. You…?",
+          "pid": "2"
+        }
+      ],
+      "name": "Untitled passage",
+      "pid": "1",
+      "position": {
+        "x": "200",
+        "y": "100"
+      }
+    },
+    {
+      "text": "Cellmate (reading) \n[[Chico. You need to pay attention here. People watch each other. If you look weak or lost, it can be a problem.]]\n",
+      "links": [
+        {
+          "name": "Chico. You need to pay attention here. People watch each other. If you look weak or lost, it can be a problem.",
+          "link": "Chico. You need to pay attention here. People watch each other. If you look weak or lost, it can be a problem.",
+          "pid": "3"
+        }
+      ],
+      "name": "Yes. I’m DC. Deaf. You…?",
+      "pid": "2",
+      "position": {
+        "x": "325",
+        "y": "225"
+      }
+    },
+    {
+      "text": "[DC writes again, a bit tense.]\n\n[[Should I talk to anyone?]]\n",
+      "links": [
+        {
+          "name": "Should I talk to anyone?",
+          "link": "Should I talk to anyone?",
+          "pid": "4"
+        }
+      ],
+      "name": "Chico. You need to pay attention here. People watch each other. If you look weak or lost, it can be a problem.",
+      "pid": "3",
+      "position": {
+        "x": "425",
+        "y": "325"
+      }
+    },
+    {
+      "text": "Chico (speaking, pointing to the notebook and then to himself) \n\n[[Not at first. Stay apart until you see who you can trust. I’ll keep an eye out, but you have to handle things yourself too. That’s how people respect you.]]\n",
+      "links": [
+        {
+          "name": "Not at first. Stay apart until you see who you can trust. I’ll keep an eye out, but you have to handle things yourself too. That’s how people respect you.",
+          "link": "Not at first. Stay apart until you see who you can trust. I’ll keep an eye out, but you have to handle things yourself too. That’s how people respect you.",
+          "pid": "5"
+        }
+      ],
+      "name": "Should I talk to anyone?",
+      "pid": "4",
+      "position": {
+        "x": "525",
+        "y": "450"
+      }
+    },
+    {
+      "text": "[DC writes again.]\n\n[[How do I know who to trust?]]\n",
+      "links": [
+        {
+          "name": "How do I know who to trust?",
+          "link": "How do I know who to trust?",
+          "pid": "6"
+        }
+      ],
+      "name": "Not at first. Stay apart until you see who you can trust. I’ll keep an eye out, but you have to handle things yourself too. That’s how people respect you.",
+      "pid": "5",
+      "position": {
+        "x": "650",
+        "y": "575"
+      }
+    },
+    {
+      "text": "Chico (speaking, even tone):\n[[You watch. Pay attention to how people act, not what they say. Respect isn’t given.]]\n\n",
+      "links": [
+        {
+          "name": "You watch. Pay attention to how people act, not what they say. Respect isn’t given.",
+          "link": "You watch. Pay attention to how people act, not what they say. Respect isn’t given.",
+          "pid": "7"
+        }
+      ],
+      "name": "How do I know who to trust?",
+      "pid": "6",
+      "position": {
+        "x": "800",
+        "y": "675"
+      }
+    },
+    {
+      "text": "[DC signs \"thank you.\" Chico just nods. Chico quietly shreds the page DC wrote on and tosses the pieces into the trash.]\n",
+      "name": "You watch. Pay attention to how people act, not what they say. Respect isn’t given.",
+      "pid": "7",
+      "position": {
+        "x": "975",
+        "y": "825"
+      }
+    }
+  ],
+  "name": "DC Cellie Convo",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.0",
+  "ifid": "1B52802A-EED8-435A-ACF4-D847AFBC3249"
+}
