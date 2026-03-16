@@ -153,7 +153,7 @@ public class PlayerLogic : MonoBehaviour
             menuPanel.SetActive(false);
             _input.cursorInputForLook = true;
         }
-        ClearCanvas();
+        //ClearCanvas();
         
     }
     public void LockCursor()

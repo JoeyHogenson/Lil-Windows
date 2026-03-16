@@ -1,11 +1,30 @@
 using UnityEngine;
-
+using PixelCrushers.DialogueSystem;
+using System.Collections;
+using TMPro;
 public class RFI : MonoBehaviour
 {
+    private bool visitedLibrary;
+
+    public GameObject blackSquare;
+
+    public Transform lawLibrary;
+    public Transform commissary;
+    public Transform segPosition;
+
+    public GameObject player;
+    public GameObject eventTextObject;
+    public TextMeshProUGUI eventText;
     public GameObject lawLibraryCheck;
-    public GameObject mailCheck;
+    public GameObject propertyCheck;
     public GameObject VisitationCheck;
     public GameObject commissaryCheck;
+    public GameObject housingCheck;
+    public GameObject lawLibraryButton;
+    public GameObject property;
+    public GameObject Visitation;
+    public GameObject commissaryButton;
+    public GameObject housing;
     public GameObject LawLibraryDoor;
     public GameObject commissaryDoor;
     
@@ -20,16 +39,54 @@ public class RFI : MonoBehaviour
     {
         
     }
+    /*public void ClearAllButtons()
+    {
+        for(int i = 0; i < checkmarks.Length; i++)
+        {
+            checkmarks[i].SetActive(false);
+        }
+        
+    }*/
     public void Submit()
     {
-        if(lawLibraryCheck)
+        if(lawLibraryCheck && visitedLibrary == false)
         {
-            //access to the law library
-            LawLibraryDoor.transform.localRotation = Quaternion.Euler(-90f,0,180f);
+            visitedLibrary = true;
+            //LawLibraryDoor.transform.localRotation = Quaternion.Euler(-90f,0,180f);
+            eventText.text = "The law library is now open. Go there to request access for special commissary. You will have one minute.";
+            Invoke("RemoveText",5f);
+            Invoke("TeleportLawLibrary",5f);
+            
         }
-        if(commissaryCheck)
+        else if(commissaryCheck && visitedLibrary == true)
         {
             commissaryDoor.transform.localRotation = Quaternion.Euler(-90f,0,180f);
+            Invoke("TeleportCommissary",5f);
         }
     }
+    public void RemoveText()
+    {
+        eventTextObject.SetActive(false);
+    }
+    public void TeleportLawLibrary()
+    {
+        player.SetActive(false);
+        Debug.Log("Hmm");
+        player.transform.position = lawLibrary.position;
+        player.SetActive(true);
+        Invoke("TeleportToSeg", 60f);
+    }
+    public void TeleportCommissary()
+    {
+        player.SetActive(false);
+        player.transform.position = commissary.position;
+        player.SetActive(true);
+    }
+    public void TeleportToSeg()
+    {
+        player.SetActive(false);
+        player.transform.position = segPosition.position;
+        player.SetActive(true);
+    }
+
 }

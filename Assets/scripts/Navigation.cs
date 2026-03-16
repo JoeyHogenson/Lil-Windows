@@ -33,7 +33,6 @@ public class Navigation : MonoBehaviour
             agent.isStopped = false;
             COAnimator.SetBool("isWalking",true);
             COAnimator.SetBool("isStanding",false);
-            Debug.Log("doing this");
             agent.destination = player.position;
         }
         else

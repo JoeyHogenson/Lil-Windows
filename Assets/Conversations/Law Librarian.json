@@ -1,0 +1,192 @@
+{
+  "passages": [
+    {
+      "text": "Copying costs 10 cents a page. You'll need to share with me what you need. \n\n[[yes, I'd like a copy]] \n[[this is my first time]]",
+      "links": [
+        {
+          "name": "yes, I'd like a copy",
+          "link": "yes, I'd like a copy",
+          "pid": "10"
+        },
+        {
+          "name": "this is my first time",
+          "link": "this is my first time",
+          "pid": "6"
+        }
+      ],
+      "name": "How does copying work?",
+      "pid": "1",
+      "position": {
+        "x": "100",
+        "y": "325"
+      }
+    },
+    {
+      "text": "No problem. You'll get it. Nice work on getting here. I'm always here working on my own case. I can help with copies.\n\n[[what's up, yea I need a copy]] \n[[explore the resources]] \n[[How does copying work?]]",
+      "links": [
+        {
+          "name": "what's up, yea I need a copy",
+          "link": "what's up, yea I need a copy",
+          "pid": "8"
+        },
+        {
+          "name": "explore the resources",
+          "link": "explore the resources",
+          "pid": "5"
+        },
+        {
+          "name": "How does copying work?",
+          "link": "How does copying work?",
+          "pid": "1"
+        }
+      ],
+      "name": "Sorta, but confused",
+      "pid": "2",
+      "position": {
+        "x": "1075",
+        "y": "100"
+      },
+      "tags": [
+        "Player",
+        "Robert"
+      ]
+    },
+    {
+      "text": "Hi, I'm Robert the law librarian. You good?\n\n[[Sorta, but confused]] \n[[what's up, yea I need a copy]] \n[[this is my first time]]\n[[explore the resources]]",
+      "links": [
+        {
+          "name": "Sorta, but confused",
+          "link": "Sorta, but confused",
+          "pid": "2"
+        },
+        {
+          "name": "what's up, yea I need a copy",
+          "link": "what's up, yea I need a copy",
+          "pid": "8"
+        },
+        {
+          "name": "this is my first time",
+          "link": "this is my first time",
+          "pid": "6"
+        },
+        {
+          "name": "explore the resources",
+          "link": "explore the resources",
+          "pid": "5"
+        }
+      ],
+      "name": "Welcome to the Law Library",
+      "pid": "3",
+      "position": {
+        "x": "475",
+        "y": "50"
+      }
+    },
+    {
+      "text": "Ok here's the form. (Use the link below the game to use the form)",
+      "name": "copy please",
+      "pid": "4",
+      "position": {
+        "x": "300",
+        "y": "625"
+      }
+    },
+    {
+      "text": "Access the library below the game.",
+      "name": "explore the resources",
+      "pid": "5",
+      "position": {
+        "x": "475",
+        "y": "800"
+      }
+    },
+    {
+      "text": "I'm here to help you learn more about your rights. and do leagal research. \n\n[[what do I do]]\n[[where do I start]]",
+      "links": [
+        {
+          "name": "what do I do",
+          "link": "what do I do",
+          "pid": "7"
+        },
+        {
+          "name": "where do I start",
+          "link": "where do I start",
+          "pid": "9"
+        }
+      ],
+      "name": "this is my first time",
+      "pid": "6",
+      "position": {
+        "x": "625",
+        "y": "375"
+      }
+    },
+    {
+      "text": "The law library and the law librian provide you with access to state statues and policies and procedures for this insitution. You can do research during the time you are allowed in here. You can also request copies.\n\n[[what's up, yea I need a copy]]",
+      "links": [
+        {
+          "name": "what's up, yea I need a copy",
+          "link": "what's up, yea I need a copy",
+          "pid": "8"
+        }
+      ],
+      "name": "what do I do",
+      "pid": "7",
+      "position": {
+        "x": "1125",
+        "y": "700"
+      }
+    },
+    {
+      "text": "Ok here's the form. (Use the link below the game to use the form)",
+      "name": "what's up, yea I need a copy",
+      "pid": "8",
+      "position": {
+        "x": "725",
+        "y": "200"
+      }
+    },
+    {
+      "text": "Good question, my advice is to explore the resources. It used to be that you had to know the code names and numbers in order to cross reference, but now you can use the dialog box and it will compile your answers. You can always cross reference from there. \n\n[[explore the resources]]\n[[copy please]]",
+      "links": [
+        {
+          "name": "explore the resources",
+          "link": "explore the resources",
+          "pid": "5"
+        },
+        {
+          "name": "copy please",
+          "link": "copy please",
+          "pid": "4"
+        }
+      ],
+      "name": "where do I start",
+      "pid": "9",
+      "position": {
+        "x": "800",
+        "y": "625"
+      }
+    },
+    {
+      "text": "Wonderful. I will need you to share exactly what you need with me through this form. It can take up to three days. But, I try to work fast so that it is in the library for you the next time you visit. \n\n[[copy please]]",
+      "links": [
+        {
+          "name": "copy please",
+          "link": "copy please",
+          "pid": "4"
+        }
+      ],
+      "name": "yes, I'd like a copy",
+      "pid": "10",
+      "position": {
+        "x": "375",
+        "y": "425"
+      }
+    }
+  ],
+  "name": "Legal Copy Procedure",
+  "startnode": "3",
+  "creator": "Twine",
+  "creator-version": "2.11.0",
+  "ifid": "6F57B69C-FAD8-45E8-8920-DFEAC31D3818"
+}

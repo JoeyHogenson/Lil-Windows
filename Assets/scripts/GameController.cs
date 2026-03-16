@@ -153,8 +153,8 @@ public class GameController : MonoBehaviour
         }
         if(!_lockdownFired && Time.time >= lockdown && dayCount == 2)
         {
-            Lockdown();
-            _lockdownFired = true;
+            //Lockdown();
+            //_lockdownFired = true;
         }
     }
     void SetEvents()
@@ -313,7 +313,7 @@ public class GameController : MonoBehaviour
     }
     void SetEnd()
     {
-        end = daystart + 600;
+        end = daystart + 300;
     }
     void SetThoughts()
     {

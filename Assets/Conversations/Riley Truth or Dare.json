@@ -1,0 +1,328 @@
+{
+  "passages": [
+    {
+      "text": "Let's play truth or dare, i'll start.\n[[Truth]]\n[[Dare]]",
+      "links": [
+        {
+          "name": "Truth",
+          "link": "Truth",
+          "pid": "16"
+        },
+        {
+          "name": "Dare",
+          "link": "Dare",
+          "pid": "5"
+        }
+      ],
+      "name": " Join in the vent conversation.",
+      "pid": "1",
+      "position": {
+        "x": "625",
+        "y": "250"
+      }
+    },
+    {
+      "text": "",
+      "name": "Being trans in prison means you don’t just do time — you get studied. At intake, they ask the questions. Are you transgender? Have you been assaulted before? Do you think you’re at risk? You can feel the room shift when you answer. From that point on, you’re not just a person — you’re a category. In population, you’re always aware of yourself. How you walk. How you talk. Who’s watching. Some people leave you alone. Some don’t. Staff might use the wrong name like it’s nothing. Medical care turns into paperwork and waiting and hoping someone believes you. If they decide you’re “too vulnerable,” they move you for “protection.” That usually means isolation. A locked door is still a locked door, even if they say it’s for your own good. You learn to calculate everything. Who’s safe. When to correct someone. When to let it go. You get good at shrinking, or at standing still. Mostly, it’s exhausting. Trying to survive. Trying not to disappear.",
+      "pid": "2",
+      "position": {
+        "x": "325",
+        "y": "775"
+      }
+    },
+    {
+      "text": "“Brutus?”\nYou say it softly, like you’re testing whether the name will turn on you.\nBrutus betrayed a friend for the republic.\nI wonder what you think you’re saving in here.",
+      "name": "Brutus",
+      "pid": "3",
+      "position": {
+        "x": "100",
+        "y": "400"
+      }
+    },
+    {
+      "text": "Accepted, cool.\n\nLet me know when you learn about Alaska DOC Policy 808.19",
+      "name": "Challenge accepted, I guess",
+      "pid": "4",
+      "position": {
+        "x": "550",
+        "y": "825"
+      }
+    },
+    {
+      "text": "I dare you to sneak a peek at the manual in the law library\n\n[[That sounds like a lot of work...]] \n[[Sneak a peek? Shoudn't that be accessible to us when we ask?]]\n[[Why? What good can all that legalese do?]]\n[[I'm so bored, i'd say yes to about anyting, so challenge accepted, I guess...]]",
+      "links": [
+        {
+          "name": "That sounds like a lot of work...",
+          "link": "That sounds like a lot of work...",
+          "pid": "15"
+        },
+        {
+          "name": "Sneak a peek? Shoudn't that be accessible to us when we ask?",
+          "link": "Sneak a peek? Shoudn't that be accessible to us when we ask?",
+          "pid": "13"
+        },
+        {
+          "name": "Why? What good can all that legalese do?",
+          "link": "Why? What good can all that legalese do?",
+          "pid": "17"
+        },
+        {
+          "name": "I'm so bored, i'd say yes to about anyting, so challenge accepted, I guess...",
+          "link": "I'm so bored, i'd say yes to about anyting, so challenge accepted, I guess...",
+          "pid": "9"
+        }
+      ],
+      "name": "Dare",
+      "pid": "5",
+      "position": {
+        "x": "850",
+        "y": "525"
+      }
+    },
+    {
+      "text": "Tell me more \n\n[[Being trans in prison means you don’t just do time — you get studied. At intake, they ask the questions. Are you transgender? Have you been assaulted before? Do you think you’re at risk? You can feel the room shift when you answer. From that point on, you’re not just a person — you’re a category. In population, you’re always aware of yourself. How you walk. How you talk. Who’s watching. Some people leave you alone. Some don’t. Staff might use the wrong name like it’s nothing. Medical care turns into paperwork and waiting and hoping someone believes you. If they decide you’re “too vulnerable,” they move you for “protection.” That usually means isolation. A locked door is still a locked door, even if they say it’s for your own good. You learn to calculate everything. Who’s safe. When to correct someone. When to let it go. You get good at shrinking, or at standing still. Mostly, it’s exhausting. Trying to survive. Trying not to disappear.]]",
+      "links": [
+        {
+          "name": "Being trans in prison means you don’t just do time — you get studied. At intake, they ask the questions. Are you transgender? Have you been assaulted before? Do you think you’re at risk? You can feel the room shift when you answer. From that point on, you’re not just a person — you’re a category. In population, you’re always aware of yourself. How you walk. How you talk. Who’s watching. Some people leave you alone. Some don’t. Staff might use the wrong name like it’s nothing. Medical care turns into paperwork and waiting and hoping someone believes you. If they decide you’re “too vulnerable,” they move you for “protection.” That usually means isolation. A locked door is still a locked door, even if they say it’s for your own good. You learn to calculate everything. Who’s safe. When to correct someone. When to let it go. You get good at shrinking, or at standing still. Mostly, it’s exhausting. Trying to survive. Trying not to disappear.",
+          "link": "Being trans in prison means you don’t just do time — you get studied. At intake, they ask the questions. Are you transgender? Have you been assaulted before? Do you think you’re at risk? You can feel the room shift when you answer. From that point on, you’re not just a person — you’re a category. In population, you’re always aware of yourself. How you walk. How you talk. Who’s watching. Some people leave you alone. Some don’t. Staff might use the wrong name like it’s nothing. Medical care turns into paperwork and waiting and hoping someone believes you. If they decide you’re “too vulnerable,” they move you for “protection.” That usually means isolation. A locked door is still a locked door, even if they say it’s for your own good. You learn to calculate everything. Who’s safe. When to correct someone. When to let it go. You get good at shrinking, or at standing still. Mostly, it’s exhausting. Trying to survive. Trying not to disappear.",
+          "pid": "2"
+        }
+      ],
+      "name": "Didn't fight. Didn't break a rule. Didn't even raise my voice. Just failed their little math problem about bodies and boxes.",
+      "pid": "6",
+      "position": {
+        "x": "150",
+        "y": "650"
+      }
+    },
+    {
+      "text": "Cool, tell Robert hi.",
+      "name": "Hmm okay, challenge accepted, I guess",
+      "pid": "7",
+      "position": {
+        "x": "675",
+        "y": "925"
+      }
+    },
+    {
+      "text": "Tell me more\n\n[[Being trans in prison means you don’t just do time — you get studied. At intake, they ask the questions. Are you transgender? Have you been assaulted before? Do you think you’re at risk? You can feel the room shift when you answer. From that point on, you’re not just a person — you’re a category. In population, you’re always aware of yourself. How you walk. How you talk. Who’s watching. Some people leave you alone. Some don’t. Staff might use the wrong name like it’s nothing. Medical care turns into paperwork and waiting and hoping someone believes you. If they decide you’re “too vulnerable,” they move you for “protection.” That usually means isolation. A locked door is still a locked door, even if they say it’s for your own good. You learn to calculate everything. Who’s safe. When to correct someone. When to let it go. You get good at shrinking, or at standing still. Mostly, it’s exhausting. Trying to survive. Trying not to disappear.]]",
+      "links": [
+        {
+          "name": "Being trans in prison means you don’t just do time — you get studied. At intake, they ask the questions. Are you transgender? Have you been assaulted before? Do you think you’re at risk? You can feel the room shift when you answer. From that point on, you’re not just a person — you’re a category. In population, you’re always aware of yourself. How you walk. How you talk. Who’s watching. Some people leave you alone. Some don’t. Staff might use the wrong name like it’s nothing. Medical care turns into paperwork and waiting and hoping someone believes you. If they decide you’re “too vulnerable,” they move you for “protection.” That usually means isolation. A locked door is still a locked door, even if they say it’s for your own good. You learn to calculate everything. Who’s safe. When to correct someone. When to let it go. You get good at shrinking, or at standing still. Mostly, it’s exhausting. Trying to survive. Trying not to disappear.",
+          "link": "Being trans in prison means you don’t just do time — you get studied. At intake, they ask the questions. Are you transgender? Have you been assaulted before? Do you think you’re at risk? You can feel the room shift when you answer. From that point on, you’re not just a person — you’re a category. In population, you’re always aware of yourself. How you walk. How you talk. Who’s watching. Some people leave you alone. Some don’t. Staff might use the wrong name like it’s nothing. Medical care turns into paperwork and waiting and hoping someone believes you. If they decide you’re “too vulnerable,” they move you for “protection.” That usually means isolation. A locked door is still a locked door, even if they say it’s for your own good. You learn to calculate everything. Who’s safe. When to correct someone. When to let it go. You get good at shrinking, or at standing still. Mostly, it’s exhausting. Trying to survive. Trying not to disappear.",
+          "pid": "2"
+        }
+      ],
+      "name": "I told them who I was.",
+      "pid": "8",
+      "position": {
+        "x": "475",
+        "y": "650"
+      }
+    },
+    {
+      "text": "",
+      "name": "I'm so bored, i'd say yes to about anyting, so challenge accepted, I guess...",
+      "pid": "9",
+      "position": {
+        "x": "1050",
+        "y": "825"
+      }
+    },
+    {
+      "text": "Who kncocks? Is it you?\n\n[[Brutus]]\n[[Les Misérables Cat]]",
+      "links": [
+        {
+          "name": "Brutus",
+          "link": "Brutus",
+          "pid": "3"
+        },
+        {
+          "name": "Les Misérables Cat",
+          "link": "Les Misérables Cat",
+          "pid": "11"
+        }
+      ],
+      "name": "Knock twice — a code for ‘still here.’",
+      "pid": "10",
+      "position": {
+        "x": "175",
+        "y": "200"
+      }
+    },
+    {
+      "text": "“Les Misérables Cat.”\n\nHe survives on crumbs.\nHe hides when the light changes.\nHe comes out when the coast is clear.",
+      "name": "Les Misérables Cat",
+      "pid": "11",
+      "position": {
+        "x": "850",
+        "y": "1150"
+      }
+    },
+    {
+      "text": "C'mon, you have to had done something...\n\n\n[[Being trans in prison means you don’t just do time — you get studied. At intake, they ask the questions. Are you transgender? Have you been assaulted before? Do you think you’re at risk? You can feel the room shift when you answer. From that point on, you’re not just a person — you’re a category. In population, you’re always aware of yourself. How you walk. How you talk. Who’s watching. Some people leave you alone. Some don’t. Staff might use the wrong name like it’s nothing. Medical care turns into paperwork and waiting and hoping someone believes you. If they decide you’re “too vulnerable,” they move you for “protection.” That usually means isolation. A locked door is still a locked door, even if they say it’s for your own good. You learn to calculate everything. Who’s safe. When to correct someone. When to let it go. You get good at shrinking, or at standing still. Mostly, it’s exhausting. Trying to survive. Trying not to disappear.]]",
+      "links": [
+        {
+          "name": "Being trans in prison means you don’t just do time — you get studied. At intake, they ask the questions. Are you transgender? Have you been assaulted before? Do you think you’re at risk? You can feel the room shift when you answer. From that point on, you’re not just a person — you’re a category. In population, you’re always aware of yourself. How you walk. How you talk. Who’s watching. Some people leave you alone. Some don’t. Staff might use the wrong name like it’s nothing. Medical care turns into paperwork and waiting and hoping someone believes you. If they decide you’re “too vulnerable,” they move you for “protection.” That usually means isolation. A locked door is still a locked door, even if they say it’s for your own good. You learn to calculate everything. Who’s safe. When to correct someone. When to let it go. You get good at shrinking, or at standing still. Mostly, it’s exhausting. Trying to survive. Trying not to disappear.",
+          "link": "Being trans in prison means you don’t just do time — you get studied. At intake, they ask the questions. Are you transgender? Have you been assaulted before? Do you think you’re at risk? You can feel the room shift when you answer. From that point on, you’re not just a person — you’re a category. In population, you’re always aware of yourself. How you walk. How you talk. Who’s watching. Some people leave you alone. Some don’t. Staff might use the wrong name like it’s nothing. Medical care turns into paperwork and waiting and hoping someone believes you. If they decide you’re “too vulnerable,” they move you for “protection.” That usually means isolation. A locked door is still a locked door, even if they say it’s for your own good. You learn to calculate everything. Who’s safe. When to correct someone. When to let it go. You get good at shrinking, or at standing still. Mostly, it’s exhausting. Trying to survive. Trying not to disappear.",
+          "pid": "2"
+        }
+      ],
+      "name": "Nothing",
+      "pid": "12",
+      "position": {
+        "x": "325",
+        "y": "650"
+      }
+    },
+    {
+      "text": "Sneak a peek?\n\nThat’s kind of the point — you’re not really supposed to own it in here.\n\nYeah, it’s supposed to be accessible when we ask. That’s what they say. \n\nIn SHU, you don’t just walk to a shelf. You request it. You wait. If the officer’s busy, short-staffed, or just not in the mood, it doesn’t happen. And if you ask again too soon, now you’re being pushy.\n\nEven when they do bring it, you get a few minutes standing at the door, trying to skim policies written in legal language that references three other policies you don’t have.\n\nSo yeah — it should be accessible, but it's still a challenge.\n\n[[Challenge accepted, I guess]]",
+      "links": [
+        {
+          "name": "Challenge accepted, I guess",
+          "link": "Challenge accepted, I guess",
+          "pid": "4"
+        }
+      ],
+      "name": "Sneak a peek? Shoudn't that be accessible to us when we ask?",
+      "pid": "13",
+      "position": {
+        "x": "1175",
+        "y": "675"
+      }
+    },
+    {
+      "text": "",
+      "name": "Stay silent.",
+      "pid": "14",
+      "position": {
+        "x": "950",
+        "y": "225"
+      }
+    },
+    {
+      "text": "It is, they don't make it easy, but your rights are worth it.\n\n[[Challenge accepted, I guess]]",
+      "links": [
+        {
+          "name": "Challenge accepted, I guess",
+          "link": "Challenge accepted, I guess",
+          "pid": "4"
+        }
+      ],
+      "name": "That sounds like a lot of work...",
+      "pid": "15",
+      "position": {
+        "x": "650",
+        "y": "600"
+      }
+    },
+    {
+      "text": "What'd you do get in here?\n\n[[Nothing]]\n[[I told them who I was.]]\n[[Didn't fight. Didn't break a rule. Didn't even raise my voice. Just failed their little math problem about bodies and boxes.]]",
+      "links": [
+        {
+          "name": "Nothing",
+          "link": "Nothing",
+          "pid": "12"
+        },
+        {
+          "name": "I told them who I was.",
+          "link": "I told them who I was.",
+          "pid": "8"
+        },
+        {
+          "name": "Didn't fight. Didn't break a rule. Didn't even raise my voice. Just failed their little math problem about bodies and boxes.",
+          "link": "Didn't fight. Didn't break a rule. Didn't even raise my voice. Just failed their little math problem about bodies and boxes.",
+          "pid": "6"
+        }
+      ],
+      "name": "Truth",
+      "pid": "16",
+      "position": {
+        "x": "375",
+        "y": "500"
+      }
+    },
+    {
+      "text": "What good can it do?\n\nIt’s not about the fancy words.\n\nIt’s about knowing what they’re supposed to do versus what they’re actually doing.\n\nThe guidebook lays out timelines. Reviews. Access to property. How long you can be in here before someone has to look at your case again. How to file a grievance. What counts as ‘protective custody’ and what they owe you while you’re in it.\n\nWithout it, everything feels arbitrary. Like whatever happens to you just… happens.\n\nWith it, at least you can say, ‘No, that’s not what your policy says.’\n\nIt doesn’t fix the system. It doesn’t open the door.\n\nBut it gives you something solid to stand on in a place where most of the ground keeps shifting.\n\n[[Hmm okay, challenge accepted, I guess]]\n[[do you have a bug in your zone too?]]",
+      "links": [
+        {
+          "name": "Hmm okay, challenge accepted, I guess",
+          "link": "Hmm okay, challenge accepted, I guess",
+          "pid": "7"
+        },
+        {
+          "name": "do you have a bug in your zone too?",
+          "link": "do you have a bug in your zone too?",
+          "pid": "19"
+        }
+      ],
+      "name": "Why? What good can all that legalese do?",
+      "pid": "17",
+      "position": {
+        "x": "850",
+        "y": "825"
+      }
+    },
+    {
+      "text": "Yeah, me too. Sometimes I miss the noise. The normal kind.  Now it’s just me, the hum, and my head. Want to play telephone through the vents?  I need a distraction, bad.\n[[ Join in the vent conversation.]]\n[[Stay silent.]]\n[[Knock twice — a code for ‘still here.’]]",
+      "links": [
+        {
+          "name": " Join in the vent conversation.",
+          "link": " Join in the vent conversation.",
+          "pid": "1"
+        },
+        {
+          "name": "Stay silent.",
+          "link": "Stay silent.",
+          "pid": "14"
+        },
+        {
+          "name": "Knock twice — a code for ‘still here.’",
+          "link": "Knock twice — a code for ‘still here.’",
+          "pid": "10"
+        }
+      ],
+      "name": "You awake...",
+      "pid": "18",
+      "position": {
+        "x": "625",
+        "y": "50"
+      }
+    },
+    {
+      "text": "Of course I do. Still haven't named her..or him. I've been thinking about \n\n[[Les Misérables Cat]]\n\n[[something else]]",
+      "links": [
+        {
+          "name": "Les Misérables Cat",
+          "link": "Les Misérables Cat",
+          "pid": "11"
+        },
+        {
+          "name": "something else",
+          "link": "something else",
+          "pid": "20"
+        }
+      ],
+      "name": "do you have a bug in your zone too?",
+      "pid": "19",
+      "position": {
+        "x": "950",
+        "y": "1000"
+      }
+    },
+    {
+      "text": "are you sure it's a bug?",
+      "name": "something else",
+      "pid": "20",
+      "position": {
+        "x": "1150",
+        "y": "1200"
+      }
+    }
+  ],
+  "name": "Reily",
+  "startnode": "18",
+  "creator": "Twine",
+  "creator-version": "2.11.0",
+  "ifid": "FB0B7BD5-7940-4457-8E61-7BF75CE8E942"
+}

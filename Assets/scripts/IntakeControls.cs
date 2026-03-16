@@ -31,7 +31,7 @@ public class IntakeControls : MonoBehaviour
     {
         if(GameController.GetComponent<GameController>().dayCount == 1)
         {
-            StartCoroutine(WaitForSecondAudio(23));
+            StartCoroutine(WaitForSecondAudio(74));
             if(didFirstPlay == false)
             {
                 
