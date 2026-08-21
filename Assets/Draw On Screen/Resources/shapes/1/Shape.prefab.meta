@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b78078ab8ba96554e9d81b735d8a79b7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 21878
+  packageName: Draw On Screen
+  packageVersion: 1.0.7
+  assetPath: Assets/Draw On Screen/Resources/shapes/1/Shape.prefab
+  uploadId: 863604

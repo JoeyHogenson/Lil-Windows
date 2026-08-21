@@ -1,0 +1,48 @@
+{
+  "passages": [
+    {
+      "text": "This is test body text. Run this Dialogue if my_variable is 5 and then set it to be 1 greater. Setting a \"Look at Manual\" quest to active. Then link to 2 player options.\n\nConditions: Variable[\"my_variable\"] == 5;\n\nScript: SetQuestState(\"Look at Manual\", \"active\"); \nVariable[\"my_variable\"] = Variable[\"my_variable\"] + 1;\n\n[[Player Option 1 Conditions: Variable[\"bugTalk\"] == 1;]]\n[[Player Option 2]]",
+      "links": [
+        {
+          "name": "Player Option 1 Conditions: Variable[\"bugTalk\"] == 1;",
+          "link": "Player Option 1 Conditions: Variable[\"bugTalk\"] == 1;",
+          "pid": "2"
+        },
+        {
+          "name": "Player Option 2",
+          "link": "Player Option 2",
+          "pid": "3"
+        }
+      ],
+      "name": "Untitled Passage",
+      "pid": "1",
+      "position": {
+        "x": "1075",
+        "y": "175"
+      }
+    },
+    {
+      "text": "",
+      "name": "Player Option 1 Conditions: Variable[\"bugTalk\"] == 1;",
+      "pid": "2",
+      "position": {
+        "x": "775",
+        "y": "400"
+      }
+    },
+    {
+      "text": "",
+      "name": "Player Option 2",
+      "pid": "3",
+      "position": {
+        "x": "1200",
+        "y": "400"
+      }
+    }
+  ],
+  "name": "Logic Testing",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.0",
+  "ifid": "8BEAC19E-0B53-41AA-BB78-CCF2AD76F9CE"
+}

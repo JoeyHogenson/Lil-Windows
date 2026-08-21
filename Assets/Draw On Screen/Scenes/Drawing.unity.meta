@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3d6aa40caa0f93144b12251999699055
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 21878
+  packageName: Draw On Screen
+  packageVersion: 1.0.7
+  assetPath: Assets/Draw On Screen/Scenes/Drawing.unity
+  uploadId: 863604

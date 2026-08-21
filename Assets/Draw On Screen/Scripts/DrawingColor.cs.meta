@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0ad3d388f302d884696f6596b70aca10
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 100
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 21878
+  packageName: Draw On Screen
+  packageVersion: 1.0.7
+  assetPath: Assets/Draw On Screen/Scripts/DrawingColor.cs
+  uploadId: 863604

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 570e79c99ce831b45a7142c46f533b15
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 21878
+  packageName: Draw On Screen
+  packageVersion: 1.0.7
+  assetPath: Assets/Draw On Screen/Documentation/README.txt
+  uploadId: 863604

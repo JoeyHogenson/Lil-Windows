@@ -25,11 +25,11 @@ Material:
     m_TexEnvs:
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 2.82, y: 4.08}
+        m_Scale: {x: 1.1, y: 1.69}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 8ab7de14069ccaf4baebe6d0c2bcd049, type: 3}
-        m_Scale: {x: 2.82, y: 4.08}
+        m_Scale: {x: 1.1, y: 1.69}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats: []

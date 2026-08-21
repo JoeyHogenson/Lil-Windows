@@ -1,0 +1,48 @@
+{
+  "passages": [
+    {
+      "text": "This is the first dialogue to appear in the conversation.\n\n[[I have the item. Conditions: Variable[\"hasItem\"] == true;]]\n[[Player Option 2]]",
+      "links": [
+        {
+          "name": "I have the item. Conditions: Variable[\"hasItem\"] == true;",
+          "link": "I have the item. Conditions: Variable[\"hasItem\"] == true;",
+          "pid": "3"
+        },
+        {
+          "name": "Player Option 2",
+          "link": "Player Option 2",
+          "pid": "2"
+        }
+      ],
+      "name": "Untitled Passage",
+      "pid": "1",
+      "position": {
+        "x": "975",
+        "y": "100"
+      }
+    },
+    {
+      "text": "",
+      "name": "Player Option 2",
+      "pid": "2",
+      "position": {
+        "x": "1200",
+        "y": "300"
+      }
+    },
+    {
+      "text": "",
+      "name": "I have the item. Conditions: Variable[\"hasItem\"] == true;",
+      "pid": "3",
+      "position": {
+        "x": "700",
+        "y": "300"
+      }
+    }
+  ],
+  "name": "Logic Testing",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.0",
+  "ifid": "8BEAC19E-0B53-41AA-BB78-CCF2AD76F9CE"
+}

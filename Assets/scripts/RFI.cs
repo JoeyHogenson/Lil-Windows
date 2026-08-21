@@ -49,18 +49,17 @@ public class RFI : MonoBehaviour
     }*/
     public void Submit()
     {
-        if(lawLibraryCheck && visitedLibrary == false)
+        if(lawLibraryCheck.activeSelf && visitedLibrary == false)
         {
             visitedLibrary = true;
             //LawLibraryDoor.transform.localRotation = Quaternion.Euler(-90f,0,180f);
-            eventText.text = "The law library is now open. Go there to request access for special commissary. You will have one minute.";
+            eventText.text = "The law library is now open. Go there to request access for special commissary. Click 'E' on the door to teleport back";
             Invoke("RemoveText",5f);
             Invoke("TeleportLawLibrary",5f);
             
         }
-        else if(commissaryCheck && visitedLibrary == true)
+        else if(commissaryCheck.activeSelf)
         {
-            commissaryDoor.transform.localRotation = Quaternion.Euler(-90f,0,180f);
             Invoke("TeleportCommissary",5f);
         }
     }
@@ -71,16 +70,15 @@ public class RFI : MonoBehaviour
     public void TeleportLawLibrary()
     {
         player.SetActive(false);
-        Debug.Log("Hmm");
         player.transform.position = lawLibrary.position;
         player.SetActive(true);
-        Invoke("TeleportToSeg", 60f);
     }
     public void TeleportCommissary()
     {
         player.SetActive(false);
         player.transform.position = commissary.position;
         player.SetActive(true);
+        Invoke("TeleportToSeg",60f);
     }
     public void TeleportToSeg()
     {

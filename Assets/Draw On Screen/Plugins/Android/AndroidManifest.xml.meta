@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 21f7df22ca83f684dab79419ed59188f
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 21878
+  packageName: Draw On Screen
+  packageVersion: 1.0.7
+  assetPath: Assets/Draw On Screen/Plugins/Android/AndroidManifest.xml
+  uploadId: 863604

@@ -4,12 +4,20 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - CinemachineTarget
-  - NPC
+  - WheelColor
+  - ColorsWheel
+  - DrawingShape
+  - Menu
+  - DrawSize
+  - DrawingArea
+  - line-render-carrier
+  - MiddleCam
+  - LowCam
   - Terrain
   - Wall
+  - CinemachineTarget
   - Manual
-  - Newspaper
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -17,7 +25,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Drawing Sprite
   - 
   - 
   - 

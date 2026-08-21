@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0f30bc646418fc5419bc18db732cc2c1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 21878
+  packageName: Draw On Screen
+  packageVersion: 1.0.7
+  assetPath: Assets/Draw On Screen/Scripts/ScreenshotExporter.cs
+  uploadId: 863604

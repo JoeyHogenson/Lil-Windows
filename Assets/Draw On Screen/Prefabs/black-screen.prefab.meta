@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fd65de41a24aed74da65ed9f9538ac8b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 21878
+  packageName: Draw On Screen
+  packageVersion: 1.0.7
+  assetPath: Assets/Draw On Screen/Prefabs/black-screen.prefab
+  uploadId: 863604

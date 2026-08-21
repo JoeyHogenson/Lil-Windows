@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: add5d7ed8ea48724ab1cfe6a0b22a494
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 21878
+  packageName: Draw On Screen
+  packageVersion: 1.0.7
+  assetPath: Assets/Draw On Screen/Prefabs/lineRenderer.prefab
+  uploadId: 863604

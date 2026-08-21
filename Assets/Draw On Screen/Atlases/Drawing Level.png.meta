@@ -1,0 +1,1111 @@
+fileFormatVersion: 2
+guid: 26e5263766a358f4b9fbbff5b23ab6aa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: circle (Drawing Level)
+  - first:
+      213: 21300002
+    second: beck (Drawing Level)
+  - first:
+      213: 21300004
+    second: menu (Drawing Level)
+  - first:
+      213: 21300006
+    second: home (Drawing Level)
+  - first:
+      213: 21300008
+    second: trash (Drawing Level)
+  - first:
+      213: 21300010
+    second: pencil_click (Drawing Level)
+  - first:
+      213: 21300012
+    second: Missing
+  - first:
+      213: 21300014
+    second: brush_click (Drawing Level)
+  - first:
+      213: 21300016
+    second: delete_click (Drawing Level)
+  - first:
+      213: 21300018
+    second: or (Drawing Level)
+  - first:
+      213: 21300020
+    second: circle_color (Drawing Level)
+  - first:
+      213: 21300022
+    second: pu (Drawing Level)
+  - first:
+      213: 21300024
+    second: pi (Drawing Level)
+  - first:
+      213: 21300026
+    second: res (Drawing Level)
+  - first:
+      213: 21300028
+    second: bla (Drawing Level)
+  - first:
+      213: 21300030
+    second: ye (Drawing Level)
+  - first:
+      213: 21300032
+    second: gr (Drawing Level)
+  - first:
+      213: 21300034
+    second: Missing
+  - first:
+      213: 21300036
+    second: trash-click (Drawing Level)
+  - first:
+      213: 21300038
+    second: home-click (Drawing Level)
+  - first:
+      213: 21300040
+    second: menu-click (Drawing Level)
+  - first:
+      213: 21300042
+    second: exit (Drawing Level)
+  - first:
+      213: 21300044
+    second: camera (Drawing Level)
+  - first:
+      213: 21300046
+    second: right (Drawing Level)
+  - first:
+      213: 21300048
+    second: left (Drawing Level)
+  - first:
+      213: 21300050
+    second: blu (Drawing Level)
+  - first:
+      213: 21300052
+    second: menu-window (Drawing Level)
+  - first:
+      213: 21300054
+    second: back (Drawing Level)
+  - first:
+      213: 21300056
+    second: size-circle (Drawing Level)
+  - first:
+      213: 21300058
+    second: main-size-circle (Drawing Level)
+  - first:
+      213: 21300060
+    second: border_white (Drawing Level)
+  - first:
+      213: 21300062
+    second: sound_off (Drawing Level)
+  - first:
+      213: 21300064
+    second: sound_on (Drawing Level)
+  - first:
+      213: 21300066
+    second: facebook (Drawing Level)
+  - first:
+      213: 21300068
+    second: music_off (Drawing Level)
+  - first:
+      213: 21300070
+    second: music_on (Drawing Level)
+  - first:
+      213: 21300072
+    second: aboutUs (Drawing Level)
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: circle (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 1011
+        height: 1013
+      alignment: 9
+      pivot: {x: 0.49851632, y: 0.50148076}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d9a0115f6e079c44a93069b2c1a5a11
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beck (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 1
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d467dfcb6422d1e4c854e9fe5000ca88
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 1016
+        width: 495
+        height: 512
+      alignment: 9
+      pivot: {x: 0.51717174, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 105e57c9d8e510b4a9e8dd07c1b5be85
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1016
+        width: 500
+        height: 512
+      alignment: 9
+      pivot: {x: 0.508, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5d6c75cdaa6bfd42a8fe7b283100721
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trash (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 1
+        width: 498
+        height: 489
+      alignment: 9
+      pivot: {x: 0.5060241, y: 0.51124746}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6d15881fbdc7ff42a66605d1666e228
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pencil_click (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 2019
+        y: 911
+        width: 155
+        height: 487
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85f7f7fb60638bd409e431aa33fb2d54
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Missing
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5ef8c9c808c2814ba1bfc530774fe44
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_click (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 3023
+        y: 493
+        width: 100
+        height: 476
+      alignment: 9
+      pivot: {x: 0.48708007, y: 0.54071724}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b127d543b241e7468cb27a34111acac
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: delete_click (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 911
+        width: 212
+        height: 471
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab0fa2b416c773e4cbdb8ba9a4e5406d
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: or (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 3418
+        y: 887
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 129181d4d865ac2458ad248bd6e3d3d6
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle_color (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 993
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82424036b23a4a04a8850bb6b6f26e56
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pu (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 3735
+        y: 1
+        width: 256
+        height: 251
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5099602}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8848a7b0564482646a6b9830185d05a0
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pi (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 2390
+        y: 974
+        width: 251
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5099602, y: 0.4796748}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82cca3df34d9c6d41b3c5265a5d19467
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: res (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 2511
+        y: 1388
+        width: 250
+        height: 245
+      alignment: 9
+      pivot: {x: 0.488, y: 0.50612247}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f42049e497f329449a4dda7a77b3343
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bla (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 3676
+        y: 887
+        width: 249
+        height: 244
+      alignment: 9
+      pivot: {x: 0.48594376, y: 0.5081967}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c87e047a3ada5746886eaa274c29d2d
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ye (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 3766
+        y: 254
+        width: 249
+        height: 248
+      alignment: 9
+      pivot: {x: 0.48594376, y: 0.516129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8959730644c7764bbc1e7cccdf841ce
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gr (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 3418
+        y: 1145
+        width: 243
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5020576, y: 0.516129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e163901f796de4c4caef005eb80e2304
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Missing
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      alignment: 9
+      pivot: {x: 0.477551, y: 0.5020243}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f128f379544d4446a4a9007c178af77
+      internalID: 5677780486505070746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trash-click (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1022
+        width: 497
+        height: 489
+      alignment: 9
+      pivot: {x: 0.4969819, y: 0.5010225}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b47816ab89a281438ad8f735783ee0a
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home-click (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 2542
+        y: 1
+        width: 496
+        height: 488
+      alignment: 9
+      pivot: {x: 0.49596775, y: 0.5102459}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd7ba7758b505ad49b97dce70d2ae895
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu-click (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 1530
+        width: 495
+        height: 487
+      alignment: 9
+      pivot: {x: 0.49292928, y: 0.50308007}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f20dd58354f4714b81db6bcc89b41e6
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exit (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 1400
+        width: 476
+        height: 477
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5073375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74cce44cbcc98234eb52b9b1815f4733
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: camera (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 3298
+        y: 481
+        width: 466
+        height: 404
+      alignment: 9
+      pivot: {x: 0.5064378, y: 0.509901}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 209bd325e7937f84c9dcaf0663e3d305
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: right (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 2116
+        y: 1400
+        width: 393
+        height: 416
+      alignment: 9
+      pivot: {x: 0.5063613, y: 0.53846157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 902c6c5ea3d24b24bb4ed4d18e92dee0
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: left (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 3023
+        y: 971
+        width: 393
+        height: 415
+      alignment: 9
+      pivot: {x: 0.5114504, y: 0.4795181}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8af0566a5dc9994393a307c1c736ec1
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blu (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 2643
+        y: 974
+        width: 245
+        height: 247
+      alignment: 9
+      pivot: {x: 0.477551, y: 0.5020243}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba2a2ddb4a7e85b4dbc8954b0f1a829b
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu-window (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1530
+        width: 491
+        height: 497
+      alignment: 9
+      pivot: {x: 0.49490836, y: 0.501006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d641733cdefb2a46a2f188535d671f3
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: back (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 1022
+        width: 137
+        height: 492
+      alignment: 9
+      pivot: {x: 0.49270073, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e536d215bc20d264598eeaa86b787cf6
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: size-circle (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 2542
+        y: 491
+        width: 479
+        height: 481
+      alignment: 9
+      pivot: {x: 0.51356995, y: 0.5010395}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 388470aa3bef75244b174e280960aa01
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main-size-circle (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 1
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf37a028aca496941abc7eb36ed73c41
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: border_white (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 515
+        width: 505
+        height: 505
+      alignment: 9
+      pivot: {x: 0.5069307, y: 0.5029703}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0182f4ec10f6264fbf758a58e441ea9
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound_off (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 1521
+        y: 515
+        width: 496
+        height: 476
+      alignment: 9
+      pivot: {x: 0.49596775, y: 0.5042017}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe931d3783d5c704fbfc020b6b1f9b73
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound_on (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 492
+        width: 495
+        height: 417
+      alignment: 9
+      pivot: {x: 0.4888889, y: 0.51318944}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9114553b25d2834449a9c9e52e151fe1
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: facebook (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 3040
+        y: 1
+        width: 256
+        height: 490
+      alignment: 9
+      pivot: {x: 0.47265625, y: 0.5102041}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1587e01c37fb2d04c85c4ce3377e8f04
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_off (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 1530
+        width: 475
+        height: 485
+      alignment: 9
+      pivot: {x: 0.49052632, y: 0.50927836}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b95fa44b491c5004eb273982853a9a7b
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_on (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 3298
+        y: 1
+        width: 435
+        height: 478
+      alignment: 9
+      pivot: {x: 0.5356322, y: 0.50209206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6873373b02e5d39489cf66f9dd621682
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aboutUs (Drawing Level)
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 1516
+        width: 126
+        height: 453
+      alignment: 9
+      pivot: {x: 0.61904764, y: 0.5121413}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c891dd12dfc92464e85204c20a815ad6
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Missing: 21300012
+      aboutUs (Drawing Level): 21300072
+      back (Drawing Level): 21300054
+      beck (Drawing Level): 21300002
+      bla (Drawing Level): 21300028
+      blu (Drawing Level): 21300050
+      border_white (Drawing Level): 21300060
+      brush_click (Drawing Level): 21300014
+      camera (Drawing Level): 21300044
+      circle (Drawing Level): 21300000
+      circle_color (Drawing Level): 21300020
+      delete_click (Drawing Level): 21300016
+      exit (Drawing Level): 21300042
+      facebook (Drawing Level): 21300066
+      gr (Drawing Level): 21300032
+      home (Drawing Level): 21300006
+      home-click (Drawing Level): 21300038
+      left (Drawing Level): 21300048
+      main-size-circle (Drawing Level): 21300058
+      menu (Drawing Level): 21300004
+      menu-click (Drawing Level): 21300040
+      menu-window (Drawing Level): 21300052
+      music_off (Drawing Level): 21300068
+      music_on (Drawing Level): 21300070
+      or (Drawing Level): 21300018
+      pencil_click (Drawing Level): 21300010
+      pi (Drawing Level): 21300024
+      pu (Drawing Level): 21300022
+      res (Drawing Level): 21300026
+      right (Drawing Level): 21300046
+      size-circle (Drawing Level): 21300056
+      sound_off (Drawing Level): 21300062
+      sound_on (Drawing Level): 21300064
+      trash (Drawing Level): 21300008
+      trash-click (Drawing Level): 21300036
+      ye (Drawing Level): 21300030
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 21878
+  packageName: Draw On Screen
+  packageVersion: 1.0.7
+  assetPath: Assets/Draw On Screen/Atlases/Drawing Level.png
+  uploadId: 863604

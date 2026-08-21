@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 53fbffdef4a68654295dd2696798deb8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 21878
+  packageName: Draw On Screen
+  packageVersion: 1.0.7
+  assetPath: Assets/Draw On Screen/animation/Tools.controller
+  uploadId: 863604

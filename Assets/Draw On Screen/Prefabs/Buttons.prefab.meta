@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c377abb96d0adde498249b8f0842b56a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 21878
+  packageName: Draw On Screen
+  packageVersion: 1.0.7
+  assetPath: Assets/Draw On Screen/Prefabs/Buttons.prefab
+  uploadId: 863604

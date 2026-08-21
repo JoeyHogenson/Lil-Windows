@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4d21816a8344a0a46a53afc36bd1a93a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 21878
+  packageName: Draw On Screen
+  packageVersion: 1.0.7
+  assetPath: Assets/Draw On Screen/animation/blackScreenFadingIn.anim
+  uploadId: 863604

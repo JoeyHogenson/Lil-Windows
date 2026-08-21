@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7a7278bd5df4ad449a347697dfcae510
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 21878
+  packageName: Draw On Screen
+  packageVersion: 1.0.7
+  assetPath: Assets/Draw On Screen/animation/background (Drawing Level).controller
+  uploadId: 863604

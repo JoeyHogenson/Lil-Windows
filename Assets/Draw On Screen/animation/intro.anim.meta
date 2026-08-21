@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7206b033483bc14498b4c692abbc491d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 21878
+  packageName: Draw On Screen
+  packageVersion: 1.0.7
+  assetPath: Assets/Draw On Screen/animation/intro.anim
+  uploadId: 863604

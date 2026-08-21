@@ -1,0 +1,372 @@
+{
+  "passages": [
+    {
+      "text": "[[Name it Brutus]]\n[[Name is Les Miserables Cat]]\n[[Name it something else]]\n[[Don't name it]]",
+      "links": [
+        {
+          "name": "Name it Brutus",
+          "link": "Name it Brutus",
+          "pid": "15"
+        },
+        {
+          "name": "Name is Les Miserables Cat",
+          "link": "Name is Les Miserables Cat",
+          "pid": "14"
+        },
+        {
+          "name": "Name it something else",
+          "link": "Name it something else",
+          "pid": "16"
+        },
+        {
+          "name": "Don't name it",
+          "link": "Don't name it",
+          "pid": "11"
+        }
+      ],
+      "name": "Are you real?",
+      "pid": "1",
+      "position": {
+        "x": "1100",
+        "y": "450"
+      }
+    },
+    {
+      "text": "You listen and you can hear the bug crawl.\n\n“Am I still myself?”\n\nThe bug pauses. You hear a voice, \"Define yourself.\"\n\n“My name,” you answer.\n\nYour name is yours.\n\n“My body.”\n\nThe bug moves closer but keeps distance.\n\nYou open your eyes. You take a breath. You exhale slowly.\n\nYou look down at your hands.\n\nThey are yours.\n\nThey have always been negotiating survival.\n\nYour eyes start to feel heavy\n\n[[Close them to rest]]",
+      "links": [
+        {
+          "name": "Close them to rest",
+          "link": "Close them to rest",
+          "pid": "9"
+        }
+      ],
+      "name": "Ask if you are still yourself",
+      "pid": "2",
+      "position": {
+        "x": "1475",
+        "y": "1350"
+      }
+    },
+    {
+      "text": "The voice from the vent answers, \"Justice is paperwork.\"\n\nWhat's it to you? Says the bug, says the voice. You aren't sure anymore.\n\nYou think. You aren't sure. Is justice one thing?\n\n[[Name it something else]]",
+      "links": [
+        {
+          "name": "Name it something else",
+          "link": "Name it something else",
+          "pid": "16"
+        }
+      ],
+      "name": "Ask it about justice",
+      "pid": "3",
+      "position": {
+        "x": "1000",
+        "y": "1300"
+      }
+    },
+    {
+      "text": "What do you want, Brutus? What do you need? What do I need?\n\n[[you need shelter]] \n[[I could share my last crumb]]\n[[Ask if you are still yourself]]",
+      "links": [
+        {
+          "name": "you need shelter",
+          "link": "you need shelter",
+          "pid": "19"
+        },
+        {
+          "name": "I could share my last crumb",
+          "link": "I could share my last crumb",
+          "pid": "13"
+        },
+        {
+          "name": "Ask if you are still yourself",
+          "link": "Ask if you are still yourself",
+          "pid": "2"
+        }
+      ],
+      "name": "Ask the bug what it wants",
+      "pid": "4",
+      "position": {
+        "x": "350",
+        "y": "800"
+      }
+    },
+    {
+      "text": "You ok? How did your research go last night at the law library? \n\n\"The computer was down.\"\n\nSigh.\n\nThe voice shares, \"my court date is next week.\"\n\nYour eyes are feeling heavy, and you are laying on your cot.\n\n[[You scared?]] \n[[Close them to rest]]",
+      "links": [
+        {
+          "name": "You scared?",
+          "link": "You scared?",
+          "pid": "18"
+        },
+        {
+          "name": "Close them to rest",
+          "link": "Close them to rest",
+          "pid": "9"
+        }
+      ],
+      "name": "Ask the vent why it sounds tired",
+      "pid": "5",
+      "position": {
+        "x": "1200",
+        "y": "1000"
+      }
+    },
+    {
+      "text": "Thanks for the tip about the law library and just generally being here. \n\n[[You scared?]] \n[[Ask it about justice]]",
+      "links": [
+        {
+          "name": "You scared?",
+          "link": "You scared?",
+          "pid": "18"
+        },
+        {
+          "name": "Ask it about justice",
+          "link": "Ask it about justice",
+          "pid": "3"
+        }
+      ],
+      "name": "Ask the voice in the vent if it trusts you",
+      "pid": "6",
+      "position": {
+        "x": "625",
+        "y": "1275"
+      }
+    },
+    {
+      "text": "What does it mean to be something else? \n\n[[Ask if you are still yourself]]",
+      "links": [
+        {
+          "name": "Ask if you are still yourself",
+          "link": "Ask if you are still yourself",
+          "pid": "2"
+        }
+      ],
+      "name": "Ask what it means",
+      "pid": "7",
+      "position": {
+        "x": "1350",
+        "y": "775"
+      }
+    },
+    {
+      "text": "[[Name is Les Miserables Cat]] \n[[Name it something else]]",
+      "links": [
+        {
+          "name": "Name is Les Miserables Cat",
+          "link": "Name is Les Miserables Cat",
+          "pid": "14"
+        },
+        {
+          "name": "Name it something else",
+          "link": "Name it something else",
+          "pid": "16"
+        }
+      ],
+      "name": "Change the name",
+      "pid": "8",
+      "position": {
+        "x": "825",
+        "y": "1125"
+      }
+    },
+    {
+      "text": "You are tired and you fall asleep.",
+      "name": "Close them to rest",
+      "pid": "9",
+      "position": {
+        "x": "1750",
+        "y": "1175"
+      }
+    },
+    {
+      "text": "You close your eyes.\n\nThe bug keeps moving. You can hear it.\n\nYou keep your eyes closed.\n\nWhat kind of closing is this?\n\n[[Close them to rest]]\n[[Ask if you are still yourself]]",
+      "links": [
+        {
+          "name": "Close them to rest",
+          "link": "Close them to rest",
+          "pid": "9"
+        },
+        {
+          "name": "Ask if you are still yourself",
+          "link": "Ask if you are still yourself",
+          "pid": "2"
+        }
+      ],
+      "name": "Close your eyes",
+      "pid": "10",
+      "position": {
+        "x": "1850",
+        "y": "825"
+      }
+    },
+    {
+      "text": "You decide not to name it.\n\nNaming makes things permanent.\n\nThe bug walks freely now.\n\nYou already named me, you hear it say.\n\nYour chest tightens.\n\n“I did not.”\n\nYou called me witness.",
+      "name": "Don't name it",
+      "pid": "11",
+      "position": {
+        "x": "950",
+        "y": "650"
+      }
+    },
+    {
+      "text": "The bug moves one antenna\n\n[[You scared?]]\n[[Are you real?]]",
+      "links": [
+        {
+          "name": "You scared?",
+          "link": "You scared?",
+          "pid": "18"
+        },
+        {
+          "name": "Are you real?",
+          "link": "Are you real?",
+          "pid": "1"
+        }
+      ],
+      "name": "Hey, there little guy",
+      "pid": "12",
+      "position": {
+        "x": "700",
+        "y": "450"
+      }
+    },
+    {
+      "text": "You lick your finger and press it on a crumb. You bring it over. \n\n\"Here you go.\"\n\nYou are feeling tired.\n\n[[Close your eyes]]",
+      "links": [
+        {
+          "name": "Close your eyes",
+          "link": "Close your eyes",
+          "pid": "10"
+        }
+      ],
+      "name": "I could share my last crumb",
+      "pid": "13",
+      "position": {
+        "x": "375",
+        "y": "1300"
+      }
+    },
+    {
+      "text": "“Les Misérables Cat,” you announce quietly.\n\nThe bug continues walking the perimeter of the cell like it’s inspecting property lines.\n\n“That’s not a cat,” the vent says.\n\n“It survives,” you reply.\n\nThe bug stops near a crumb you missed at dinner.\n\n“You think it’s Jean Valjean or Javert?” the voice asks.\n\nYou watch the way the bug carries the crumb like it matters.\n\nI am hungry, it says.\nThat’s all.\n\n[[I could share my last crumb]] \n[[Ask it about justice]]\n[[Ask the vent why it sounds tired]]",
+      "links": [
+        {
+          "name": "I could share my last crumb",
+          "link": "I could share my last crumb",
+          "pid": "13"
+        },
+        {
+          "name": "Ask it about justice",
+          "link": "Ask it about justice",
+          "pid": "3"
+        },
+        {
+          "name": "Ask the vent why it sounds tired",
+          "link": "Ask the vent why it sounds tired",
+          "pid": "5"
+        }
+      ],
+      "name": "Name is Les Miserables Cat",
+      "pid": "14",
+      "position": {
+        "x": "1125",
+        "y": "700"
+      }
+    },
+    {
+      "text": "“Brutus,” you say.\n\nThe bug freezes.\n\nFrom the vent:\n\n“Bold choice.”\n\nYou look up. “You heard that?”\n\n“I hear everything in here.”\n\nThe bug moves again. Slow. Deliberate.\n\n“Et tu?” you whisper when it disappears under the cot.\n\n[[Ask the bug what it wants]]\n[[Ask the voice in the vent if it trusts you]]\n[[Change the name]]",
+      "links": [
+        {
+          "name": "Ask the bug what it wants",
+          "link": "Ask the bug what it wants",
+          "pid": "4"
+        },
+        {
+          "name": "Ask the voice in the vent if it trusts you",
+          "link": "Ask the voice in the vent if it trusts you",
+          "pid": "6"
+        },
+        {
+          "name": "Change the name",
+          "link": "Change the name",
+          "pid": "8"
+        }
+      ],
+      "name": "Name it Brutus",
+      "pid": "15",
+      "position": {
+        "x": "675",
+        "y": "625"
+      }
+    },
+    {
+      "text": "“Something Else.”\n\nSilence\n\n“That’s not a helpful,\" says the voice from the vent.\n\n“It’s accurate,” you say.\n\nSilence again.\n\nThe bug climbs the wall.\n\nYou are also something else, you hear the bug say.\n\n[[Ask what it means]]\n[[Ask if you are still yourself]]\n[[Close your eyes]]",
+      "links": [
+        {
+          "name": "Ask what it means",
+          "link": "Ask what it means",
+          "pid": "7"
+        },
+        {
+          "name": "Ask if you are still yourself",
+          "link": "Ask if you are still yourself",
+          "pid": "2"
+        },
+        {
+          "name": "Close your eyes",
+          "link": "Close your eyes",
+          "pid": "10"
+        }
+      ],
+      "name": "Name it something else",
+      "pid": "16",
+      "position": {
+        "x": "1625",
+        "y": "550"
+      }
+    },
+    {
+      "text": "[[Hey, there little guy]]",
+      "links": [
+        {
+          "name": "Hey, there little guy",
+          "link": "Hey, there little guy",
+          "pid": "12"
+        }
+      ],
+      "name": "Untitled Passage",
+      "pid": "17",
+      "position": {
+        "x": "700",
+        "y": "325"
+      }
+    },
+    {
+      "text": "Silence.\n\nYou think to yourself me too. \n\nYou watch the bug for awhile and go back to cleaning your milk carton. \n\nEventually the bug comes around again.\n\n[[Hey, there little guy]]",
+      "links": [
+        {
+          "name": "Hey, there little guy",
+          "link": "Hey, there little guy",
+          "pid": "12"
+        }
+      ],
+      "name": "You scared?",
+      "pid": "18",
+      "position": {
+        "x": "250",
+        "y": "525"
+      }
+    },
+    {
+      "text": "You wash the milk carton from dinner. It will make a nice bug hotel.",
+      "name": "you need shelter",
+      "pid": "19",
+      "position": {
+        "x": "125",
+        "y": "1000"
+      }
+    }
+  ],
+  "name": "Bug Improv",
+  "startnode": "17",
+  "creator": "Twine",
+  "creator-version": "2.11.0",
+  "ifid": "6DD40B02-C67B-48EA-B214-AA4D0079CA3F"
+}

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1d931bbc520846b418c64e41bedc3469
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 21878
+  packageName: Draw On Screen
+  packageVersion: 1.0.7
+  assetPath: Assets/Draw On Screen/animation/drawResizerBackgroundFadeIn.anim
+  uploadId: 863604

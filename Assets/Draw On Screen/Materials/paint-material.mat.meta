@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 56727fca3c318ee4c989c170841d2129
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 21878
+  packageName: Draw On Screen
+  packageVersion: 1.0.7
+  assetPath: Assets/Draw On Screen/Materials/paint-material.mat
+  uploadId: 863604
