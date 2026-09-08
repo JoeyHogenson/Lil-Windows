@@ -15,7 +15,7 @@ public class Clock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        clock.rotation = Quaternion.Euler((daystart/gameController.GetComponent<GameController>().end)*-360,0,0);
+        clock.rotation = Quaternion.Euler(0,0,(daystart/gameController.GetComponent<GameController>().end*-360));
         //-1*(daystart/gameController.GetComponent<GameController>().end)
     }
 }

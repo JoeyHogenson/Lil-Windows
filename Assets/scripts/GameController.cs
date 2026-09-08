@@ -208,6 +208,7 @@ public class GameController : MonoBehaviour
 
         Debug.Log("[GameController] CountEvent triggered at " + Time.time);
         StartCoroutine(StopWalkingAfterSeconds());
+        count += 600;
     }
 
     //script that checks if player is in the count zone
@@ -230,7 +231,10 @@ public class GameController : MonoBehaviour
         //if (eventText != null) eventText.text = "Get to the commissary for meal time";
         if (eventTextObject != null) eventTextObject.SetActive(true);
         isCommissary = true;
-        Debug.Log("[GameController] CommisaryEvent triggered at " + Time.time);
+        player.SetActive(false);
+        player.transform.position = playerStartingPosition.position;
+        player.SetActive(true);
+        
         //path NPC characters to Commissary
     }
     void MailEvent()
@@ -304,16 +308,16 @@ public class GameController : MonoBehaviour
     }
     void SetCount()
     {
-        count = daystart + 10;
+        count = daystart + 600;
     }
     void SetCommisary()
     {
-        commisary = daystart + 180;
+        commisary = daystart + 1000;
         isCommissary = false;
     }
     void SetEnd()
     {
-        end = daystart + 300;
+        end = daystart + 1800;
     }
     void SetThoughts()
     {
@@ -365,9 +369,6 @@ public class GameController : MonoBehaviour
                 npc.NPCspeed = 0;
             }
         }
-        player.SetActive(false);
-        player.transform.position = playerStartingPosition.position;
-        player.SetActive(true);
         StartDay();
     }
     IEnumerator HideTextAfterSeconds()

@@ -22,6 +22,8 @@ public class PlayerLogic : MonoBehaviour
     public GameObject loadSlots;
     public int count;
 
+    public GameObject blueImage;
+
     public bool startDialogue;
 
     private bool canvasCleared;
@@ -143,6 +145,7 @@ public class PlayerLogic : MonoBehaviour
     {
         PixelCrushers.DialogueSystem.DialogueManager.StopConversation();
         _input.cursorInputForLook = true;
+        blueImage.SetActive(false);
         if(menuPanel.activeSelf == false && canvasCleared == true)
         {
             menuPanel.SetActive(true);

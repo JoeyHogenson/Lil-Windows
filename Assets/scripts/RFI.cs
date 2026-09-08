@@ -58,10 +58,12 @@ public class RFI : MonoBehaviour
             Invoke("TeleportLawLibrary",5f);
             
         }
-        else if(commissaryCheck.activeSelf)
+        /*else if(commissaryCheck.activeSelf)
         {
             Invoke("TeleportCommissary",5f);
-        }
+        }*/
+        QuestLog.SetQuestState("Submit an RFI","success");
+
     }
     public void RemoveText()
     {
