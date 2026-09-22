@@ -109561,7 +109561,7 @@ MonoBehaviour:
   playerStartingPosition: {fileID: 2114359287}
   lockdownPrisonerAnimator: {fileID: 1724611633}
   end: 120
-  dayCount: 2
+  dayCount: 1
   blackSquare: {fileID: 1011637175}
   thoughtsObject: {fileID: 1995772230}
   ThoughtsText: {fileID: 0}
