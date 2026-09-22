@@ -80,14 +80,12 @@ public class PlayerLogic : MonoBehaviour
     }
 
     //fires regardless of how the conversation ended (completed, StopConversation(), interrupted
-    //by another conversation, etc.) so neither the cursor nor look input can get stuck in the
-    //dialogue's state
+    //by another conversation, etc.) so look input can't get stuck disabled from the dialogue.
+    //Update() derives the actual OS cursor state from cursorInputForLook every frame
     private void OnConversationEnded(Transform actor)
     {
         if(!menuPanel.activeSelf)
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
             _input.cursorInputForLook = true;
         }
     }
@@ -98,8 +96,12 @@ public class PlayerLogic : MonoBehaviour
         //reasserted every frame instead of only on menu toggle: in the Editor,
         //pressing Escape while locked triggers Unity's own auto-unlock, which
         //races with our toggle and otherwise leaves the cursor stuck until
-        //something (e.g. alt-tab) forces Windows to resync it
-        if(menuPanel.activeSelf || PixelCrushers.DialogueSystem.DialogueManager.isConversationActive)
+        //something (e.g. alt-tab) forces Windows to resync it.
+        //driven off cursorInputForLook (not menuPanel/dialogue state directly) since
+        //that's the flag every UI in the scene already toggles via LockCursor()/
+        //UnlockCursor() - menu, dialogue responses, the newspaper, etc. - so any of
+        //them reliably gets a visible cursor instead of only the ones special-cased here
+        if(!_input.cursorInputForLook)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
