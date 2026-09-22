@@ -150,14 +150,18 @@ public class PlayerLogic : MonoBehaviour
         {
             menuPanel.SetActive(true);
             _input.cursorInputForLook = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         else if(menuPanel.activeSelf == true)
         {
             menuPanel.SetActive(false);
             _input.cursorInputForLook = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         //ClearCanvas();
-        
+
     }
     public void LockCursor()
     {
