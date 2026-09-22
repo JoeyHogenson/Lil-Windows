@@ -58,6 +58,7 @@ public class PlayerLogic : MonoBehaviour
 
     private void OnEnable()
     {
+        PixelCrushers.DialogueSystem.DialogueManager.instance.conversationStarted += OnConversationStarted;
         PixelCrushers.DialogueSystem.DialogueManager.instance.conversationEnded += OnConversationEnded;
     }
 
@@ -65,18 +66,29 @@ public class PlayerLogic : MonoBehaviour
     {
         if(PixelCrushers.DialogueSystem.DialogueManager.hasInstance)
         {
+            PixelCrushers.DialogueSystem.DialogueManager.instance.conversationStarted -= OnConversationStarted;
             PixelCrushers.DialogueSystem.DialogueManager.instance.conversationEnded -= OnConversationEnded;
         }
     }
 
+    //driven off the Dialogue System's own C# events instead of per-conversation Inspector
+    //UnityEvents (OnConversationStart/End), since not every conversation/ending (e.g. walking
+    //away, some dialogue options) has those wired up to call LockCursor()/UnlockCursor()
+    private void OnConversationStarted(Transform actor)
+    {
+        _input.cursorInputForLook = false;
+    }
+
     //fires regardless of how the conversation ended (completed, StopConversation(), interrupted
-    //by another conversation, etc.) so the cursor can't get stuck in the dialogue's unlocked state
+    //by another conversation, etc.) so neither the cursor nor look input can get stuck in the
+    //dialogue's state
     private void OnConversationEnded(Transform actor)
     {
         if(!menuPanel.activeSelf)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            _input.cursorInputForLook = true;
         }
     }
 
