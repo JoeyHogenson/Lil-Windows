@@ -53,7 +53,31 @@ public class PlayerLogic : MonoBehaviour
         Cursor.visible = false;
         _input.cursorInputForLook = true;
         _input.cursorLocked = true;
-        
+
+    }
+
+    private void OnEnable()
+    {
+        PixelCrushers.DialogueSystem.DialogueManager.instance.conversationEnded += OnConversationEnded;
+    }
+
+    private void OnDisable()
+    {
+        if(PixelCrushers.DialogueSystem.DialogueManager.hasInstance)
+        {
+            PixelCrushers.DialogueSystem.DialogueManager.instance.conversationEnded -= OnConversationEnded;
+        }
+    }
+
+    //fires regardless of how the conversation ended (completed, StopConversation(), interrupted
+    //by another conversation, etc.) so the cursor can't get stuck in the dialogue's unlocked state
+    private void OnConversationEnded(Transform actor)
+    {
+        if(!menuPanel.activeSelf)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 
     // Update is called once per frame
