@@ -196,6 +196,14 @@ public class PlayerLogic : MonoBehaviour
     }
     public void Menu()
     {
+        //Escape closes whatever's on top (a newspaper) instead of opening the pause
+        //menu underneath it - otherwise Escape only reset look/cursor state and left
+        //the newspaper on screen
+        if(Newspaper.CurrentlyOpen != null)
+        {
+            Newspaper.CurrentlyOpen.ShutNewspaper();
+            return;
+        }
         PixelCrushers.DialogueSystem.DialogueManager.StopConversation();
         _input.cursorInputForLook = true;
         blueImage.SetActive(false);

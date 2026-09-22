@@ -68,6 +68,7 @@ public class GameController : MonoBehaviour
     }
     void Start()
     {
+        Debug.Log("[GameController] Start: dayCount=" + dayCount + " (StartDay will " + (dayCount != 1 ? "" : "NOT ") + "be called from Start)");
         if(dayCount != 1)
         {
             StartDay();
@@ -75,7 +76,7 @@ public class GameController : MonoBehaviour
     }
     public void StartDay()
     {
-        // called only when the player goes to bed, sets time for next morning, and events for the next day. 
+        // called only when the player goes to bed, sets time for next morning, and events for the next day.
         daystart = Time.time;
         ResetDayFlags();
         SetEvents();
@@ -85,7 +86,8 @@ public class GameController : MonoBehaviour
         blackSquare.SetActive(false);
         daystarted = true;
 
-        Debug.Log("[GameController] StartDay: daystart=" + daystart + " count=" + count);
+        Debug.Log("[GameController] StartDay: dayCount=" + dayCount + " daystart=" + daystart + " count=" + count
+            + "\ncalled from:\n" + new System.Diagnostics.StackTrace(true));
 
     }
 
@@ -167,6 +169,7 @@ public class GameController : MonoBehaviour
         SetThoughts();
         SetBookBan();
         SetLockdown();
+        Debug.Log("[GameController] SetEvents: daystart=" + daystart + " end=" + end + " (day ends at Time.time=" + end + ")");
     }
     void CountDeadline()
     {
@@ -247,7 +250,7 @@ public class GameController : MonoBehaviour
         eventTextObject.SetActive(true);
         eventText.text = "The end of the day is nearing. Get to your cell or you will be teleported there.";
         //teleport characters back to starting position
-        Debug.Log("[GameController] EndOfDayEvent triggered at " + Time.time);
+        Debug.Log("[GameController] EndOfDayEvent triggered at Time.time=" + Time.time + " (dayCount " + dayCount + " -> " + (dayCount + 1) + ")");
         StartCoroutine(FadeToBlack());
         dayCount++;
     }

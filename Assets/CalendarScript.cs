@@ -15,6 +15,7 @@ public class CalendarScript : MonoBehaviour
         {
             calendarText = GetComponentInChildren<TMP_Text>();
         }
+        Debug.Log("[CalendarScript] Start on " + gameObject.name + ": gameController.dayCount=" + gameController.dayCount);
     }
 
     // Update is called once per frame
@@ -22,6 +23,7 @@ public class CalendarScript : MonoBehaviour
     {
         if(gameController.dayCount != displayedDay)
         {
+            Debug.Log("[CalendarScript] " + gameObject.name + " displayed day changing " + displayedDay + " -> " + gameController.dayCount + " at Time.time=" + Time.time);
             displayedDay = gameController.dayCount;
             calendarText.text = displayedDay.ToString();
         }

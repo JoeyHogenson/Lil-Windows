@@ -31321,6 +31321,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1667599722}
+    - target: {fileID: 7613362922838641958, guid: d81bd9f175b078a41a842c91c57ca6a5,
+        type: 3}
+      propertyPath: m_text
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8083479025997224675, guid: d81bd9f175b078a41a842c91c57ca6a5,
         type: 3}
       propertyPath: m_Name
@@ -111226,7 +111231,7 @@ MonoBehaviour:
   playerStartingPosition: {fileID: 2114359287}
   lockdownPrisonerAnimator: {fileID: 1724611633}
   end: 120
-  dayCount: 0
+  dayCount: 1
   blackSquare: {fileID: 1011637175}
   thoughtsObject: {fileID: 1995772230}
   ThoughtsText: {fileID: 0}

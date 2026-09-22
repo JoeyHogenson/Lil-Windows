@@ -15,16 +15,43 @@ public class Newspaper : MonoBehaviour
     public GameObject NewspaperController;
 
     public GameObject Buttons;
+
+    public bool IsOpen { get { return Buttons != null && Buttons.activeSelf; } }
+
+    //there are several newspaper props in the scene; this tracks whichever one is
+    //currently open so Escape (PlayerLogic.Menu) can close it without needing a
+    //reference to every individual newspaper
+    public static Newspaper CurrentlyOpen;
+
+    private float originalMoveSpeed;
+    private float originalSprintSpeed;
+    private bool wasOpen;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         count = 0;
         finalPage = newspaper.Length;
+        FirstPersonController controller = player.GetComponent<FirstPersonController>();
+        originalMoveSpeed = controller.MoveSpeed;
+        originalSprintSpeed = controller.SprintSpeed;
     }
     // Update is called once per frame
     void Update()
     {
-        
+        //reasserted every frame (same pattern as PlayerLogic's cursor handling) so opening/
+        //closing the newspaper reliably freezes/restores movement and cursor look, regardless
+        //of whatever UnityEvent actually toggled Buttons/newspaper[] active
+        bool isOpen = IsOpen;
+        if(isOpen != wasOpen)
+        {
+            FirstPersonController controller = player.GetComponent<FirstPersonController>();
+            controller.MoveSpeed = isOpen ? 0f : originalMoveSpeed;
+            controller.SprintSpeed = isOpen ? 0f : originalSprintSpeed;
+            player.GetComponent<StarterAssetsInputs>().cursorInputForLook = !isOpen;
+            wasOpen = isOpen;
+            CurrentlyOpen = isOpen ? this : null;
+        }
     }
     public void NextPage()
     {
