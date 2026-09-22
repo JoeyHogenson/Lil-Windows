@@ -6168,29 +6168,27 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "<div class=\"section-header\">SECTION 4 \uFFFD OFFENDER TRUST ACCOUNTS
-          / FUNDS</div>\n\n<div class=\"institutional\">\nPRISONER FUNDS \uFFFD 4.01\n\nAll
-          prisoner funds are maintained by the State by \nmeans of computerized accounting.
-          Funds may be \nreceived through the U.S. mail at any time. Funds \nmay
-          also be deposited at the facility by immediate \nfamily members Monday
-          through Friday, 8:00 a.m. \nto 4:00 p.m.\n\nCOMMISSARY \uFFFD 4.03\n\nYou
-          must have sufficient funds in your account on \nthe day you order commissary.
-          The money will be \ndeducted the same day.\n\nCommissary purchase limit
-          for Phase I prisoners \nis [var=25].00 per week.\n\nPhase I prisoners include:
-          newly remanded prisoners, \npretrial detainees, and those serving less
-          than \none year.\n</div>\n\n<div class=\"warning\">\nINDIGENT ORDERS \uFFFD
+        value: "PRISONER FUNDS \uFFFD 4.01\n\nAll prisoner funds are maintained by
+          the State by \nmeans of computerized accounting. Funds may be \nreceived
+          through the U.S. mail at any time. Funds \nmay also be deposited at the
+          facility by immediate \nfamily members Monday through Friday, 8:00 a.m.
+          \nto 4:00 p.m.\n\nCOMMISSARY \uFFFD 4.03\n\nYou must have sufficient funds
+          in your account on \nthe day you order commissary. The money will be \ndeducted
+          the same day.\n\nCommissary purchase limit for Phase I prisoners \nis [var=25].00
+          per week.\n\nPhase I prisoners include: newly remanded prisoners, \npretrial
+          detainees, and those serving less than \none year.\n\nINDIGENT ORDERS \uFFFD
           4.04\n\nAn indigent prisoner is one who has less than [var=20].00 \npresently
           available on their account and who has had \nno more than [var=50].00 in
           their account during the \npreceding 30 days. Indigent status is determined
           by \ncomputer and will be reflected on your prisoner \naccount statement.\n\nIndigent
           orders for five envelopes per week, writing \npaper, pencil, toothpaste,
           toothbrush, cup, comb, \nshampoo, and soap are to be filled at the same
-          time \non the Indigent Commissary Form.\n</div>\n\n<div class=\"player-thought\">\nYou
-          do the math on the indigent section. \nLess than [var=20] available. No
-          more than [var=50] in \nthe last 30 days.\nYou're not sure what's in your
-          account right now. \nYou're not sure how to find out.\nThere's a form for
-          the indigent supplies. \nYou'd need to submit a cop-out to get it.\nA cop-out
-          requires a form you also don't have yet.\n</div>\n\n---"
+          time \non the Indigent Commissary Form.\n\nYou do the math on the indigent
+          section. \nLess than [var=20] available. No more than [var=50] in \nthe
+          last 30 days.\nYou're not sure what's in your account right now. \nYou're
+          not sure how to find out.\nThere's a form for the indigent supplies. \nYou'd
+          need to submit a cop-out to get it.\nA cop-out requires a form you also
+          don't have yet.\n\n\n---"
         type: 0
         typeString: 
       - title: Sequence
@@ -6251,20 +6249,19 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "<div class=\"section-header\">SECTION 13 \uFFFD COUNT AND DAILY SCHEDULE</div>\n
-          \n<div class=\"institutional\">\nCOUNT TIMES \uFFFD 13.01\n\nCount is conducted
-          multiple times daily at the times \nposted in your living area.\n\nDuring
-          count, all prisoners in their living area will \nbe by their bunk. This
-          means a prisoner may not remain \nin a day room, may not remain on the
-          phone, may not \ncontinue a card game, may not stay in the shower.\n\nDuring
-          prisoner counts a prisoner will not talk to \nother prisoners or staff
-          while officers are in their \narea counting. During prisoner counts a prisoner
-          will \nnot move within their living area while count officers \nare present.\n\nAny
-          prisoner not in their living area during count will \nremain in the area
-          they are in until count is cleared.\n</div>\n\n<div class=\"player-thought\">\nCount
-          times are posted on the wall near the door. \nYou make a note to look at
-          them before anything else.\nIf count clears and you're somewhere you're
-          not \nsupposed to be, that's already a problem.\n</div>\n\n---"
+        value: "COUNT TIMES \uFFFD 13.01\n\nCount is conducted multiple times daily
+          at the times \nposted in your living area.\n\nDuring count, all prisoners
+          in their living area will \nbe by their bunk. This means a prisoner may
+          not remain \nin a day room, may not remain on the phone, may not \ncontinue
+          a card game, may not stay in the shower.\n\nDuring prisoner counts a prisoner
+          will not talk to \nother prisoners or staff while officers are in their
+          \narea counting. During prisoner counts a prisoner will \nnot move within
+          their living area while count officers \nare present.\n\nAny prisoner not
+          in their living area during count will \nremain in the area they are in
+          until count is cleared.\n\nCount times are posted on the wall near the
+          door. \nYou make a note to look at them before anything else.\nIf count
+          clears and you're somewhere you're not \nsupposed to be, that's already
+          a problem.\n\n---"
         type: 0
         typeString: 
       - title: Sequence
@@ -6325,24 +6322,22 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "<div class=\"section-header\">SECTION 9 \uFFFD LEGAL INFORMATION</div>\n\n<div
-          class=\"institutional\">\nLAW LIBRARY \uFFFD 9.01\n\nThe Law Library provides
-          assistance to prisoners in \nresearch and preparation of legal work. The
-          Law \nLibrarian assists prisoners in requesting materials \uFFFD \nthey
-          do not do the legal work for you.\n\nTo access the Law Library, sign up
-          on the Law Library \nlist in your living area. Staff collect the list \nnightly.
-          You must request access daily \uFFFD no one will \nbe automatically called.\n\nPrisoners
+        value: "LAW LIBRARY \uFFFD 9.01\n\nThe Law Library provides assistance to
+          prisoners in \nresearch and preparation of legal work. The Law \nLibrarian
+          assists prisoners in requesting materials \uFFFD \nthey do not do the legal
+          work for you.\n\nTo access the Law Library, sign up on the Law Library
+          \nlist in your living area. Staff collect the list \nnightly. You must
+          request access daily \uFFFD no one will \nbe automatically called.\n\nPrisoners
           may use the Law Library one hour per day.\n\nA prisoner has the right to
           receive assistance from \nanother prisoner in the use of the Law Library.
           A \nprisoner providing such assistance may not charge or \nreceive payment
           of any kind.\n\nLEGAL COPIES \uFFFD 9.02\n\nLegal copies cost 15 cents
           per page. Complete a \ndisbursement form with your name, offender number,
           \ndate, and number of copies. Copies will be returned \nwithin three working
-          days.\n\nAn indigent prisoner may have copies made, as required \nby the
-          court, at state expense.\n</div>\n\n<div class=\"player-thought\">\nYou'd
+          days.\n\nAn indigent prisoner may have copies made, as required \n\n\nYou'd
           have to sign up on a list today to get in \ntomorrow. You don't know where
           the list is yet.\nOne hour. That's what you get.\nYou file this away. You
-          might need it.\n</div>\n\n---"
+          might need it.\n\n---"
         type: 0
         typeString: 
       - title: Sequence
@@ -6403,20 +6398,18 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "<div class=\"section-header\">SECTION 3 \uFFFD MAIL</div>\n\n<div
-          class=\"institutional\">\nGENERAL MAIL \uFFFD 3.01\n\nPrisoners are responsible
-          for their own postage costs.\n\nYou may not receive postage stamps in the
-          mail. \nStamps must be purchased through commissary.\n\nOutgoing mail must
-          be addressed as follows:\n\n[Your name as booked]\nFairbanks Correctional
-          Center\n1931 Eagan Ave.\nFairbanks, AK 99701\n\nMail with any other return
-          address will be sent back \nto you and will not be mailed out of the institution.\n\nThe
+        value: "GENERAL MAIL \uFFFD 3.01\n\nPrisoners are responsible for their own
+          postage costs.\n\nYou may not receive postage stamps in the mail. \nStamps
+          must be purchased through commissary.\n\nOutgoing mail must be addressed
+          as follows:\n\n[Your name as booked]\nFairbanks Correctional Center\n1931
+          Eagan Ave.\nFairbanks, AK 99701\n\nMail with any other return address will
+          be sent back \nto you and will not be mailed out of the institution.\n\nThe
           institution will, at its expense, provide postage \nfor up to five pieces
           of mail per week for any \nprisoner determined to be indigent.\n\nDO NOT
-          SEAL OUTGOING MAIL.\n</div>\n\n<div class=\"player-thought\">\nYou'd need
-          a stamp to send anything.\nStamps come from commissary.\nCommissary requires
-          money.\nOr you qualify as indigent and submit a form.\nWhich requires a
-          cop-out.\nWhich requires a form.\n\nYou close that loop in your head and
-          leave it there.\n</div>\n\n---"
+          SEAL OUTGOING MAIL.\n\nYou'd need a stamp to send anything.\nStamps come
+          from commissary.\nCommissary requires money.\nOr you qualify as indigent
+          and submit a form.\nWhich requires a cop-out.\nWhich requires a form.\n\nYou
+          close that loop in your head and leave it there.\n\n---"
         type: 0
         typeString: 
       - title: Sequence
@@ -6477,23 +6470,22 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "<div class=\"section-header\">SECTION 6 \uFFFD TELEPHONES</div>\n\n<div
-          class=\"institutional\">\nTELEPHONES \uFFFD 6.01\n\nTelephone service at
-          this facility is operated by \nSecurus, Inc., a private contractor. It
-          is not \naffiliated with any local or long distance providers \nin Alaska.\n\nThe
-          telephones are in service between 8:00 a.m. \nand 10:00 p.m. daily.\n\nCalls
-          are limited to 15 minutes.\n\nAll long distance calls must be collect.
-          Phone cards \nand 800 numbers will not work. Prisoners cannot \nreceive
-          incoming calls.\n\nThe person you are calling must open an account with
-          \nSecurus in order to accept your call. They may do so \nby calling 1-800-844-6591.
-          In some cases a deposit \nwill be required.\n\nAll prisoners are required
-          to enter their pre-assigned \nPIN number when placing a call. Do not exchange
-          or \nallow other prisoners to use your PIN.\n\nFor security reasons, the
-          phones may be disabled at \nany time with little or no notice.\n</div>\n\n<div
-          class=\"player-thought\">\nFifteen minutes.\nThe person you want to call
-          needs an account first.\nYou try to remember if they would know to set
-          one up.\nYou don't know if they know you're here yet.\nYour PIN is on a
-          slip of paper somewhere in your \nintake paperwork. You need to find that.\n</div>\n\n---"
+        value: "TELEPHONES \uFFFD 6.01\n\nTelephone service at this facility is operated
+          by \nSecurus, Inc., a private contractor. It is not \naffiliated with any
+          local or long distance providers \nin Alaska.\n\nThe telephones are in
+          service between 8:00 a.m. \nand 10:00 p.m. daily.\n\nCalls are limited
+          to 15 minutes.\n\nAll long distance calls must be collect. Phone cards
+          \nand 800 numbers will not work. Prisoners cannot \nreceive incoming calls.\n\nThe
+          person you are calling must open an account with \nSecurus in order to
+          accept your call. They may do so \nby calling 1-800-844-6591. In some cases
+          a deposit \nwill be required.\n\nAll prisoners are required to enter their
+          pre-assigned \nPIN number when placing a call. Do not exchange or \nallow
+          other prisoners to use your PIN.\n\nFor security reasons, the phones may
+          be disabled at \nany time with little or no notice.\n\nFifteen minutes.\nThe
+          person you want to call needs an account first.\nYou try to remember if
+          they would know to set one up.\nYou don't know if they know you're here
+          yet.\nYour PIN is on a slip of paper somewhere in your \nintake paperwork.
+          You need to find that.\n\n---"
         type: 0
         typeString: 
       - title: Sequence
@@ -6556,7 +6548,7 @@ MonoBehaviour:
       - title: Dialogue Text
         value: "There is a handbook on the bunk. \nFAIRBANKS CORRECTIONAL CENTER
           \uFFFD PRISONER HANDBOOK.\nUpdated January 2014.\n\nOn the inside cover,
-          a stamp in red ink:\n\n\n<div class=\"stamp\">OFFENDER #: 00001</div>\n\nThat's
+          a stamp in red ink:\n\n<div class=\"stamp\">OFFENDER #: 00001</div>\n\nThat's
           you now. You already know it without thinking.\nThat's new.\n\nYou flip
           to the table of contents.\n\n---"
         type: 0
@@ -6649,26 +6641,24 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "<div class=\"section-header\">SECTION 10 \uFFFD COMMUNICATIONS BY
-          PRISONERS</div>\n\n<div class=\"institutional\">\nREQUEST FOR INTERVIEW
-          \uFFFD 10.01\n\nRequests for Interview (also called cop-outs) are used
-          \nto communicate with all staff. If you have a question \nor need, it must
-          be written on a Request for Interview \nform and submitted to the appropriate
-          staff member \nor program area.\n\nIf you are unsure which program or staff
-          member to \ncontact, address your request to the Shift Supervisor \nand
-          it will be directed accordingly.\n\nCompleted forms are placed in the cop-out
-          boxes located \non the walls of each living area. Shift Supervisors \npick
-          up forms once every 24 hours.\n\nYour name and offender number must be
-          on the form. \nState your reason briefly. Swearing and derogatory \nstatements
-          are not permitted.\n\nRequests for Interview are required for the following:\n\uFFFD
-          Law Library access\n\uFFFD Scheduled visitation\n\uFFFD Medical and dental
-          services  \n\uFFFD Indigent supply orders\n\uFFFD Commissary special requests\n\uFFFD
-          Classification questions\n\uFFFD Work assignment applications\n</div>\n\n<div
-          class=\"warning\">\nThere is no other way to make a formal request to staff.
-          \nIf it is not submitted in writing on the appropriate \nform, it will
-          not be processed.\n</div>\n\n<div class=\"player-thought\">\nYou look around
-          the cell for the form. \nYou don't see one yet. \nEverything here requires
-          a form you don't have yet \nto get the things you need to get the form.\n</div>\n\n---"
+        value: "REQUEST FOR INTERVIEW \uFFFD 10.01\n\nRequests for Interview (also
+          called cop-outs) are used \nto communicate with all staff. If you have
+          a question \nor need, it must be written on a Request for Interview \nform
+          and submitted to the appropriate staff member \nor program area.\n\nIf
+          you are unsure which program or staff member to \ncontact, address your
+          request to the Shift Supervisor \nand it will be directed accordingly.\n\nCompleted
+          forms are placed in the cop-out boxes located \non the walls of each living
+          area. Shift Supervisors \npick up forms once every 24 hours.\n\nYour name
+          and offender number must be on the form. \nState your reason briefly. Swearing
+          and derogatory \nstatements are not permitted.\n\nRequests for Interview
+          are required for the following:\n\uFFFD Law Library access\n\uFFFD Scheduled
+          visitation\n\uFFFD Medical and dental services  \n\uFFFD Indigent supply
+          orders\n\uFFFD Commissary special requests\n\uFFFD Classification questions\n\nThere
+          is no other way to make a formal request to staff. \nIf it is not submitted
+          in writing on the appropriate \nform, it will not be processed.\n\nYou
+          look around the cell for the form. \nYou don't see one yet. \nEverything
+          here requires a form you don't have yet \nto get the things you need to
+          get the form.\n\n\n---"
         type: 0
         typeString: 
       - title: Sequence
@@ -7344,7 +7334,7 @@ MonoBehaviour:
       isGroup: 0
       nodeColor: 
       delaySimStatus: 0
-      falseConditionAction: 
+      falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 15
@@ -7805,8 +7795,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 79.78365, y: 20.918861}
-    canvasZoom: 0.3700003
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.55000025
   - id: 16
     fields:
     - title: Title
@@ -8291,6 +8281,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: cbf4698a-ba7a-4905-b17c-d9d849329ffd
         type: 0
         typeString: 
       conversationID: 16
@@ -8790,6 +8784,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 142fad27-94da-40c4-8fc0-ceaae9516d59
+        type: 0
+        typeString: 
       conversationID: 16
       isRoot: 0
       isGroup: 0
@@ -8892,7 +8890,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Look at the manual in the cell before talking to me.
+        value: 'Hey, what do you want?
 
 '
         type: 0
@@ -8912,16 +8910,23 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: CurrentQuestState("Look at Manual") == "active"
+      outgoingLinks:
+      - originConversationID: 16
+        originDialogueID: 18
+        destinationConversationID: 16
+        destinationDialogueID: 20
+        isConnector: 0
+        priority: 2
+      conditionsString: CurrentQuestState("Submit an RFI") == "unassigned" or (CurrentQuestState("Submit
+        an RFI") == "active")
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 23.414665
-        y: 261.46338
+        x: 21.596481
+        y: 262.3725
         width: 160
         height: 30
     - id: 19
@@ -8979,8 +8984,116 @@ MonoBehaviour:
         y: 284.91812
         width: 160
         height: 30
+    - id: 20
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: I don't know
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 16
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 16
+        originDialogueID: 20
+        destinationConversationID: 16
+        destinationDialogueID: 21
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 22.50557
+        y: 346.91794
+        width: 160
+        height: 30
+    - id: 21
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Go read the manual in your cell
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: cb888421-57b6-4d4e-b881-7c76d19ecd40
+        type: 0
+        typeString: 
+      conversationID: 16
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 19.778297
+        y: 437.82703
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 96.36362}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.8800001
   - id: 17
     fields:
@@ -23263,7 +23376,19 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 19
+        originDialogueID: 11
+        destinationConversationID: 19
+        destinationDialogueID: 26
+        isConnector: 0
+        priority: 2
+      - originConversationID: 19
+        originDialogueID: 11
+        destinationConversationID: 19
+        destinationDialogueID: 29
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -23271,8 +23396,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 679.3534
-        y: 472.71494
+        x: 591.48456
+        y: 479.2723
         width: 160
         height: 30
     - id: 12
@@ -23423,9 +23548,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Back away, step into the line ahead
-
-'
+        value: "Back away, step into the line ahead. Find a quiet place to eat aone.
+          \n"
         type: 0
         typeString: 
       - title: Sequence
@@ -23439,7 +23563,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 19
+        originDialogueID: 14
+        destinationConversationID: 19
+        destinationDialogueID: 29
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -23447,8 +23577,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 654.9447
-        y: 536.5533
+        x: 690.4553
+        y: 683.89233
         width: 160
         height: 30
     - id: 15
@@ -23488,7 +23618,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 19
+        originDialogueID: 15
+        destinationConversationID: 19
+        destinationDialogueID: 29
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -23496,8 +23632,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 856.5447
-        y: 534.34033
+        x: 944.8927
+        y: 666.06775
         width: 160
         height: 30
     - id: 16
@@ -23537,7 +23673,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 19
+        originDialogueID: 16
+        destinationConversationID: 19
+        destinationDialogueID: 29
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -23545,8 +23687,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1060.5448
-        y: 540.7405
+        x: 1245.8995
+        y: 647.85266
         width: 160
         height: 30
     - id: 17
@@ -23816,7 +23958,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 19
+        originDialogueID: 21
+        destinationConversationID: 19
+        destinationDialogueID: 29
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -23914,7 +24062,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 19
+        originDialogueID: 23
+        destinationConversationID: 19
+        destinationDialogueID: 29
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -23949,10 +24103,240 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: You're eating scraps and keeping your head down, thats not doing okay.
-          Thats fine, if you want to midn your business, jsut know when things get
-          harder, and they will, remember this conversation. Remember there are people
-          who see you as a problema nd
+        value: 'You''re eating scraps and keeping your head down, thats not doing
+          okay. Thats fine, if you want to midn your business, jsut know when things
+          get harder, and they will, remember this conversation. Remember there are
+          people who see you as a problema nd people who see you as useful. '
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 19
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 19
+        originDialogueID: 24
+        destinationConversationID: 19
+        destinationDialogueID: 29
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 383.15396
+        y: 564.4094
+        width: 160
+        height: 30
+    - id: 26
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Smart, IO like that, right now, nothing. But new people are useful.
+          You might need someone watching your back who understand leverage. Think
+          about it. I'm always around.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 19
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 19
+        originDialogueID: 26
+        destinationConversationID: 19
+        destinationDialogueID: 27
+        isConnector: 0
+        priority: 2
+      - originConversationID: 19
+        originDialogueID: 26
+        destinationConversationID: 19
+        destinationDialogueID: 28
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 249.38351
+        y: 815.229
+        width: 160
+        height: 30
+    - id: 27
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Ths rattles you. Go sti alone.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 19
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 19
+        originDialogueID: 27
+        destinationConversationID: 19
+        destinationDialogueID: 29
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 119.54753
+        y: 898.01587
+        width: 160
+        height: 30
+    - id: 28
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Find Chico and tell him about it
+
+'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 19
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 19
+        originDialogueID: 28
+        destinationConversationID: 19
+        destinationDialogueID: 29
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 368.72772
+        y: 896.7044
+        width: 160
+        height: 30
+    - id: 29
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Find a quiet place to eat aone. '
         type: 0
         typeString: 
       - title: Sequence
@@ -23974,13 +24358,2903 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 413.31787
-        y: 525.0652
+        x: 686.763
+        y: 976.5495
+        width: 160
+        height: 30
+    entryGroups: []
+    canvasScrollPosition: {x: 41.538322, y: 44.223625}
+    canvasZoom: 0.5500004
+  - id: 20
+    fields:
+    - title: Title
+      value: Opening Sequence (Playthrough 2)
+      type: 0
+      typeString: 
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+    - title: Actor
+      value: 1
+      type: 5
+      typeString: CustomFieldType_Actor
+    - title: Conversant
+      value: 2
+      type: 5
+      typeString: CustomFieldType_Actor
+    overrideSettings:
+      useOverrides: 0
+      overrideSubtitleSettings: 0
+      showNPCSubtitlesDuringLine: 1
+      showNPCSubtitlesWithResponses: 1
+      showPCSubtitlesDuringLine: 0
+      skipPCSubtitleAfterResponseMenu: 0
+      subtitleCharsPerSecond: 30
+      minSubtitleSeconds: 2
+      continueButton: 0
+      overrideSequenceSettings: 0
+      defaultSequence: 
+      defaultPlayerSequence: 
+      defaultResponseMenuSequence: 
+      overrideInputSettings: 0
+      alwaysForceResponseMenu: 1
+      includeInvalidEntries: 0
+      responseTimeout: 0
+      emTagForOldResponses: 0
+      emTagForInvalidResponses: 0
+      cancelSubtitle:
+        key: 27
+        buttonName: 
+      cancelConversation:
+        key: 27
+        buttonName: 
+    nodeColor: 
+    dialogueEntries:
+    - id: 0
+      fields:
+      - title: Title
+        value: START
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: Continue()
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 1
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 0
+        destinationConversationID: 20
+        destinationDialogueID: 1
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1701.2166
+        y: 298.6953
+        width: 160
+        height: 30
+    - id: 1
+      fields:
+      - title: Title
+        value: Sunday Morning - Cell
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "You're back in your cell after breakfast. Chico is on the bunk above.
+          The morning is quiet.\n\nChico gets down and sits on the floor. He pulls
+          out a folded piece of paper from under his mattress.\n\nYou watch his lips.\n\n\u201CD\xEDa
+          lento.\"\n\nThe rest comes too quickly, but you catch gente, aqu\xED, domingos.
+          The words between them slide past you. You don't have enough. You watch
+          his hands, but he isn't signing. Nothing.\n\nThen you catch,\n\n\u201CPero
+          estamos aqu\xED.\u201D\n\nAqu\xED.\n\nHe gestures around.\n\nEst\xE1 bien.\n\nHe
+          unfolds the paper.\n\nA poem. You can see that immediately. Spanish."
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 1
+        destinationConversationID: 20
+        destinationDialogueID: 35
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1700.2753
+        y: 352.5777
+        width: 160
+        height: 30
+    - id: 2
+      fields:
+      - title: Title
+        value: You nod, or sign YES
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "You nod, or sign YES.\n\nChico nods back, like that settles something.\n\n\u201CLugar
+          no construido\u201D\n\nYou watch his mouth.\n\nA place. Not built. You
+          catch enough.\n\nHe walks closer to you, you can read his lips because
+          he speaks slowly \u201CMuchas cosas que no te cuentan.\"\n\nYou almost
+          smile.\n\nYou already know.\n\n\u201CPero puedo contarte cosas. Lo resolvemos
+          juntos.\u201D\n\nYou watch him say \"juntos.\"\n\nSomething about the word
+          stays with you."
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 2
+        destinationConversationID: 20
+        destinationDialogueID: 36
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1698.2849
+        y: 566.44696
+        width: 160
+        height: 30
+    - id: 3
+      fields:
+      - title: Title
+        value: You're not sure how to answer
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "You're not sure how to answer\n\nChico watches you, patient.\n\n\u201COkay,
+          just read the paper,\u201D he says. \u201CI\u2019ll read aloud. You follow
+          with your eyes. We\u2019ll take our time. There\u2019s no rush.\u201D\n\nYou
+          look at the paper.\n\nThen at him.\n\nHe doesn\u2019t know.\n\nHe sits
+          down and holds the paper where you can see it clearly.\n\nYour eyes move
+          across the page.\n\nEspa\xF1ol.\n\nYou understand every word.\n\n\u201CInvicto.\u201D\n\nYou
+          know that word.\n\nInvicto.\n\nChico keeps talking.\n\nYou watch his mouth
+          for a moment, but you don\u2019t need to.\n\nYour eyes return to the poem.\n\nInvicto.\n\nThe
+          word feels different now."
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 3
+        destinationConversationID: 20
+        destinationDialogueID: 17
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2635.478
+        y: 890.86945
+        width: 160
+        height: 30
+    - id: 4
+      fields:
+      - title: Title
+        value: '"Bien," dice Chico.'
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "\"Bien,\" dice Chico.\n\n\"Entonces leemos juntos, despacio. Yo leo,
+          t\xFA lees. Hablamos de ello.\"\n\nSe sienta en el suelo, con el papel
+          entre ustedes."
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 4
+        destinationConversationID: 20
+        destinationDialogueID: 18
+        isConnector: 0
+        priority: 2
+      - originConversationID: 20
+        originDialogueID: 4
+        destinationConversationID: 20
+        destinationDialogueID: 19
+        isConnector: 0
+        priority: 2
+      - originConversationID: 20
+        originDialogueID: 4
+        destinationConversationID: 20
+        destinationDialogueID: 20
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1595.4774
+        y: 890.86945
+        width: 160
+        height: 30
+    - id: 5
+      fields:
+      - title: Title
+        value: You shrug.
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "You shrug.\n\n\"Entendido\", says Chico. \"Sigues las palabras.\"\n\nHe
+          hands you a pen. \n\n\"Si no entiendes, escr\xEDbelo. No problema.\"\n\nHe
+          sits down, holding the paper so you can see.\n\nYou settle in."
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 5
+        destinationConversationID: 20
+        destinationDialogueID: 21
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2427.4775
+        y: 1058.8695
+        width: 160
+        height: 30
+    - id: 6
+      fields:
+      - title: Title
+        value: Chico shrugs, not bothered.
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Chico shrugs, not bothered.
+
+
+          "No problem. I''ll read slow.
+          You follow with your eyes. If you don''t understand, we figure it out."
+
+
+          He
+          sits down on the floor, the paper ready.
+
+
+          You settle in.'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 6
+        destinationConversationID: 20
+        destinationDialogueID: 22
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2219.4775
+        y: 1058.8695
+        width: 160
+        height: 30
+    - id: 7
+      fields:
+      - title: Title
+        value: Invicto
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "\u201CInvicto.\u201D\n\nMiras la palabra.\n\nLa conoces.\n\n\u201CEste
+          poema\u2014trata sobre sobrevivir. Sobre mantenerte entero cuando el sistema
+          intenta quebrarte.\u201D\n\nMiras su boca.\n\n\"Sobrevivir.\"\n\"Sistema.\"\n\"Romper.\"\n\nEntiendes
+          lo suficiente.\n\n\u201CEres nuevo aqu\xED. Vas a descubrirlo: hacen reglas.
+          Cierran puertas. Deciden cu\xE1ndo comes, duermes, trabajas, todo.\u201D\n\nMueve
+          las manos mientras habla. No est\xE1 haciendo se\xF1as. Solo gesticula.\n\nSe\xF1ala
+          alrededor de la habitaci\xF3n.\n\nEsa parte ya la entiendes.\n\nLuego se\xF1ala
+          tu pecho.\n\n\u201C\xBFPero aqu\xED dentro?\u201D\n\nSu dedo descansa contra
+          su propio pecho.\n\n\u201CEso es tuyo. Eso es lo que controlas.\u201D\n\nMiras
+          su rostro.\n\nLee los primeros versos de la p\xE1gina, lentamente.\n\n\u201CDe
+          la noche que me cubre, negra como un pozo\u2026\u201D\n\nTus ojos siguen
+          las palabras.\n\nNo necesitas mirar su boca.\n\nLuego traduce.\n\n\u201CDe
+          la noche que me cubre, oscura como un pozo\u2026\u201D\n\nHace una pausa,
+          buscando en la p\xE1gina, y encuentra la estrofa que quiere.\n\n\u201CSoy
+          due\xF1o de mi destino,\nSoy capit\xE1n de mi alma.\u201D\n\nLevanta la
+          mirada.\n\n\u201CSoy due\xF1o de mi destino. Soy capit\xE1n de mi alma.
+          De eso trata todo, hermano.\u201D\n\nLees junto con \xE9l.\n\nPero una
+          palabra te llama la atenci\xF3n.\n\nDue\xF1o.\n\nConoces la palabra.\n\nDue\xF1o
+          de una casa.\nEl due\xF1o de un negocio.\n\nPropietario.\n\nPero \xBFaqu\xED?\n\nLa
+          se\xF1alas.\n\nChico te observa.\n\n\u201C\xBFDue\xF1o?\u201D\n\nAsientes.\n\nQuieres
+          saber qu\xE9 quiere decir con ella. No solo la traducci\xF3n. La palabra.\n\nHaces
+          m\xEDmica de abrir un libro y luego buscar algo.\n\nDiccionario.\n\nChico
+          entiende.\n\nSu expresi\xF3n cambia.\n\n\u201C\xBFDiccionario?\u201D\n\nVuelves
+          a asentir.\n\nPiensa por un momento.\n\n\u201CNo creo que tengan uno aqu\xED.\u201D\n\nEsperas.\n\nChico
+          se encoge de hombros.\n\n\u201CPodr\xEDa preguntar.\u201D\n\nMiras el poema
+          otra vez.\n\nSoy due\xF1o de mi destino.\n\nChico te mira.\n\nVuelves a
+          mirar la palabra.\n\nDue\xF1o.\n\nPropietario.\n\nAmo.\n\nEl que posee.\n\nEl
+          que tiene autoridad."
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 7
+        destinationConversationID: 20
+        destinationDialogueID: 23
+        isConnector: 0
+        priority: 2
+      - originConversationID: 20
+        originDialogueID: 7
+        destinationConversationID: 20
+        destinationDialogueID: 24
+        isConnector: 0
+        priority: 2
+      - originConversationID: 20
+        originDialogueID: 7
+        destinationConversationID: 20
+        destinationDialogueID: 25
+        isConnector: 0
+        priority: 2
+      - originConversationID: 20
+        originDialogueID: 7
+        destinationConversationID: 20
+        destinationDialogueID: 26
+        isConnector: 0
+        priority: 2
+      - originConversationID: 20
+        originDialogueID: 7
+        destinationConversationID: 20
+        destinationDialogueID: 27
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1387.4774
+        y: 1058.8695
+        width: 160
+        height: 30
+    - id: 8
+      fields:
+      - title: Title
+        value: 'You sit down and pull out your diary. '
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "You sit down and pull out your diary. \n\nChico sits beside you or
+          watches from the bunk.\n\nYou begin copying the lines in Spanish, slowly,
+          carefully. Chico helps when you hesitate on a word.\n\nThe morning passes
+          quietly. By the time you finish, the poem is yours\u2014written in your
+          own hand, in Spanish, in your diary.\n\nWhen you're done, Chico nods."
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 8
+        destinationConversationID: 20
+        destinationDialogueID: 28
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1387.4774
+        y: 1226.8695
+        width: 160
+        height: 30
+    - id: 9
+      fields:
+      - title: Title
+        value: '"Vale," dice Chico. '
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "\"Vale,\" dice Chico. \n\nSe acomoda, sosteniendo el papel.\n\nRepasa
+          m\xE1s estrofas contigo, verso por verso. Te explica el significado detr\xE1s
+          de las palabras. Habla de c\xF3mo este poema fue escrito por alguien que
+          sab\xEDa lo que se sent\xEDa al estar atrapado, al no tener poder a los
+          ojos del mundo\u2014pero ser inquebrantable por dentro.\n\n\"Esa somos
+          nosotros\", dice. \"Eso es lo que no entienden. Pueden cerrar las puertas
+          con llave, pero no pueden encerrarnos.\"\n\nSe sientan juntos durante mucho
+          tiempo, leyendo y hablando. Al final, las palabras sienten como si les
+          pertenecieran."
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 9
+        destinationConversationID: 20
+        destinationDialogueID: 29
+        isConnector: 0
+        priority: 2
+      - originConversationID: 20
+        originDialogueID: 9
+        destinationConversationID: 20
+        destinationDialogueID: 30
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1699.4774
+        y: 1226.8695
+        width: 160
+        height: 30
+    - id: 10
+      fields:
+      - title: Title
+        value: "You fold the paper carefully and tuck it somewhere safe\u2014under
+          your mattress, in your diary, somewhere close."
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "You fold the paper carefully and tuck it somewhere safe\u2014under
+          your mattress, in your diary, somewhere close.\n\nChico nods, satisfied.\n\nHe
+          gets back up on the bunk.\n\nThe morning is quiet. The poem is with you
+          now."
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 10
+        destinationConversationID: 20
+        destinationDialogueID: 31
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1179.4774
+        y: 1394.8698
+        width: 160
+        height: 30
+    - id: 11
+      fields:
+      - title: Title
+        value: 'TIME MESSAGE: 2pm Count'
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "TIME MESSAGE: 2pm count. \n\nDoors lock throughout the tier. \n\nYou're
+          locked in your cell with Chico.\n\nSilence. Waiting. The count takes about
+          20 minutes. Then doors unlock again.\n\n[[Back to Cell]"
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 763.4774
+        y: 1394.8698
+        width: 160
+        height: 30
+    - id: 12
+      fields:
+      - title: Title
+        value: You SIGN BOOK
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "You sign BOOK.\n\nChico nods. \n\nYou sign again. ASL.\n\nHe watches
+          your hands.\n\n\u201CASL?\u201D\n\nYou nod.\n\nHe looks toward the shelves.\n\n\u201C\xBFQuieres
+          un libro de ASL?\u201D\n\nYou shake your head.\n\nYou sign BOOK again,
+          then ASL.\n\nChico studies you.\n\n\u201C\xBFUn libro para ASL?\u201D\n\nYou
+          nod.\n\nHe thinks about that."
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 12
+        destinationConversationID: 20
+        destinationDialogueID: 32
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 763.4774
+        y: 1226.8695
+        width: 160
+        height: 30
+    - id: 13
+      fields:
+      - title: Title
+        value: You give the sign for ASK? and point to yourself ME?
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "You give the sign for ASK? and point to yourself ME?\n\n\nYou look
+          toward at the door of your cell.\n\nYou sign THEY SAY NO?\n\nYou look back
+          at the poem.\n\nA pause.\n\nYou scrunch your face, moving your hands from
+          your stomach toward your face: GET IN TROUBLE?\n\nChico shakes his head.\n\nNo
+          es un problema. Es solo una solicitud.\u201D\n\nYou point around the room,
+          then bring two fingers toward your eyes, scanning the space: THEY WATCH
+          ME.\n\n\u201CS\xED. Vigilan a todo el mundo.\u201D\n\nAnd then, importantly,
+          he doesn't promise that nothing will happen. He could say:\n\n\u201C\xBFPero
+          pedir un libro? Eso no es ning\xFAn problema.\u201D\n\nYou point to yourself,
+          then point toward Chico, eyebrows raised: YOU ASK?\n\nChico pauses."
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 13
+        destinationConversationID: 20
+        destinationDialogueID: 33
+        isConnector: 0
+        priority: 2
+      - originConversationID: 20
+        originDialogueID: 13
+        destinationConversationID: 20
+        destinationDialogueID: 34
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1075.4774
+        y: 1226.8695
+        width: 160
+        height: 30
+    - id: 14
+      fields:
+      - title: Title
+        value: You nod, or sign YES Link 1
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: You nod, or sign YES
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 14
+        destinationConversationID: 20
+        destinationDialogueID: 2
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1701.2167
+        y: 494.52136
+        width: 160
+        height: 30
+    - id: 15
+      fields:
+      - title: Title
+        value: '"Bien," dice Chico. Link 2'
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: '"Bien," dice Chico.'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 15
+        destinationConversationID: 20
+        destinationDialogueID: 4
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1600.6947
+        y: 744.2607
+        width: 160
+        height: 30
+    - id: 16
+      fields:
+      - title: Title
+        value: You're not sure how to answer Link 2
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: You're not sure how to answer
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 16
+        destinationConversationID: 20
+        destinationDialogueID: 3
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2207.6523
+        y: 754.6954
+        width: 160
+        height: 30
+    - id: 17
+      fields:
+      - title: Title
+        value: Continue Link 3
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Continue
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 17
+        destinationConversationID: 20
+        destinationDialogueID: 7
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2635.478
+        y: 974.86957
+        width: 160
+        height: 30
+    - id: 18
+      fields:
+      - title: Title
+        value: Continue Link 4
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Continue
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 18
+        destinationConversationID: 20
+        destinationDialogueID: 7
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1387.4774
+        y: 974.86957
+        width: 160
+        height: 30
+    - id: 19
+      fields:
+      - title: Title
+        value: Shake your head No Link 4
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Shake your head No
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 19
+        destinationConversationID: 20
+        destinationDialogueID: 6
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2219.4775
+        y: 974.86957
+        width: 160
+        height: 30
+    - id: 20
+      fields:
+      - title: Title
+        value: Shrug your shoulders Link 4
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Shrug your shoulders
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 20
+        destinationConversationID: 20
+        destinationDialogueID: 5
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2427.4775
+        y: 974.86957
+        width: 160
+        height: 30
+    - id: 21
+      fields:
+      - title: Title
+        value: Continue Link 5
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Continue
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 21
+        destinationConversationID: 20
+        destinationDialogueID: 11
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2427.4775
+        y: 1142.8696
+        width: 160
+        height: 30
+    - id: 22
+      fields:
+      - title: Title
+        value: Continue Link 6
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Continue
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 22
+        destinationConversationID: 20
+        destinationDialogueID: 11
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2219.4775
+        y: 1142.8696
+        width: 160
+        height: 30
+    - id: 23
+      fields:
+      - title: Title
+        value: You sign BOOK Link 7
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: You sign BOOK
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 23
+        destinationConversationID: 20
+        destinationDialogueID: 12
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 763.4774
+        y: 1142.8696
+        width: 160
+        height: 30
+    - id: 24
+      fields:
+      - title: Title
+        value: You sign ASK Link 7
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: You sign ASK
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 24
+        destinationConversationID: 20
+        destinationDialogueID: 13
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1075.4774
+        y: 1142.8696
+        width: 160
+        height: 30
+    - id: 25
+      fields:
+      - title: Title
+        value: You want to write Link 7
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: You want to write
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 25
+        destinationConversationID: 20
+        destinationDialogueID: 8
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1387.4774
+        y: 1142.8696
+        width: 160
+        height: 30
+    - id: 26
+      fields:
+      - title: Title
+        value: You want to read Link 7
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: You want to read
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 26
+        destinationConversationID: 20
+        destinationDialogueID: 9
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1699.4774
+        y: 1141.1305
+        width: 160
+        height: 30
+    - id: 27
+      fields:
+      - title: Title
+        value: You want to keep it safe Link 7
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: You want to keep it safe
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 27
+        destinationConversationID: 20
+        destinationDialogueID: 10
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2011.4774
+        y: 1142.8696
+        width: 160
+        height: 30
+    - id: 28
+      fields:
+      - title: Title
+        value: Continue Link 8
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Continue
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 28
+        destinationConversationID: 20
+        destinationDialogueID: 11
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1387.4774
+        y: 1310.8695
+        width: 160
+        height: 30
+    - id: 29
+      fields:
+      - title: Title
+        value: I'm ready to write it down Link 9
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: I'm ready to write it down
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 29
+        destinationConversationID: 20
+        destinationDialogueID: 8
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1595.4774
+        y: 1310.8695
+        width: 160
+        height: 30
+    - id: 30
+      fields:
+      - title: Title
+        value: I want to keep it safe Link 9
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: I want to keep it safe
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 30
+        destinationConversationID: 20
+        destinationDialogueID: 10
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1803.4774
+        y: 1310.8695
+        width: 160
+        height: 30
+    - id: 31
+      fields:
+      - title: Title
+        value: Continue Link 10
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Continue
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 31
+        destinationConversationID: 20
+        destinationDialogueID: 11
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1179.4774
+        y: 1478.8698
+        width: 160
+        height: 30
+    - id: 32
+      fields:
+      - title: Title
+        value: 'TIME MESSAGE: 2pm Count Link 12'
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'TIME MESSAGE: 2pm Count'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 32
+        destinationConversationID: 20
+        destinationDialogueID: 11
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 763.4774
+        y: 1310.8695
+        width: 160
+        height: 30
+    - id: 33
+      fields:
+      - title: Title
+        value: You sign BOOK Link 13
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: You sign BOOK
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 33
+        destinationConversationID: 20
+        destinationDialogueID: 12
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 971.4774
+        y: 1310.8695
+        width: 160
+        height: 30
+    - id: 34
+      fields:
+      - title: Title
+        value: Fold the paper away. Maybe later. Link 13
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Fold the paper away. Maybe later.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 34
+        destinationConversationID: 20
+        destinationDialogueID: 10
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1179.4774
+        y: 1310.8695
+        width: 160
+        height: 30
+    - id: 35
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "He taps the paper.\n\n\u201CQuiero mostrarte algo.\u201D\n\nYou watch
+          his mouth.\n\n\u201CLlevas aqu\xED tres d\xEDas.\u201D\n\nTres d\xEDas.\n\nYou
+          catch silencio. His mouth keeps moving.\n\n\u201CEst\xE1 bien.\u201D He
+          pauses and looks right at you.\n\n\"Pero noto\u2026\u201D\n\nYour eyes
+          stay on his face and your stomach tightens.\n\nHe knows.\n\nThere is a
+          silence.\n\nThen he looks directly at you and you watch as his mouth forms
+          two words.\n\n\xBFEres sordo?"
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 35
+        destinationConversationID: 20
+        destinationDialogueID: 14
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1700.2345
+        y: 422.8539
+        width: 160
+        height: 30
+    - id: 36
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "He holds up the paper.\n\n\u201CEsto es un poema. Espa\xF1ol.\u201D\n\nYour
+          eyes drop to the page.\n\nEspa\xF1ol.\n\nYou don't need to read his lips
+          anymore.\n\n\u201CInvicto.\u201D\n\nYou look at the word.\n\nYou know it.\n\n\"Invicto.\"\n\n\nChico
+          keeps talking, explaining it in English, but you are already somewhere
+          inside the word.\n\n\nYou look up at him.\n\nHis mouth is still moving.\n\nThen
+          he asks:\n\n\u201C\xBFEntiendes espa\xF1ol?\u201D\n\nYou almost laugh.\n\nAnd
+          for the first time since you arrived, you wonder if Chico understands that
+          the Spanish on the page is not something you need translated.\n\nIt is
+          the part you understand."
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 20
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 20
+        originDialogueID: 36
+        destinationConversationID: 20
+        destinationDialogueID: 15
+        isConnector: 0
+        priority: 2
+      - originConversationID: 20
+        originDialogueID: 36
+        destinationConversationID: 20
+        destinationDialogueID: 16
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1696.5458
+        y: 630.36005
+        width: 160
+        height: 30
+    entryGroups: []
+    canvasScrollPosition: {x: 90.43457, y: 8.695679}
+    canvasZoom: 0.46000063
+  - id: 21
+    fields:
+    - title: Title
+      value: New Conversation 21
+      type: 0
+      typeString: 
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+    - title: Actor
+      value: 1
+      type: 5
+      typeString: CustomFieldType_Actor
+    - title: Conversant
+      value: 2
+      type: 5
+      typeString: CustomFieldType_Actor
+    overrideSettings:
+      useOverrides: 0
+      overrideSubtitleSettings: 0
+      showNPCSubtitlesDuringLine: 1
+      showNPCSubtitlesWithResponses: 1
+      showPCSubtitlesDuringLine: 0
+      skipPCSubtitleAfterResponseMenu: 0
+      subtitleCharsPerSecond: 30
+      minSubtitleSeconds: 2
+      continueButton: 0
+      overrideSequenceSettings: 0
+      defaultSequence: 
+      defaultPlayerSequence: 
+      defaultResponseMenuSequence: 
+      overrideInputSettings: 0
+      alwaysForceResponseMenu: 1
+      includeInvalidEntries: 0
+      responseTimeout: 0
+      emTagForOldResponses: 0
+      emTagForInvalidResponses: 0
+      cancelSubtitle:
+        key: 27
+        buttonName: 
+      cancelConversation:
+        key: 27
+        buttonName: 
+    nodeColor: 
+    dialogueEntries:
+    - id: 0
+      fields:
+      - title: Title
+        value: START
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: None()
+        type: 0
+        typeString: 
+      conversationID: 21
+      isRoot: 1
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 21
+        originDialogueID: 0
+        destinationConversationID: 21
+        destinationDialogueID: 1
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 494.39996
+        y: 32.4
+        width: 160
+        height: 30
+    - id: 1
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: ...
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 21
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 21
+        originDialogueID: 1
+        destinationConversationID: 21
+        destinationDialogueID: 2
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 494.39996
+        y: 82.4
+        width: 160
+        height: 30
+    - id: 2
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "Write on your pad in spanish: Yo leo espa\xF1ol y no ingl\xE9s. Soy
+          sordo. "
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 21
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 21
+        originDialogueID: 2
+        destinationConversationID: 21
+        destinationDialogueID: 8
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 495.1999
+        y: 137.20001
+        width: 160
+        height: 30
+    - id: 4
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Walk away
+
+'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 21
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 841.6001
+        y: 383.7884
+        width: 160
+        height: 30
+    - id: 5
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "\xBFMe ayudas con el formulario? Ingl\xE9s. No entiendo."
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 21
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 651.906
+        y: 384.49423
+        width: 160
+        height: 30
+    - id: 6
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'You write: Gracias'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 21
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 455.95294
+        y: 381.90607
+        width: 160
+        height: 30
+    - id: 7
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "You write: \xBFEs dif\xEDcil? \xBFPor qu\xE9 cuidas?"
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 21
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 21
+        originDialogueID: 7
+        destinationConversationID: 21
+        destinationDialogueID: 11
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 260.9529
+        y: 358.80014
+        width: 160
+        height: 30
+    - id: 8
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Ah *nods*
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 21
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 21
+        originDialogueID: 8
+        destinationConversationID: 21
+        destinationDialogueID: 9
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 498.3999
+        y: 198.4
+        width: 160
+        height: 30
+    - id: 9
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "\xBFPor qu\xE9 est\xE1s aqu\xED? Deber\xEDas estar libre. \xBFEs
+          dif\xEDcil? \xBFPor qu\xE9 cuidas?"
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 21
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 21
+        originDialogueID: 9
+        destinationConversationID: 21
+        destinationDialogueID: 10
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 501.59988
+        y: 257.19995
+        width: 160
+        height: 30
+    - id: 10
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: '*Points to the calendar and makes a gesture like people leaving**She
+          points around the room and then a hand over her heart* She writes on the
+          notepad: alguien tiene que quedarse'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 21
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 21
+        originDialogueID: 10
+        destinationConversationID: 21
+        destinationDialogueID: 7
+        isConnector: 0
+        priority: 2
+      - originConversationID: 21
+        originDialogueID: 10
+        destinationConversationID: 21
+        destinationDialogueID: 6
+        isConnector: 0
+        priority: 2
+      - originConversationID: 21
+        originDialogueID: 10
+        destinationConversationID: 21
+        destinationDialogueID: 5
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 499.85873
+        y: 307.99997
+        width: 160
+        height: 30
+    - id: 11
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'She nods
+
+'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 21
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 262.83524
+        y: 444.56485
         width: 160
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.6100004
+    canvasZoom: 0.85000014
   syncInfo:
     syncActors: 0
     syncItems: 0
