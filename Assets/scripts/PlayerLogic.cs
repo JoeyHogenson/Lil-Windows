@@ -59,6 +59,21 @@ public class PlayerLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //reasserted every frame instead of only on menu toggle: in the Editor,
+        //pressing Escape while locked triggers Unity's own auto-unlock, which
+        //races with our toggle and otherwise leaves the cursor stuck until
+        //something (e.g. alt-tab) forces Windows to resync it
+        if(menuPanel.activeSelf || PixelCrushers.DialogueSystem.DialogueManager.isConversationActive)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
         //shoot raycast every frame
         //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
@@ -150,15 +165,11 @@ public class PlayerLogic : MonoBehaviour
         {
             menuPanel.SetActive(true);
             _input.cursorInputForLook = false;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
         }
         else if(menuPanel.activeSelf == true)
         {
             menuPanel.SetActive(false);
             _input.cursorInputForLook = true;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
         }
         //ClearCanvas();
 
