@@ -76,6 +76,13 @@ public class PlayerLogic : MonoBehaviour
     //away, some dialogue options) has those wired up to call LockCursor()/UnlockCursor()
     private void OnConversationStarted(Transform actor)
     {
+        //an intro conversation can fire before this component's own Start() has run
+        //(e.g. a DialogueSystemTrigger firing on scene load, before the player gets
+        //control), so _input may not be cached yet
+        if(_input == null)
+        {
+            _input = GetComponent<StarterAssetsInputs>();
+        }
         _input.cursorInputForLook = false;
     }
 
@@ -84,6 +91,10 @@ public class PlayerLogic : MonoBehaviour
     //Update() derives the actual OS cursor state from cursorInputForLook every frame
     private void OnConversationEnded(Transform actor)
     {
+        if(_input == null)
+        {
+            _input = GetComponent<StarterAssetsInputs>();
+        }
         if(!menuPanel.activeSelf)
         {
             _input.cursorInputForLook = true;
