@@ -24915,7 +24915,17 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Description
-        value: 
+        value: "Dev note (not shown to players): Chico's poem is \u201CInvictus\u201D
+          by William Ernest Henley (1875), public domain. The Spanish text copied
+          into the diary below is a translation for this scene. English original,
+          for reference/traceability:\n\nOut of the night that covers me,\nBlack
+          as the pit from pole to pole,\nI thank whatever gods may be\nFor my unconquerable
+          soul.\n\nIn the fell clutch of circumstance\nI have not winced nor cried
+          aloud.\nUnder the bludgeonings of chance\nMy head is bloody, but unbowed.\n\nBeyond
+          this place of wrath and tears\nLooms but the Horror of the shade,\nAnd
+          yet the menace of the years\nFinds, and shall find, me unafraid.\n\nIt
+          matters not how strait the gate,\nHow charged with punishments the scroll,\nI
+          am the master of my fate,\nI am the captain of my soul."
         type: 0
         typeString: 
       - title: Actor
@@ -24933,9 +24943,18 @@ MonoBehaviour:
       - title: Dialogue Text
         value: "You sit down and pull out your diary. \n\nChico sits beside you or
           watches from the bunk.\n\nYou begin copying the lines in Spanish, slowly,
-          carefully. Chico helps when you hesitate on a word.\n\nThe morning passes
-          quietly. By the time you finish, the poem is yours\u2014written in your
-          own hand, in Spanish, in your diary.\n\nWhen you're done, Chico nods."
+          carefully. Chico helps when you hesitate on a word.\n\n\u201CInvicto\u201D\n\nDesde
+          la noche que me cubre,\nnegra como el abismo de polo a polo,\nagradezco
+          a los dioses que puedan existir\npor mi alma inconquistable.\n\nEn las
+          garras feroces de las circunstancias\nno me he estremecido ni he gritado
+          en voz alta.\nBajo los golpes del azar,\nmi cabeza sangra, pero no se inclina.\n\nM\xE1s
+          all\xE1 de este lugar de ira y l\xE1grimas\nse cierne solo el Horror de
+          la sombra,\ny a\xFAn as\xED la amenaza de los a\xF1os\nme encuentra, y
+          me encontrar\xE1, sin miedo.\n\nNo importa cu\xE1n estrecha sea la puerta,\ncu\xE1n
+          cargada de castigos est\xE9 la sentencia,\nyo soy el amo de mi destino,\nyo
+          soy el capit\xE1n de mi alma.\n\nThe morning passes quietly. By the time
+          you finish, the poem is yours\u2014written in your own hand, in Spanish,
+          in your diary.\n\nWhen you're done, Chico nods."
         type: 0
         typeString: 
       - title: Sequence
@@ -26580,7 +26599,7 @@ MonoBehaviour:
       type: 5
       typeString: CustomFieldType_Actor
     - title: Conversant
-      value: 2
+      value: 4
       type: 5
       typeString: CustomFieldType_Actor
     overrideSettings:
@@ -26626,7 +26645,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -26677,7 +26696,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -26736,7 +26755,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -26792,7 +26811,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -26841,7 +26860,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -26896,7 +26915,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -26945,7 +26964,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -26996,7 +27015,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -27055,7 +27074,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -27107,7 +27126,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -27182,7 +27201,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -27233,7 +27252,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant

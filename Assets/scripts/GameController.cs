@@ -57,7 +57,7 @@ public class GameController : MonoBehaviour
     private bool _bookBanFired;
     private bool _lockdownFired;
 
-    ///game days should be 10min
+    ///game days should be 5min
     void Update()
     {
         if(daystarted == true)
@@ -89,6 +89,13 @@ public class GameController : MonoBehaviour
         Debug.Log("[GameController] StartDay: dayCount=" + dayCount + " daystart=" + daystart + " count=" + count
             + "\ncalled from:\n" + new System.Diagnostics.StackTrace(true));
 
+    }
+
+    // dayCount 1 is the opening "Sunday Morning" day, so day-of-week cycles from Sunday.
+    public System.DayOfWeek GetDayOfWeek()
+    {
+        int index = (dayCount - 1) % 7;
+        return (System.DayOfWeek)index;
     }
 
     void ResetDayFlags()
@@ -311,7 +318,7 @@ public class GameController : MonoBehaviour
     }
     void SetCount()
     {
-        count = daystart + 600;
+        count = daystart + 300;
     }
     void SetCommisary()
     {
@@ -320,7 +327,7 @@ public class GameController : MonoBehaviour
     }
     void SetEnd()
     {
-        end = daystart + 600;
+        end = daystart + 300;
     }
     void SetThoughts()
     {
