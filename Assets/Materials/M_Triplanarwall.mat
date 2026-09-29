@@ -47,7 +47,8 @@ Material:
     - _QueueOffset: 0
     - _Smoothness: 0
     - _TextureScale: 0.055
-    m_Colors: []
+    m_Colors:
+    - _BrickTint: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &2295699368007873987

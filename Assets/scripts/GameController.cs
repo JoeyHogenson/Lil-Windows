@@ -211,7 +211,7 @@ public class GameController : MonoBehaviour
 
         Debug.Log("[GameController] CountEvent triggered at " + Time.time);
         StartCoroutine(StopWalkingAfterSeconds());
-        count += 600;
+        //count += 600;
     }
 
     //script that checks if player is in the count zone
@@ -320,7 +320,7 @@ public class GameController : MonoBehaviour
     }
     void SetEnd()
     {
-        end = daystart + 1800;
+        end = daystart + 600;
     }
     void SetThoughts()
     {

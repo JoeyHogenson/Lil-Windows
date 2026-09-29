@@ -101,6 +101,28 @@ MonoBehaviour:
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
+  - id: 4
+    fields:
+    - title: Name
+      value: Officer Martinez
+      type: 0
+      typeString: 
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
   items:
   - id: 1
     fields:
@@ -26544,11 +26566,13 @@ MonoBehaviour:
   - id: 21
     fields:
     - title: Title
-      value: New Conversation 21
+      value: Martinez
       type: 0
       typeString: 
     - title: Description
-      value: 
+      value: 'Martinez Convo
+
+'
       type: 0
       typeString: 
     - title: Actor
