@@ -24,8 +24,6 @@ public class GameController : MonoBehaviour
     private float bookBan;
     private float lockdown;
 
-    public int dayCount;
-
     public GameObject blackSquare;
 
     public GameObject thoughtsObject;
@@ -33,6 +31,8 @@ public class GameController : MonoBehaviour
 
     public TextMeshProUGUI eventText;
     public GameObject eventTextObject;
+
+    public TextMeshProUGUI dayCount;
 
     public GameObject bookBanNewspaper;
     public GameObject intakeNewspaper;

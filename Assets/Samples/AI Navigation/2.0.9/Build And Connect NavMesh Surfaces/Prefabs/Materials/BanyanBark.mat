@@ -24,7 +24,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BanyanBark
-  m_Shader: {fileID: -6465566751694194690, guid: bcfcfca2e739042e2ab845c3727b47de, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: bcfcfca2e739042e2ab845c3727b47de,
+    type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -130,7 +131,7 @@ Material:
     - _OpaqueCullMode: 2
     - _Parallax: 0.02
     - _PerPixelSorting: 0
-    - _QueueControl: -1
+    - _QueueControl: 1
     - _QueueOffset: 0
     - _RayTracing: 0
     - _ReceivesSSR: 1
