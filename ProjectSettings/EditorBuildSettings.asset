@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/New jail Scene.unity
     guid: 6d8f7ed888b6ec2429bc2bbe54d65596
-  - enabled: 1
+  - enabled: 0
     path: Assets/menu.unity
     guid: d767d8cbe48e2cb4ea307f48bef97547
   - enabled: 1

@@ -27,17 +27,28 @@ public class RFI : MonoBehaviour
     public GameObject housing;
     public GameObject LawLibraryDoor;
     public GameObject commissaryDoor;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    //this script sits on the form object itself (RFI Form, Indigent Form), so the form is open
+    //exactly while this component is enabled; tracked so Escape (PlayerLogic.Menu) can close it
+    public static RFI CurrentlyOpen;
+
+    void OnEnable()
     {
-        
+        CurrentlyOpen = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnDisable()
     {
-        
+        if(CurrentlyOpen == this)
+        {
+            CurrentlyOpen = null;
+        }
+    }
+
+    //closes the form without submitting it; the checkmarks stay as they were for next time
+    public void Close()
+    {
+        gameObject.SetActive(false);
     }
     /*public void ClearAllButtons()
     {

@@ -1,21 +1,26 @@
 using UnityEngine;
-using System.Collections;
 
+/// <summary>Rotates the clock hand one full turn over each in-game day.</summary>
 public class Clock : MonoBehaviour
 {
     public Transform clock;
     public GameObject gameController;
-    private float daystart;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private GameController controller;
+
     void Start()
     {
-      daystart = Time.time;  
+        controller = gameController.GetComponent<GameController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        clock.rotation = Quaternion.Euler(0,0,(daystart/gameController.GetComponent<GameController>().end*-360));
-        //-1*(daystart/gameController.GetComponent<GameController>().end)
+        //holds at 12 o'clock until the day starts (day 1 waits for intake to finish)
+        float progress = 0f;
+        if(controller.IsDayStarted)
+        {
+            float dayLength = controller.end - controller.DayStartTime;
+            progress = dayLength > 0f ? Mathf.Clamp01((Time.time - controller.DayStartTime) / dayLength) : 0f;
+        }
+        clock.rotation = Quaternion.Euler(0, 0, progress * -360f);
     }
 }

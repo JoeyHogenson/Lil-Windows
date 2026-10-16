@@ -1,254 +1,275 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-using System.Collections;
-using TMPro;
+using UnityEngine.Serialization;
+using PixelCrushers.DialogueSystem;
 
 namespace StarterAssets
 {
+/// <summary>
+/// Player-side game logic: looking at and interacting with doors/teleporters, the pause menu,
+/// and keeping the OS cursor in sync with whether the player is in a UI or free-looking.
+/// </summary>
 public class PlayerLogic : MonoBehaviour
 {
+    private enum InteractionType { None, Door, Teleporter }
+
+    private const float InteractRange = 15f;
+
+    [Header("Player Stats")]
     public int socialCred;
     public int troubleMeter;
     public int mentalHealth;
 
-    public GameObject DialogueManager;
-
-    public GameObject eToOpenButton;
-    public GameObject eToCloseButton;
-    public GameObject eToGrabButton;
-    public GameObject menuPanel;
-    public GameObject[] CanvasObjects;
-    public GameObject saveSlots;
-    public GameObject loadSlots;
-    public int count;
-
-    public GameObject blueImage;
-
-    public bool startDialogue;
-
-    private bool canvasCleared;
-
-    public string typeInteract;
+    [Header("UI")]
+    [SerializeField] private GameObject eToOpenButton;
+    [SerializeField] private GameObject eToCloseButton;
+    [SerializeField] private GameObject menuPanel;
+    [SerializeField] private GameObject blueImage;
+    [Tooltip("Intro/tutorial overlays. The pause menu can't open until these are cleared.")]
+    [FormerlySerializedAs("CanvasObjects")]
+    [SerializeField] private GameObject[] canvasObjects;
 
     private StarterAssetsInputs _input;
-    private PlayerInput _playerInput;
+    private Camera _camera;
+    private bool _canvasCleared;
 
-    new Collider collider;
+    //what the player is currently looking at within range; refreshed every frame
+    private InteractionType _lookTarget;
+    private SimpleDoor _lookedAtDoor;
+    private InteractTele _lookedAtTeleporter;
+    //last in-range collider, kept even after looking away so dialogue options still reach that NPC
+    private Collider _lastInRangeCollider;
 
-    public string currentEvent;
+    void Awake()
+    {
+        _input = GetComponent<StarterAssetsInputs>();
+    }
 
-    public Ray ray;
-    public RaycastHit hit;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Cursor.visible = false;
-        //setting _input variable to starter assets script to get inputs
-        startDialogue = true;
-        _input = GetComponent<StarterAssetsInputs>();
-        _playerInput = GetComponent<PlayerInput>();
-        count = 0;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        _camera = Camera.main;
         _input.cursorInputForLook = true;
         _input.cursorLocked = true;
-
+        ApplyCursorState();
     }
 
     private void OnEnable()
     {
-        PixelCrushers.DialogueSystem.DialogueManager.instance.conversationStarted += OnConversationStarted;
-        PixelCrushers.DialogueSystem.DialogueManager.instance.conversationEnded += OnConversationEnded;
+        //guarded so a scene without a Dialogue Manager doesn't throw here
+        if(DialogueManager.hasInstance)
+        {
+            DialogueManager.instance.conversationStarted += OnConversationStarted;
+            DialogueManager.instance.conversationEnded += OnConversationEnded;
+        }
     }
 
     private void OnDisable()
     {
-        if(PixelCrushers.DialogueSystem.DialogueManager.hasInstance)
+        if(DialogueManager.hasInstance)
         {
-            PixelCrushers.DialogueSystem.DialogueManager.instance.conversationStarted -= OnConversationStarted;
-            PixelCrushers.DialogueSystem.DialogueManager.instance.conversationEnded -= OnConversationEnded;
+            DialogueManager.instance.conversationStarted -= OnConversationStarted;
+            DialogueManager.instance.conversationEnded -= OnConversationEnded;
         }
     }
 
     //driven off the Dialogue System's own C# events instead of per-conversation Inspector
-    //UnityEvents (OnConversationStart/End), since not every conversation/ending (e.g. walking
-    //away, some dialogue options) has those wired up to call LockCursor()/UnlockCursor()
+    //UnityEvents, since not every conversation/ending (e.g. walking away, some dialogue
+    //options) has those wired up to call LockCursor()/UnlockCursor()
     private void OnConversationStarted(Transform actor)
     {
-        //an intro conversation can fire before this component's own Start() has run
-        //(e.g. a DialogueSystemTrigger firing on scene load, before the player gets
-        //control), so _input may not be cached yet
-        if(_input == null)
-        {
-            _input = GetComponent<StarterAssetsInputs>();
-        }
         _input.cursorInputForLook = false;
     }
 
-    //fires regardless of how the conversation ended (completed, StopConversation(), interrupted
-    //by another conversation, etc.) so look input can't get stuck disabled from the dialogue.
-    //Update() derives the actual OS cursor state from cursorInputForLook every frame
+    //fires however the conversation ended (completed, StopConversation(), interrupted, ...)
+    //so look input can't get stuck disabled by a dialogue
     private void OnConversationEnded(Transform actor)
     {
-        if(_input == null)
-        {
-            _input = GetComponent<StarterAssetsInputs>();
-        }
-        if(!menuPanel.activeSelf)
+        if(!IsMenuOpen)
         {
             _input.cursorInputForLook = true;
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //reasserted every frame instead of only on menu toggle: in the Editor,
-        //pressing Escape while locked triggers Unity's own auto-unlock, which
-        //races with our toggle and otherwise leaves the cursor stuck until
-        //something (e.g. alt-tab) forces Windows to resync it.
-        //driven off cursorInputForLook (not menuPanel/dialogue state directly) since
-        //that's the flag every UI in the scene already toggles via LockCursor()/
-        //UnlockCursor() - menu, dialogue responses, the newspaper, etc. - so any of
-        //them reliably gets a visible cursor instead of only the ones special-cased here
-        if(!_input.cursorInputForLook)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
+        ApplyCursorState();
+        UpdateLookTarget();
+    }
 
-        //shoot raycast every frame
-        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
-        //handles when raycast hits something
-        if(Physics.Raycast(ray, out hit))
-        {
-            if(hit.distance <= 15f)
-            {
-                
-                collider = hit.collider; 
-                if(collider.GetComponent<InteractTele>())
-                {
-                    typeInteract = "Tele";
-                    eToOpenButton.SetActive(true);
-                }
-                else if(collider.GetComponent<SimpleDoor>())
-                {
-                    if(!collider.GetComponent<SimpleDoor>().isOpen)
-                    {
-                        typeInteract = "Door";
-                        eToOpenButton.SetActive(true);
-                    }
-                    else
-                    {
-                        typeInteract = "Door";
-                        eToCloseButton.SetActive(true);
-                    }
+    // ---------- Public API (also wired to UnityEvents in scenes; don't rename) ----------
 
-                }
-                else
-                {
-                    typeInteract = "None";
-                    eToCloseButton.SetActive(false);
-                    eToOpenButton.SetActive(false);
-                    
-                }
-            }
-            else
-            {
-                typeInteract = "None";
-                eToCloseButton.SetActive(false);
-                eToOpenButton.SetActive(false);
-            }
-        }
-        
-    }
-    public void Option1()
-    {
-        collider.GetComponent<DialogueController>().nextLineOption1();
-    }
-    /*
-    public void InitiateDialougue()
-    {
-        dialoguePanel.SetActive(true);
-        GetComponent<FirstPersonController>().MoveSpeed = 0f;
-        _input.cursorInputForLook = false;
-        hit.collider.gameObject.GetComponent<DialogueController>().onClick();
-    }
-    */
+    /// <summary>Handles the interact key (E): opens/closes the looked-at door or uses a teleporter.</summary>
     public void Interact()
     {
-        //handles starting dialogue when you press "E". Reads off of the NPC dialogue scriptable object
-        if(typeInteract == "Door" && !hit.collider.GetComponent<SimpleDoor>().isOpen)
+        switch(_lookTarget)
         {
-            hit.collider.GetComponent<SimpleDoor>().Open();
-            eToOpenButton.SetActive(false);
-        }
-        else if(typeInteract == "Door" && hit.collider.GetComponent<SimpleDoor>().isOpen)
-        {
-            hit.collider.GetComponent<SimpleDoor>().Close();
-            eToCloseButton.SetActive(false);
-        }
-        else if(typeInteract == "grabbable")
-        {
-            eToGrabButton.SetActive(true);
-        }
-        else if(typeInteract == "Tele")
-        {
-                //teleport player to target location
-                transform.position = hit.collider.GetComponentInParent<InteractTele>().targetLocation.transform.position;
+            case InteractionType.Door:
+                ToggleDoor(_lookedAtDoor);
+                break;
+            case InteractionType.Teleporter:
+                Teleport(_lookedAtTeleporter);
+                break;
         }
     }
+
+    /// <summary>
+    /// Handles the menu key (Escape): closes an open newspaper or RFI form if there is one; otherwise ends any
+    /// conversation and toggles the pause menu (which only opens once the intro overlays are cleared).
+    /// </summary>
     public void Menu()
     {
-        //Escape closes whatever's on top (a newspaper) instead of opening the pause
-        //menu underneath it - otherwise Escape only reset look/cursor state and left
-        //the newspaper on screen
         if(Newspaper.CurrentlyOpen != null)
         {
             Newspaper.CurrentlyOpen.ShutNewspaper();
             return;
         }
-        PixelCrushers.DialogueSystem.DialogueManager.StopConversation();
-        _input.cursorInputForLook = true;
-        blueImage.SetActive(false);
-        if(menuPanel.activeSelf == false && canvasCleared == true)
-        {
-            menuPanel.SetActive(true);
-            _input.cursorInputForLook = false;
-        }
-        else if(menuPanel.activeSelf == true)
-        {
-            menuPanel.SetActive(false);
-            _input.cursorInputForLook = true;
-        }
-        //ClearCanvas();
 
+        //otherwise the pause menu opens over the form, and closing it re-locks the cursor
+        //while the form is still up, leaving it unclickable
+        if(RFI.CurrentlyOpen != null)
+        {
+            RFI.CurrentlyOpen.Close();
+            UnlockCursor();
+            return;
+        }
+
+        DialogueManager.StopConversation();
+        SetActiveSafe(blueImage, false);
+
+        bool openMenu = !IsMenuOpen && _canvasCleared;
+        if(menuPanel != null) menuPanel.SetActive(openMenu);
+        _input.cursorInputForLook = !openMenu;
     }
+
+    /// <summary>Advances the last-targeted NPC's legacy dialogue with option 1.</summary>
+    public void Option1()
+    {
+        DialogueController dialogue = _lastInRangeCollider != null ? _lastInRangeCollider.GetComponent<DialogueController>() : null;
+        if(dialogue == null)
+        {
+            Debug.LogWarning("[PlayerLogic] Option1: no DialogueController on the last targeted object.");
+            return;
+        }
+        dialogue.nextLineOption1();
+    }
+
+    /// <summary>
+    /// Enters UI mode: disables mouse-look and frees/shows the cursor.
+    /// (Named for locking the camera, not the cursor.)
+    /// </summary>
     public void LockCursor()
     {
-         _input.cursorInputForLook = false;
+        _input.cursorInputForLook = false;
     }
+
+    /// <summary>
+    /// Leaves UI mode: re-enables mouse-look and locks/hides the cursor.
+    /// (Named for unlocking the camera, not the cursor.)
+    /// </summary>
     public void UnlockCursor()
     {
-         _input.cursorInputForLook = true;
+        _input.cursorInputForLook = true;
     }
+
+    /// <summary>Hides the intro overlays, after which the pause menu is allowed to open.</summary>
     public void ClearCanvas()
     {
-        for(int i = 0; i < CanvasObjects.Length; i++)
+        if(canvasObjects == null) return;
+        foreach(GameObject canvasObject in canvasObjects)
         {
-            CanvasObjects[i].SetActive(false);
-            canvasCleared = true;
+            SetActiveSafe(canvasObject, false);
+        }
+        _canvasCleared = true;
+    }
+
+    // ---------- Internals ----------
+
+    private bool IsMenuOpen
+    {
+        get { return menuPanel != null && menuPanel.activeSelf; }
+    }
+
+    //reasserted every frame instead of only on toggle: in the Editor, Escape while locked
+    //triggers Unity's own auto-unlock, which races with the menu toggle and otherwise leaves
+    //the cursor stuck until something (e.g. alt-tab) forces Windows to resync it.
+    //driven off cursorInputForLook because that's the flag every UI already toggles
+    //(menu, dialogue, newspaper, LockCursor/UnlockCursor)
+    private void ApplyCursorState()
+    {
+        bool lookEnabled = _input.cursorInputForLook;
+        Cursor.lockState = lookEnabled ? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.visible = !lookEnabled;
+    }
+
+    private void UpdateLookTarget()
+    {
+        _lookTarget = InteractionType.None;
+        _lookedAtDoor = null;
+        _lookedAtTeleporter = null;
+
+        //camera can be swapped by scene loads/cutscenes, so re-resolve when the cached one is gone
+        if(_camera == null) _camera = Camera.main;
+
+        if(_camera != null)
+        {
+            Ray ray = _camera.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f));
+            if(Physics.Raycast(ray, out RaycastHit hit, InteractRange))
+            {
+                _lastInRangeCollider = hit.collider;
+                ClassifyTarget(hit.collider);
+            }
+        }
+
+        SetActiveSafe(eToOpenButton, ShowsOpenPrompt());
+        SetActiveSafe(eToCloseButton, _lookTarget == InteractionType.Door && _lookedAtDoor.isOpen);
+    }
+
+    private void ClassifyTarget(Collider target)
+    {
+        _lookedAtTeleporter = target.GetComponent<InteractTele>();
+        if(_lookedAtTeleporter != null)
+        {
+            _lookTarget = InteractionType.Teleporter;
+            return;
+        }
+
+        _lookedAtDoor = target.GetComponent<SimpleDoor>();
+        if(_lookedAtDoor != null)
+        {
+            _lookTarget = InteractionType.Door;
         }
     }
-    
-    
-}
-}
 
+    private bool ShowsOpenPrompt()
+    {
+        return _lookTarget == InteractionType.Teleporter
+            || (_lookTarget == InteractionType.Door && !_lookedAtDoor.isOpen);
+    }
+
+    private static void ToggleDoor(SimpleDoor door)
+    {
+        if(door.isOpen)
+        {
+            door.Close();
+        }
+        else
+        {
+            door.Open();
+        }
+    }
+
+    private void Teleport(InteractTele teleporter)
+    {
+        if(teleporter.targetLocation == null)
+        {
+            Debug.LogWarning("[PlayerLogic] Teleporter " + teleporter.name + " has no target location.");
+            return;
+        }
+        transform.position = teleporter.targetLocation.transform.position;
+    }
+
+    private static void SetActiveSafe(GameObject target, bool active)
+    {
+        if(target != null) target.SetActive(active);
+    }
+}
+}
