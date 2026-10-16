@@ -94,13 +94,8 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        Log("Start: dayCount=" + dayCount + " (StartDay will " + (dayCount != 1 ? "" : "NOT ") + "be called from Start)");
-        UpdateDayCountText();
-        //day 1 is started by IntakeControls once the intake sequence finishes
-        if(dayCount != 1)
-        {
-            StartDay();
-        }
+        Log("Start: dayCount=" + dayCount);
+        StartDay();
     }
 
     void Update()
@@ -113,7 +108,7 @@ public class GameController : MonoBehaviour
 
     /// <summary>
     /// Begins a new day from the current time: resets per-day state and schedules the day's events.
-    /// Called on wake-up (after intake on day 1, after the end-of-day fade otherwise).
+    /// Called from Start for the first day, then after each end-of-day fade.
     /// </summary>
     public void StartDay()
     {
