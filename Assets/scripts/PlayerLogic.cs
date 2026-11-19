@@ -10,7 +10,7 @@ namespace StarterAssets
 /// </summary>
 public class PlayerLogic : MonoBehaviour
 {
-    private enum InteractionType { None, Door, Teleporter }
+    private enum InteractionType { None, Door, Teleporter, CellDoor }
 
     private const float InteractRange = 15f;
 
@@ -29,6 +29,7 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField] private GameObject[] canvasObjects;
 
     private StarterAssetsInputs _input;
+    private CharacterController _controller;
     private Camera _camera;
     private bool _canvasCleared;
 
@@ -36,12 +37,14 @@ public class PlayerLogic : MonoBehaviour
     private InteractionType _lookTarget;
     private SimpleDoor _lookedAtDoor;
     private InteractTele _lookedAtTeleporter;
+    private ReturnToCellDoor _lookedAtCellDoor;
     //last in-range collider, kept even after looking away so dialogue options still reach that NPC
     private Collider _lastInRangeCollider;
 
     void Awake()
     {
         _input = GetComponent<StarterAssetsInputs>();
+        _controller = GetComponent<CharacterController>();
     }
 
     void Start()
@@ -97,7 +100,7 @@ public class PlayerLogic : MonoBehaviour
 
     // ---------- Public API (also wired to UnityEvents in scenes; don't rename) ----------
 
-    /// <summary>Handles the interact key (E): opens/closes the looked-at door or uses a teleporter.</summary>
+    /// <summary>Handles the interact key (E): opens/closes the looked-at door, uses a teleporter, or goes back to the cell.</summary>
     public void Interact()
     {
         switch(_lookTarget)
@@ -107,6 +110,9 @@ public class PlayerLogic : MonoBehaviour
                 break;
             case InteractionType.Teleporter:
                 Teleport(_lookedAtTeleporter);
+                break;
+            case InteractionType.CellDoor:
+                ReturnToCell(_lookedAtCellDoor);
                 break;
         }
     }
@@ -129,6 +135,13 @@ public class PlayerLogic : MonoBehaviour
         {
             RFI.CurrentlyOpen.Close();
             UnlockCursor();
+            return;
+        }
+
+        //commissary form, book cart, property box; Close re-locks the cursor itself
+        if(SegPanel.CurrentlyOpen != null)
+        {
+            SegPanel.CurrentlyOpen.Close();
             return;
         }
 
@@ -205,6 +218,7 @@ public class PlayerLogic : MonoBehaviour
         _lookTarget = InteractionType.None;
         _lookedAtDoor = null;
         _lookedAtTeleporter = null;
+        _lookedAtCellDoor = null;
 
         //camera can be swapped by scene loads/cutscenes, so re-resolve when the cached one is gone
         if(_camera == null) _camera = Camera.main;
@@ -225,6 +239,14 @@ public class PlayerLogic : MonoBehaviour
 
     private void ClassifyTarget(Collider target)
     {
+        //checked before SimpleDoor: a cell door usually sits on a regular door's collider
+        _lookedAtCellDoor = target.GetComponent<ReturnToCellDoor>();
+        if(_lookedAtCellDoor != null)
+        {
+            _lookTarget = InteractionType.CellDoor;
+            return;
+        }
+
         _lookedAtTeleporter = target.GetComponent<InteractTele>();
         if(_lookedAtTeleporter != null)
         {
@@ -242,6 +264,7 @@ public class PlayerLogic : MonoBehaviour
     private bool ShowsOpenPrompt()
     {
         return _lookTarget == InteractionType.Teleporter
+            || _lookTarget == InteractionType.CellDoor
             || (_lookTarget == InteractionType.Door && !_lookedAtDoor.isOpen);
     }
 
@@ -264,7 +287,26 @@ public class PlayerLogic : MonoBehaviour
             Debug.LogWarning("[PlayerLogic] Teleporter " + teleporter.name + " has no target location.");
             return;
         }
-        transform.position = teleporter.targetLocation.transform.position;
+        MoveTo(teleporter.targetLocation.transform.position);
+    }
+
+    private void ReturnToCell(ReturnToCellDoor door)
+    {
+        Transform cell = door.Destination;
+        if(cell == null)
+        {
+            Debug.LogWarning("[PlayerLogic] Cell door " + door.name + " has no cell set, and the GameController has no player starting position.");
+            return;
+        }
+        MoveTo(cell.position);
+    }
+
+    //the CharacterController overwrites transform.position while enabled, so toggle it off around the move
+    private void MoveTo(Vector3 position)
+    {
+        if(_controller != null) _controller.enabled = false;
+        transform.position = position;
+        if(_controller != null) _controller.enabled = true;
     }
 
     private static void SetActiveSafe(GameObject target, bool active)

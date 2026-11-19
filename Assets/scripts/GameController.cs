@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour
 
     [Header("Day Length")]
     [Tooltip("Real-time seconds per in-game day. The next day starts exactly this long after the current one did.")]
-    public float dayLengthSeconds = 300f;
+    public float dayLengthSeconds = 30f;
 
     [Header("Day Schedule (seconds after the day starts)")]
     [SerializeField] private float thoughtsOffset = 20f;
@@ -72,8 +72,7 @@ public class GameController : MonoBehaviour
 
     [Header("Day State")]
     [Tooltip("Top-left UI text that shows the current day.")]
-    public TextMeshProUGUI dayCountText;
-    [Tooltip("Format for dayCountText; {0} is replaced with the day number.")]
+
     public string dayCountFormat = "Day {0}";
     /// <summary>Current day, starting at 1 ("Sunday Morning"). Read by the calendar and intake.</summary>
     public int dayCount = 1;
@@ -81,6 +80,12 @@ public class GameController : MonoBehaviour
     public float end;
     /// <summary>True while a lockdown is in effect. Read by NPC navigation.</summary>
     public bool isLockdown;
+
+    /// <summary>Raised at the end of <see cref="StartDay"/> with the new dayCount. The segregation systems listen to this.</summary>
+    public event Action<int> DayStarted;
+
+    /// <summary>The player's cell spawn point. Read by <see cref="ReturnToCellDoor"/>.</summary>
+    public Transform PlayerStartingPosition => playerStartingPosition;
 
     public bool IsDayStarted { get; private set; }
     /// <summary>Time.time at which the current day started. Read by <see cref="Clock"/>.</summary>
@@ -119,8 +124,8 @@ public class GameController : MonoBehaviour
         SetActiveSafe(eventTextObject, false);
         SetActiveSafe(mailObject, false);
         SetActiveSafe(blackSquare, false);
-        UpdateDayCountText();
         IsDayStarted = true;
+        DayStarted?.Invoke(dayCount);
 
         Log("StartDay: dayCount=" + dayCount + " daystart=" + dayStartTime + " end=" + end
             + "\ncalled from:\n" + new System.Diagnostics.StackTrace(true));
@@ -138,10 +143,40 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(JailSceneName);
     }
 
-    /// <summary>Quits the application. Wired to menu buttons.</summary>
+    /// <summary>Quits the application (or leaves Play mode in the editor). Wired to menu buttons.</summary>
     public void Quit()
     {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
+    }
+
+    /// <summary>
+    /// Saves every ES3AutoSave object in the scene to the current save slot. Wired to the pause menu's Save button;
+    /// the Easy Save 3 Manager's own Save Event is set to None so nothing saves without the player asking.
+    /// </summary>
+    public void SaveGame()
+    {
+        ES3AutoSaveMgr saveManager = ES3AutoSaveMgr.Current;
+        if(saveManager == null)
+        {
+            Debug.LogWarning("[GameController] SaveGame: no Easy Save 3 Manager in the scene.");
+            return;
+        }
+        saveManager.Save();
+        ShowEventText("Game saved.");
+        CancelInvoke(nameof(HideEventText));
+        Invoke(nameof(HideEventText), EventTextDuration);
+        Log("SaveGame: saved on day " + dayCount);
+    }
+
+    /// <summary>Saves, then quits. Wired to the pause menu's "Save and quit" button.</summary>
+    public void SaveAndQuit()
+    {
+        SaveGame();
+        Quit();
     }
 
     // ---------- Scheduling ----------
@@ -237,7 +272,6 @@ public class GameController : MonoBehaviour
         Log("EndOfDayEvent triggered at Time.time=" + Time.time + " (dayCount " + dayCount + " -> " + (dayCount + 1) + ")");
         //incremented now rather than after the fade so the calendar flips as the warning appears
         dayCount++;
-        UpdateDayCountText();
         //waits until `end` exactly, so each day lasts dayLengthSeconds regardless of the warning lead time
         StartCoroutine(EndDayAfterSeconds(Mathf.Max(0f, end - Time.time)));
     }
@@ -331,10 +365,6 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void UpdateDayCountText()
-    {
-        if(dayCountText != null) dayCountText.text = string.Format(dayCountFormat, dayCount);
-    }
 
     private void ShowEventText(string message)
     {

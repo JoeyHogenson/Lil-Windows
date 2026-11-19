@@ -23,6 +23,7 @@ public class SwitchArt : MonoBehaviour
             MeshRenderer mesh_renderer = wall.GetComponent<MeshRenderer>();
             mesh_renderer.material = artMaterials[times];
             times++;
+            Debug.Log("Id di ti");
         }
     }
 }

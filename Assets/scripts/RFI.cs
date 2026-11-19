@@ -4,8 +4,6 @@ using System.Collections;
 using TMPro;
 public class RFI : MonoBehaviour
 {
-    private bool visitedLibrary;
-
     public GameObject blackSquare;
 
     public Transform lawLibrary;
@@ -32,9 +30,42 @@ public class RFI : MonoBehaviour
     //exactly while this component is enabled; tracked so Escape (PlayerLogic.Menu) can close it
     public static RFI CurrentlyOpen;
 
+    //the box the player checked last; any other box that becomes checked replaces it
+    private GameObject selectedCheck;
+
+    private float originalMoveSpeed;
+    private float originalSprintSpeed;
+
     void OnEnable()
     {
         CurrentlyOpen = this;
+        LockMovement(true);
+    }
+
+    //each box is a pair wired in the scene: clicking the empty box hides it and shows its X, clicking the X
+    //does the reverse. LateUpdate runs after the UI click, so a newly checked box clears the others the same frame
+    void LateUpdate()
+    {
+        GameObject[] checks = { lawLibraryCheck, propertyCheck, VisitationCheck, commissaryCheck, housingCheck };
+        GameObject[] boxes = { lawLibraryButton, property, Visitation, commissaryButton, housing };
+
+        GameObject newlyChecked = null;
+        for(int i = 0; i < checks.Length; i++)
+        {
+            if(checks[i] != null && checks[i].activeSelf && checks[i] != selectedCheck)
+            {
+                newlyChecked = checks[i];
+            }
+        }
+        if(newlyChecked == null) return;
+
+        selectedCheck = newlyChecked;
+        for(int i = 0; i < checks.Length; i++)
+        {
+            if(checks[i] == null || checks[i] == selectedCheck) continue;
+            checks[i].SetActive(false);
+            if(boxes[i] != null) boxes[i].SetActive(true);
+        }
     }
 
     void OnDisable()
@@ -42,6 +73,29 @@ public class RFI : MonoBehaviour
         if(CurrentlyOpen == this)
         {
             CurrentlyOpen = null;
+        }
+        LockMovement(false);
+    }
+
+    //freezes walking/sprinting while the form is open (same approach as Newspaper); the speeds are saved
+    //when it opens and put back when it closes, whether by Submit, Escape or a UnityEvent
+    private void LockMovement(bool locked)
+    {
+        if(player == null) return;
+        StarterAssets.FirstPersonController controller = player.GetComponent<StarterAssets.FirstPersonController>();
+        if(controller == null) return;
+
+        if(locked)
+        {
+            originalMoveSpeed = controller.MoveSpeed;
+            originalSprintSpeed = controller.SprintSpeed;
+            controller.MoveSpeed = 0f;
+            controller.SprintSpeed = 0f;
+        }
+        else
+        {
+            controller.MoveSpeed = originalMoveSpeed;
+            controller.SprintSpeed = originalSprintSpeed;
         }
     }
 
@@ -60,44 +114,66 @@ public class RFI : MonoBehaviour
     }*/
     public void Submit()
     {
-        if(lawLibraryCheck.activeSelf && visitedLibrary == false)
+        if(lawLibraryCheck.activeSelf)
         {
-            visitedLibrary = true;
             //LawLibraryDoor.transform.localRotation = Quaternion.Euler(-90f,0,180f);
-            eventText.text = "The law library is now open. Go there to request access for special commissary. Click 'E' on the door to teleport back";
-            Invoke("RemoveText",5f);
-            Invoke("TeleportLawLibrary",5f);
-            
+            TeleportAfterDelay("Law Library", lawLibrary);
         }
-        /*else if(commissaryCheck.activeSelf)
+        else if(commissaryCheck.activeSelf)
         {
-            Invoke("TeleportCommissary",5f);
-        }*/
+            TeleportAfterDelay("Commissary", commissary);
+        }
         QuestLog.SetQuestState("Submit an RFI","success");
 
     }
+
+    //the Submit button hides this form before calling Submit, and Invoke/coroutines don't run on an
+    //inactive object, so the countdown runs on the player instead (it stays active)
+    private void TeleportAfterDelay(string locationName, Transform destination)
+    {
+        eventText.text = "You will be teleported to the " + locationName + " in 5 seconds. Press 'E' on the door to teleport back to your cell.";
+        //GameController hides this at the start of each day, so it has to be shown again here
+        eventTextObject.SetActive(true);
+        player.GetComponent<MonoBehaviour>().StartCoroutine(TeleportRoutine(destination));
+    }
+
+    private IEnumerator TeleportRoutine(Transform destination)
+    {
+        yield return new WaitForSeconds(5f);
+        RemoveText();
+        MovePlayer(destination);
+    }
+
     public void RemoveText()
     {
         eventTextObject.SetActive(false);
     }
     public void TeleportLawLibrary()
     {
-        player.SetActive(false);
-        player.transform.position = lawLibrary.position;
-        player.SetActive(true);
+        MovePlayer(lawLibrary);
     }
     public void TeleportCommissary()
     {
-        player.SetActive(false);
-        player.transform.position = commissary.position;
-        player.SetActive(true);
-        Invoke("TeleportToSeg",60f);
+        MovePlayer(commissary);
     }
     public void TeleportToSeg()
     {
-        player.SetActive(false);
-        player.transform.position = segPosition.position;
-        player.SetActive(true);
+        MovePlayer(segPosition);
+    }
+
+    //the CharacterController overwrites transform.position while enabled, so toggle it off around the move
+    //(not player.SetActive, which would also stop the coroutine running on the player)
+    private void MovePlayer(Transform destination)
+    {
+        if(destination == null)
+        {
+            Debug.LogWarning("[RFI] Cannot teleport player: destination not assigned.");
+            return;
+        }
+        CharacterController controller = player.GetComponent<CharacterController>();
+        if(controller != null) controller.enabled = false;
+        player.transform.position = destination.position;
+        if(controller != null) controller.enabled = true;
     }
 
 }
