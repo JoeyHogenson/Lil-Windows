@@ -33,7 +33,7 @@ MonoBehaviour:
     m_Value: 1
   celBands:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 5
   celSoftness:
     m_OverrideState: 1
     m_Value: 0
