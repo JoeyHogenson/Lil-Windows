@@ -6,10 +6,16 @@ using UnityEngine;
 // Animator Controller to receive these - this script only sets the parameters.
 public class ChicoWeekdaySchedule : MonoBehaviour
 {
-    public DCGameController dayController;
+    public GameController dayController;
     public Animator animator;
 
     private System.DayOfWeek _lastDay = (System.DayOfWeek)(-1);
+
+    void Awake()
+    {
+        if (dayController == null) dayController = FindFirstObjectByType<GameController>();
+        if (animator == null) animator = GetComponent<Animator>();
+    }
 
     void Update()
     {

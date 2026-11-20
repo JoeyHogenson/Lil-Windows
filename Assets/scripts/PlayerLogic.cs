@@ -123,6 +123,9 @@ public class PlayerLogic : MonoBehaviour
     /// </summary>
     public void Menu()
     {
+        //the character select must be answered; Escape would otherwise re-lock the cursor under it
+        if(PlaythroughDirector.IsChoosing) return;
+
         if(Newspaper.CurrentlyOpen != null)
         {
             Newspaper.CurrentlyOpen.ShutNewspaper();

@@ -26,7 +26,8 @@ public class GameController : MonoBehaviour
         public bool HasFired;
     }
 
-    private const string JailSceneName = "New Jail Scene";
+    //every playthrough (DC, Riley, ...) shares this scene; PlaythroughDirector picks the character
+    private const string JailSceneName = "Lil Windows";
     private const float EventTextDuration = 5f;
     private const float CountWarningLeadTime = 5f;
     private const float CountGuardWalkDuration = 8f;
@@ -100,7 +101,36 @@ public class GameController : MonoBehaviour
     void Start()
     {
         Log("Start: dayCount=" + dayCount);
+        //day 1 waits for the character select so the chosen playthrough's systems see it start
+        PlaythroughDirector director = PlaythroughDirector.Instance;
+        if(director != null && !director.HasSelected)
+        {
+            director.Selected += OnPlaythroughSelected;
+            return;
+        }
         StartDay();
+    }
+
+    private void OnPlaythroughSelected(PlayableCharacter character)
+    {
+        if(PlaythroughDirector.Instance != null) PlaythroughDirector.Instance.Selected -= OnPlaythroughSelected;
+        StartDay();
+    }
+
+    /// <summary>
+    /// Points the cell (end-of-day/commissary teleport, ReturnToCellDoor) and the count zone at the chosen
+    /// character's. Null arguments keep the current value.
+    /// </summary>
+    public void SetPlayerCell(Transform startingPosition, Collider countZone)
+    {
+        if(startingPosition != null) playerStartingPosition = startingPosition;
+        if(countZone != null) countzone = countZone;
+    }
+
+    /// <summary>Moves the player to <paramref name="destination"/> (the CharacterController is toggled around the move).</summary>
+    public void TeleportPlayerTo(Transform destination)
+    {
+        TeleportPlayer(destination);
     }
 
     void Update()
@@ -165,6 +195,8 @@ public class GameController : MonoBehaviour
             Debug.LogWarning("[GameController] SaveGame: no Easy Save 3 Manager in the scene.");
             return;
         }
+        //written before Save() so it lands in the same cached file Easy Save commits
+        PlaythroughDirector.WriteToSave(saveManager.settings);
         saveManager.Save();
         ShowEventText("Game saved.");
         CancelInvoke(nameof(HideEventText));

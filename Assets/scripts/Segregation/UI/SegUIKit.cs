@@ -28,6 +28,8 @@ public static class SegUIKit
         scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
         scaler.referenceResolution = new Vector2(1920f, 1080f);
         scaler.matchWidthOrHeight = 0.5f;
+        //onto the camera so the retro filter covers this UI too
+        RetroCanvasRouter.Route(canvas);
         return canvas;
     }
 

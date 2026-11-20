@@ -8,12 +8,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Triplanarwall
-  m_Shader: {fileID: -6465566751694194690, guid: a8b8a534901c0754fa065d38912dd346,
-    type: 3}
+  m_Shader: {fileID: 4800000, guid: 18e9b5f6c98642f4a1ea817f22e5c1c0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _INVERTHEIGHT_ON
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -43,12 +43,34 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BumpStrength: 1.88
+    - _CavityOcclusion: 0.35
+    - _ChipAmount: 0.158
+    - _ChipDepth: 0.79
+    - _ChipMortarBias: 0.45
+    - _ChipRimDarken: 0.35
+    - _ChipScale: 23
+    - _ChipSharpness: 18
+    - _CrackAmount: 0.233
+    - _CrackDepth: 3
+    - _CrackJitter: 0.199
+    - _CrackScale: 11.2
+    - _CrackWidth: 0.0146
+    - _GrimeAmount: 0.3
+    - _GrimeScale: 1.5
+    - _HeightContrast: 6
+    - _HeightMidpoint: 0.92
+    - _InvertHeight: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0
+    - _SelfIllumination: 0.15
+    - _Smoothness: 0.459
     - _TextureScale: 0.055
     m_Colors:
-    - _BrickTint: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 0}
+    - _BrickTint: {r: 1, g: 1, b: 1, a: 0}
+    - _ChipColor: {r: 0.43, g: 0.41, b: 0.38, a: 1}
+    - _CrackColor: {r: 0.08, g: 0.07, b: 0.07, a: 1}
+    - _GrimeColor: {r: 0.32, g: 0.29, b: 0.24, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &2295699368007873987
