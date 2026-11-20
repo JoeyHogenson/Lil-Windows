@@ -59,8 +59,8 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 320
   psxUIVerticalResolution:
-    m_OverrideState: 1
-    m_Value: 320
+    m_OverrideState: 0
+    m_Value: 640
   psxColorBits:
     m_OverrideState: 1
     m_Value: 3

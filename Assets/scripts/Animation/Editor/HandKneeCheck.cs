@@ -3,22 +3,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Unity.Collections;
 using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.Animations;
-using UnityEngine.Playables;
 
 /// <summary>
-/// Measures how far each character's hands sink into their thighs on the sitting clips, three ways:
-/// plain retargeting (FK), hands solved to the clip's own IK goals, and goals plus the thigh-clearance push
-/// that <see cref="HumanoidHandGoals"/> does at runtime. The clip on its own source body is the reference.
-/// Report: Library/LilWindows.hand-knee-report.txt
+/// Measures how far each character's hands sink into their thighs on the sitting clips, three ways, using the
+/// real runtime setup (a controller with IK Pass on + <see cref="HumanoidHandGoals"/>): plain retargeting (FK),
+/// hands solved to the clip's own IK goals, and goals plus the thigh-clearance push. The clip on its own source
+/// body is the reference. Report: Library/LilWindows.hand-knee-report.txt
 /// </summary>
 public static class HandKneeCheck
 {
     public const string RequestPath = "Library/LilWindows.hand-knee.request";
     public const string ReportPath = "Library/LilWindows.hand-knee-report.txt";
+    private const int Samples = 8;
 
     private static readonly (string path, string clip, string label)[] SitClips =
     {
@@ -63,7 +62,8 @@ public static class HandKneeCheck
     {
         var report = new StringBuilder("Hands vs thighs on sitting clips  " + DateTime.Now + "\n");
         report.AppendLine("clearance = distance from hand/knuckles to the thigh axis minus thigh radius, as % of thigh length");
-        report.AppendLine("(negative = inside the leg). Worst of left/right, worst over 8 samples across the clip.\n");
+        report.AppendLine("(negative = inside the leg). Worst of both hands vs both thighs, over " + Samples + " samples across the clip.");
+        report.AppendLine("'moved' = how far the hips moved from the bind pose (proves the clip actually played).\n");
 
         foreach(var sit in SitClips)
         {
@@ -71,17 +71,13 @@ public static class HandKneeCheck
             if(clip == null) { report.AppendLine(sit.label + ": clip missing"); continue; }
             report.AppendLine(sit.label);
 
-            string sourcePath = sit.path;
-            float reference = Measure(sourcePath, clip, Mode.FK);
-            report.AppendLine(string.Format("  {0,-34} {1,8}   <- reference: clip on its own body", Path.GetFileName(sourcePath) + " (source)", Pct(reference)));
+            Result reference = Measure(sit.path, clip, Mode.FK);
+            report.AppendLine(string.Format("  {0,-34} {1}   <- clip on its own body", Path.GetFileName(sit.path) + " (source)", reference));
 
             foreach(string character in Characters)
             {
-                float fk = Measure(character, clip, Mode.FK);
-                float goals = Measure(character, clip, Mode.ClipGoals);
-                float push = Measure(character, clip, Mode.GoalsPlusClearance);
-                report.AppendLine(string.Format("  {0,-34} FK {1,8}   clip goals {2,8}   goals+clearance {3,8}",
-                    Path.GetFileName(character), Pct(fk), Pct(goals), Pct(push)));
+                report.AppendLine(string.Format("  {0,-34} FK {1}   clip goals {2}   goals+clearance {3}", Path.GetFileName(character),
+                    Measure(character, clip, Mode.FK), Measure(character, clip, Mode.ClipGoals), Measure(character, clip, Mode.GoalsPlusClearance)));
             }
             report.AppendLine();
         }
@@ -90,100 +86,94 @@ public static class HandKneeCheck
         Debug.Log("[HandKneeCheck]\n" + report);
     }
 
-    private static string Pct(float v) => float.IsNaN(v) ? "n/a" : (v * 100f).ToString("0.0") + "%";
+    private struct Result
+    {
+        public bool ok;
+        public float clearance;
+        public float moved;
+        public string error;
 
-    private static float Measure(string modelPath, AnimationClip clip, Mode mode)
+        public override string ToString()
+        {
+            if(!ok) return ("n/a (" + error + ")").PadRight(22);
+            return string.Format("{0,7}% (moved {1:0.00})", (clearance * 100f).ToString("0.0"), moved);
+        }
+    }
+
+    private static Result Measure(string modelPath, AnimationClip clip, Mode mode)
     {
         var model = AssetDatabase.LoadAssetAtPath<GameObject>(modelPath);
         Avatar avatar = AssetDatabase.LoadAllAssetsAtPath(modelPath).OfType<Avatar>().FirstOrDefault();
-        if(model == null || avatar == null || !avatar.isHuman) return float.NaN;
+        if(model == null || avatar == null || !avatar.isHuman) return new Result { error = "no humanoid avatar" };
+
+        //an in-memory controller with IK Pass, like the game's character controllers
+        var controller = new AnimatorController { name = "HandKneeCheck" };
+        controller.AddLayer("Base");
+        AnimatorControllerLayer[] layers = controller.layers;
+        layers[0].iKPass = true;
+        controller.layers = layers;
+        AnimatorState state = controller.layers[0].stateMachine.AddState("Sit");
+        state.motion = clip;
 
         var instance = (GameObject)UnityEngine.Object.Instantiate(model);
         instance.hideFlags = HideFlags.HideAndDontSave;
-        PlayableGraph graph = default;
         try
         {
             Animator animator = instance.GetComponent<Animator>();
             if(animator == null) animator = instance.AddComponent<Animator>();
             animator.avatar = avatar;
             animator.applyRootMotion = false;
-            animator.Rebind();
+            animator.cullingMode = AnimatorCullingMode.AlwaysAnimate;
+            animator.runtimeAnimatorController = controller;
 
-            graph = PlayableGraph.Create("HandKneeCheck");
-            graph.SetTimeUpdateMode(DirectorUpdateMode.Manual);
-            var clipPlayable = AnimationClipPlayable.Create(graph, clip);
-            var job = new HandGoalJob
+            if(mode != Mode.FK)
             {
-                mode = (int)mode,
-                leftThigh = animator.BindStreamTransform(animator.GetBoneTransform(HumanBodyBones.LeftUpperLeg)),
-                leftKnee = animator.BindStreamTransform(animator.GetBoneTransform(HumanBodyBones.LeftLowerLeg)),
-                rightThigh = animator.BindStreamTransform(animator.GetBoneTransform(HumanBodyBones.RightUpperLeg)),
-                rightKnee = animator.BindStreamTransform(animator.GetBoneTransform(HumanBodyBones.RightLowerLeg)),
-            };
-            var scriptPlayable = AnimationScriptPlayable.Create(graph, job, 1);
-            graph.Connect(clipPlayable, 0, scriptPlayable, 0);
-            scriptPlayable.SetInputWeight(0, 1f);
-            AnimationPlayableOutput.Create(graph, "out", animator).SetSourcePlayable(scriptPlayable);
+                var goals = instance.AddComponent<HumanoidHandGoals>();
+                goals.handGoalWeight = 1f;
+                goals.keepHandsOutOfThighs = mode == Mode.GoalsPlusClearance;
+            }
 
+            Transform hipsBone = animator.GetBoneTransform(HumanBodyBones.Hips);
+            Vector3 bindHips = hipsBone.position;
             float worst = float.MaxValue;
-            for(int i = 0; i < 8; i++)
+            float moved = 0f;
+            for(int i = 0; i < Samples; i++)
             {
-                clipPlayable.SetTime(clip.length * i / 8f);
-                graph.Evaluate();
+                animator.Play(state.nameHash, 0, (float)i / Samples);
+                //three times: the clearance push reads hand/thigh positions the previous update left behind
+                animator.Update(0f);
+                animator.Update(0f);
+                animator.Update(0f);
+                moved = Mathf.Max(moved, Vector3.Distance(hipsBone.position, bindHips));
+
+                float thighLength = Vector3.Distance(animator.GetBoneTransform(HumanBodyBones.LeftUpperLeg).position,
+                    animator.GetBoneTransform(HumanBodyBones.LeftLowerLeg).position);
+                var points = new List<Vector3>();
+                foreach(HumanBodyBones bone in new[] { HumanBodyBones.LeftHand, HumanBodyBones.RightHand, HumanBodyBones.LeftIndexProximal, HumanBodyBones.RightIndexProximal, HumanBodyBones.LeftMiddleProximal, HumanBodyBones.RightMiddleProximal, HumanBodyBones.LeftLittleProximal, HumanBodyBones.RightLittleProximal, HumanBodyBones.LeftMiddleDistal, HumanBodyBones.RightMiddleDistal })
+                {
+                    Transform t = animator.GetBoneTransform(bone);
+                    if(t != null) points.Add(t.position);
+                }
                 foreach(bool left in new[] { true, false })
                 {
-                    Transform thigh = animator.GetBoneTransform(left ? HumanBodyBones.LeftUpperLeg : HumanBodyBones.RightUpperLeg);
-                    Transform knee = animator.GetBoneTransform(left ? HumanBodyBones.LeftLowerLeg : HumanBodyBones.RightLowerLeg);
-                    float thighLength = Vector3.Distance(thigh.position, knee.position);
-                    var points = new List<Vector3> { animator.GetBoneTransform(left ? HumanBodyBones.LeftHand : HumanBodyBones.RightHand).position };
-                    Transform knuckle = animator.GetBoneTransform(left ? HumanBodyBones.LeftMiddleProximal : HumanBodyBones.RightMiddleProximal);
-                    if(knuckle != null) points.Add(knuckle.position);
-                    //either hand can rest on either knee
-                    foreach(bool otherLeft in new[] { true, false })
+                    Vector3 hip = animator.GetBoneTransform(left ? HumanBodyBones.LeftUpperLeg : HumanBodyBones.RightUpperLeg).position;
+                    Vector3 knee = animator.GetBoneTransform(left ? HumanBodyBones.LeftLowerLeg : HumanBodyBones.RightLowerLeg).position;
+                    foreach(Vector3 p in points)
                     {
-                        Transform t = animator.GetBoneTransform(otherLeft ? HumanBodyBones.LeftUpperLeg : HumanBodyBones.RightUpperLeg);
-                        Transform k = animator.GetBoneTransform(otherLeft ? HumanBodyBones.LeftLowerLeg : HumanBodyBones.RightLowerLeg);
-                        foreach(Vector3 p in points)
-                        {
-                            float clearance = HumanoidHandGoals.ThighClearance(p, t.position, k.position, thighLength);
-                            worst = Mathf.Min(worst, clearance / thighLength);
-                        }
+                        worst = Mathf.Min(worst, HumanoidHandGoals.ThighClearance(p, hip, knee, thighLength) / thighLength);
                     }
                 }
             }
-            return worst;
+            return new Result { ok = true, clearance = worst, moved = moved };
+        }
+        catch(Exception e)
+        {
+            return new Result { error = e.GetType().Name };
         }
         finally
         {
-            if(graph.IsValid()) graph.Destroy();
             UnityEngine.Object.DestroyImmediate(instance);
-        }
-    }
-
-    private struct HandGoalJob : IAnimationJob
-    {
-        public int mode;
-        public TransformStreamHandle leftThigh, leftKnee, rightThigh, rightKnee;
-
-        public void ProcessRootMotion(AnimationStream stream) { }
-
-        public void ProcessAnimation(AnimationStream stream)
-        {
-            if(mode == (int)Mode.FK) return;
-            AnimationHumanStream human = stream.AsHuman();
-            foreach(AvatarIKGoal goal in new[] { AvatarIKGoal.LeftHand, AvatarIKGoal.RightHand })
-            {
-                if(mode == (int)Mode.GoalsPlusClearance)
-                {
-                    Vector3 target = human.GetGoalPosition(goal);
-                    target = HumanoidHandGoals.PushOutOfThigh(target, leftThigh.GetPosition(stream), leftKnee.GetPosition(stream));
-                    target = HumanoidHandGoals.PushOutOfThigh(target, rightThigh.GetPosition(stream), rightKnee.GetPosition(stream));
-                    human.SetGoalPosition(goal, target);
-                }
-                human.SetGoalWeightPosition(goal, 1f);
-                human.SetGoalWeightRotation(goal, 1f);
-            }
-            human.SolveIK();
+            UnityEngine.Object.DestroyImmediate(controller);
         }
     }
 }

@@ -77,6 +77,15 @@ public class RetroCanvasRouter : MonoBehaviour
 
         RetroCanvasRouter router = GetInstance();
         if(router.entries.Any(e => e.canvas == canvas)) return;
+
+        //a camera-space canvas inherits its parent's scale (overlay ones don't), so it comes out too big/small
+        //and clicks miss; keep screen canvases at the scene root or under unscaled objects
+        Transform parent = canvas.transform.parent;
+        if(parent != null && (parent.lossyScale - Vector3.one).sqrMagnitude > 1e-4f)
+        {
+            Debug.LogWarning("[RetroCanvasRouter] Canvas \"" + canvas.name + "\" is under \"" + parent.name + "\", which is scaled "
+                + parent.lossyScale + ". On the camera it will render scaled by that too; move it to the scene root.", canvas);
+        }
         router.entries.Add(new Entry { canvas = canvas, wasOverlay = overlay, sequence = router.nextSequence++ });
         router.Restack(Camera.main);
     }

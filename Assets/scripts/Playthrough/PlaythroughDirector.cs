@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using PixelCrushers.DialogueSystem;
 using StarterAssets;
 using TMPro;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 /// <summary>
@@ -78,6 +79,7 @@ public class PlaythroughDirector : MonoBehaviour
     public IReadOnlyList<PlaythroughOption> Options => options;
 
     private GameObject selectScreen;
+    private Canvas selectCanvas;
     private float timeScaleBeforeChoosing = 1f;
 
     //statics survive Play mode restarts when domain reload is off
@@ -125,11 +127,29 @@ public class PlaythroughDirector : MonoBehaviour
 
     void OnDestroy()
     {
+        if(selectCanvas != null) Destroy(selectCanvas.gameObject);
         if(Instance == this)
         {
             Instance = null;
             IsChoosing = false;
         }
+    }
+
+    //keyboard fallback so the choice can never trap the player: 1/2/... pick a character, Enter picks the first
+    void Update()
+    {
+        if(!IsChoosing) return;
+        Keyboard keyboard = Keyboard.current;
+        if(keyboard == null) return;
+        for(int i = 0; i < options.Count && i < 9; i++)
+        {
+            if(keyboard[Key.Digit1 + i].wasPressedThisFrame || keyboard[Key.Numpad1 + i].wasPressedThisFrame)
+            {
+                Select(options[i].character);
+                return;
+            }
+        }
+        if(keyboard.enterKey.wasPressedThisFrame && options.Count > 0) Select(options[0].character);
     }
 
     /// <summary>Starts the run as <paramref name="character"/>. Does nothing after the first call.</summary>
@@ -236,15 +256,19 @@ public class PlaythroughDirector : MonoBehaviour
     {
         if(!IsChoosing) return;
         IsChoosing = false;
-        if(selectScreen != null) selectScreen.SetActive(false);
+        //only needed once per run
+        if(selectCanvas != null) Destroy(selectCanvas.gameObject);
+        selectScreen = null;
         if(pauseWhileChoosing) Time.timeScale = timeScaleBeforeChoosing;
         if(playerLogic != null) playerLogic.UnlockCursor();
     }
 
     private GameObject BuildSelectScreen()
     {
+        //kept at the scene root: this object is scaled (7.9x on Game Controller Object), and a camera-space
+        //canvas under a scaled parent comes out that much too big, with clicks landing in the wrong place
         Canvas canvas = SegUIKit.CreateCanvas("Character Select Canvas", sortingOrder);
-        canvas.transform.SetParent(transform, false);
+        selectCanvas = canvas;
 
         RectTransform shade = SegUIKit.Shade(canvas.transform);
         shade.GetComponent<UnityEngine.UI.Image>().color = new Color(0f, 0f, 0f, 0.92f);
@@ -273,7 +297,7 @@ public class PlaythroughDirector : MonoBehaviour
             TextMeshProUGUI blurb = SegUIKit.Label(card, option.description, 22f, SegUIKit.Ink);
             blurb.textWrappingMode = TextWrappingModes.Normal;
             blurb.gameObject.AddComponent<UnityEngine.UI.LayoutElement>().flexibleHeight = 1f;
-            SegUIKit.Button(card, "Play as " + title, () => Select(character));
+            SegUIKit.Button(card, "[" + (options.IndexOf(option) + 1) + "] Play as " + title, () => Select(character));
         }
 
         return shade.gameObject;

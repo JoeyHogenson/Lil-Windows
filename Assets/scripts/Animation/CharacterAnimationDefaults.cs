@@ -71,6 +71,12 @@ public static class CharacterAnimationBootstrap
                 }
             }
 
+            //hands to the clip's own hand goals, kept out of the thighs (sitting clips on other bodies)
+            if(animator.avatar != null && animator.avatar.isHuman && !animator.TryGetComponent(out HumanoidHandGoals _))
+            {
+                animator.gameObject.AddComponent<HumanoidHandGoals>();
+            }
+
             if(!animator.TryGetComponent(out CharacterRigStabilizer stabilizer))
             {
                 stabilizer = animator.gameObject.AddComponent<CharacterRigStabilizer>();
