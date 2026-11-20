@@ -19,7 +19,8 @@ public static class PixelDialogueUISetup
     private const string BoxFolder = "Assets/UI/Pixel Boxes";
     private const string BasePrefabPath = "Assets/Plugins/Pixel Crushers/Dialogue System/Prefabs/Standard UI Prefabs/Templates/Basic/Basic Standard Dialogue UI.prefab";
     private const string VariantPath = "Assets/UI/Lil Windows Dialogue UI.prefab";
-    public const string RequestPath = "Library/LilWindows.pixel-ui.request";
+    //v2: the subtitle cap; a new name so an older compiled copy of this tool can't consume the request
+    public const string RequestPath = "Library/LilWindows.pixel-ui-v2.request";
     public const string ReportPath = "Library/LilWindows.pixel-ui-report.txt";
 
     //each box texture is 8x8: 1px outline + 1px bevel + 1px of fill in the slice border
@@ -114,6 +115,27 @@ public static class PixelDialogueUISetup
                     image.pixelsPerUnitMultiplier = 1f / PixelScale;
                 }
                 report.AppendLine("  " + box.Value.ToString().ToLowerInvariant().PadRight(7) + path + "  (" + why + ")");
+            }
+
+            //the NPC subtitle grows down from the top; keep it above the response menu (VCR's wider glyphs wrap
+            //onto more lines than the old font, and long lines ran over the options)
+            Transform npcPanel = instance.transform.Find("Dialogue Panel/NPC Subtitle Panel");
+            Transform menuPanel = instance.transform.Find("Dialogue Panel/Response Menu Panel");
+            if(npcPanel != null && menuPanel != null)
+            {
+                var fit = npcPanel.GetComponent<SubtitleFitAbove>();
+                if(fit == null) fit = npcPanel.gameObject.AddComponent<SubtitleFitAbove>();
+                fit.limit = (RectTransform)menuPanel;
+                Transform subtitle = npcPanel.Find("Subtitle Text");
+                fit.text = subtitle != null ? subtitle.GetComponent<Graphic>() : null;
+                var fitter = npcPanel.GetComponent<ContentSizeFitter>();
+                if(fitter != null) fitter.enabled = false;
+                report.AppendLine("NPC Subtitle Panel: capped above Response Menu Panel (SubtitleFitAbove; text "
+                    + (fit.text != null ? fit.text.GetType().Name : "NOT FOUND") + "), its ContentSizeFitter disabled");
+            }
+            else
+            {
+                report.AppendLine("NPC Subtitle Panel / Response Menu Panel not found; subtitle cap not added");
             }
 
             Directory.CreateDirectory(Path.GetDirectoryName(VariantPath));

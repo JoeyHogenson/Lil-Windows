@@ -55,19 +55,25 @@ public class RetroStylizeFeature : ScriptableRendererFeature
         RetroStylize settings = VolumeManager.instance.stack.GetComponent<RetroStylize>();
         if(settings == null || !settings.IsActive()) return;
 
+        //camera stacks (the UI overlay camera from RetroCanvasRouter): the world passes belong to the base camera,
+        //the final pass to whichever camera finishes the frame, so nothing is stylized twice
+        bool isBase = renderingData.cameraData.renderType == CameraRenderType.Base;
+        bool isLast = renderingData.cameraData.resolveFinalTarget;
+
         if(!stylizeUIAndSprites)
         {
+            if(!isBase) return;
             opaquePass.Setup(opaqueMaterial, settings, Stage.Everything);
             renderer.EnqueuePass(opaquePass);
             return;
         }
 
-        if(settings.CelActive || settings.OutlinesActive || settings.PixelateActive)
+        if(isBase && (settings.CelActive || settings.OutlinesActive || settings.PixelateActive))
         {
             opaquePass.Setup(opaqueMaterial, settings, Stage.Opaque);
             renderer.EnqueuePass(opaquePass);
         }
-        if(settings.PixelateActive || settings.QuantizeActive)
+        if(isLast && (settings.PixelateActive || settings.QuantizeActive))
         {
             finalPass.Setup(finalMaterial, settings, Stage.Final);
             renderer.EnqueuePass(finalPass);

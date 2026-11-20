@@ -27,9 +27,24 @@ public class HumanoidHandGoals : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    //a scripted reach (e.g. taking an item from the player) that blends over the clip goal; index 0 = left, 1 = right
+    private readonly Vector3[] reachTarget = new Vector3[2];
+    private readonly float[] reachWeight = new float[2];
+
+    /// <summary>Pulls a hand toward <paramref name="worldPosition"/> by <paramref name="weight"/> (0 releases it).</summary>
+    public void SetReach(AvatarIKGoal hand, Vector3 worldPosition, float weight)
+    {
+        int i = hand == AvatarIKGoal.LeftHand ? 0 : 1;
+        reachTarget[i] = worldPosition;
+        reachWeight[i] = Mathf.Clamp01(weight);
+    }
+
     void OnAnimatorIK(int layerIndex)
     {
-        if(layerIndex != 0 || animator == null || !animator.isHuman || handGoalWeight <= 0f) return;
+        if(layerIndex != 0 || animator == null || !animator.isHuman) return;
+        ApplyReach(AvatarIKGoal.LeftHand, 0);
+        ApplyReach(AvatarIKGoal.RightHand, 1);
+        if(handGoalWeight <= 0f || reachWeight[0] > 0f || reachWeight[1] > 0f) return;
 
         Transform leftHip = animator.GetBoneTransform(HumanBodyBones.LeftUpperLeg);
         Transform leftKnee = animator.GetBoneTransform(HumanBodyBones.LeftLowerLeg);
@@ -49,6 +64,15 @@ public class HumanoidHandGoals : MonoBehaviour
             animator.SetIKPositionWeight(goal, handGoalWeight);
             animator.SetIKRotationWeight(goal, handGoalWeight);
         }
+    }
+
+    private void ApplyReach(AvatarIKGoal goal, int i)
+    {
+        if(reachWeight[i] <= 0f) return;
+        Vector3 clipGoal = animator.GetIKPosition(goal);
+        animator.SetIKPosition(goal, Vector3.Lerp(clipGoal, reachTarget[i], reachWeight[i]));
+        animator.SetIKPositionWeight(goal, 1f);
+        animator.SetIKRotationWeight(goal, 1f - reachWeight[i]);
     }
 
     //the wrist plus the parts of the hand that rest on a knee

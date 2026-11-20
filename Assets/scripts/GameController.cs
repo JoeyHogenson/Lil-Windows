@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using PixelCrushers.DialogueSystem;
 using TMPro;
 using UnityEngine;
@@ -35,17 +36,25 @@ public class GameController : MonoBehaviour
     private const float EndOfDayFadeDelay = 10f;
 
     [Header("Day Length")]
-    [Tooltip("Real-time seconds per in-game day. The next day starts exactly this long after the current one did.")]
-    public float dayLengthSeconds = 30f;
+    [Tooltip("Real-time seconds per in-game day (wake-up to lights out). 960 = one in-game hour per real minute.")]
+    public float dayLengthSeconds = 960f;
 
-    [Header("Day Schedule (seconds after the day starts)")]
-    [SerializeField] private float thoughtsOffset = 20f;
-    [SerializeField] private float bookBanOffset = 20f;
-    [SerializeField] private float lockdownOffset = 20f;
-    [SerializeField] private float mailOffset = 60f;
-    [Tooltip("Clamped so the count deadline never falls after the end-of-day warning.")]
-    [SerializeField] private float countOffset = 300f;
-    [SerializeField] private float commissaryOffset = 1000f;
+    [Header("Clock (in-game hours, 24h)")]
+    [Tooltip("Wake-up. The day's clock starts here.")]
+    public float dayStartHour = 6f;
+    [Tooltip("Lights out. The day ends here and the next starts at wake-up.")]
+    public float dayEndHour = 22f;
+
+    [Header("Day Schedule (in-game hours, 24h)")]
+    [Tooltip("Formal counts: stand at your cell door. Real facilities count several times a day.")]
+    [SerializeField] private float[] countHours = { 7f, 12f, 16.5f, 21f };
+    [Tooltip("Pill line: the infirmary hands out medication.")]
+    [SerializeField] private float[] pillLineHours = { 8f, 20f };
+    [SerializeField] private float mailHour = 11f;
+    [SerializeField] private float commissaryHour = 13f;
+    [SerializeField] private float thoughtsHour = 6.5f;
+    [SerializeField] private float bookBanHour = 9f;
+    [SerializeField] private float lockdownHour = 9f;
 
     [Header("Story Events")]
     [Tooltip("Book ban is imposed on day 2 and lifted on day 3.")]
@@ -97,6 +106,75 @@ public class GameController : MonoBehaviour
 
     private float dayStartTime;
     private readonly List<ScheduledEvent> schedule = new List<ScheduledEvent>();
+
+    /// <summary>Raised when a scheduled activity begins, with its display name ("Count", "Pill line", ...).</summary>
+    public event Action<string> ActivityStarted;
+
+    // ---------- Clock ----------
+
+    /// <summary>In-game hour of day (6.5 = 6:30 AM). Holds at wake-up until the day starts.</summary>
+    public float CurrentHour
+    {
+        get
+        {
+            if(!IsDayStarted || dayLengthSeconds <= 0f) return dayStartHour;
+            float progress = Mathf.Clamp01((Time.time - dayStartTime) / dayLengthSeconds);
+            return Mathf.Lerp(dayStartHour, dayEndHour, progress);
+        }
+    }
+
+    /// <summary>Hours since day 1 began, counting each night as the full gap to the next wake-up. For deadlines.</summary>
+    public float AbsoluteHour => (dayCount - 1) * 24f + CurrentHour;
+
+    /// <summary>Real seconds per in-game hour.</summary>
+    public float SecondsPerHour => dayLengthSeconds / Mathf.Max(0.01f, dayEndHour - dayStartHour);
+
+    /// <summary>"Sun 6:40 AM".</summary>
+    public string ClockText => GetDayOfWeek().ToString().Substring(0, 3) + " " + FormatHour(CurrentHour);
+
+    public static string FormatHour(float hour)
+    {
+        hour = Mathf.Repeat(hour, 24f);
+        int h = Mathf.FloorToInt(hour);
+        int m = Mathf.FloorToInt((hour - h) * 60f);
+        //10-minute steps read like a wall clock and don't flicker every frame
+        m = m / 10 * 10;
+        int h12 = h % 12 == 0 ? 12 : h % 12;
+        return h12 + ":" + m.ToString("00") + (h < 12 ? " AM" : " PM");
+    }
+
+    /// <summary>The next activity still to come today, for the HUD. False after the last one.</summary>
+    public bool TryGetNextActivity(out string activity, out float hour)
+    {
+        activity = null;
+        hour = 0f;
+        float now = CurrentHour;
+        foreach(var (name, at) in Activities())
+        {
+            if(at > now && (activity == null || at < hour))
+            {
+                activity = name;
+                hour = at;
+            }
+        }
+        return activity != null;
+    }
+
+    private IEnumerable<(string name, float hour)> Activities()
+    {
+        if(countHours != null) foreach(float h in countHours) yield return ("Count", h);
+        if(pillLineHours != null) foreach(float h in pillLineHours) yield return ("Pill line", h);
+        yield return ("Mail", mailHour);
+        yield return ("Commissary", commissaryHour);
+        yield return ("Lights out", dayEndHour);
+    }
+
+    /// <summary>Time.time at which today's clock reads <paramref name="hour"/>.</summary>
+    public float HourToTime(float hour)
+    {
+        float span = Mathf.Max(0.01f, dayEndHour - dayStartHour);
+        return dayStartTime + (hour - dayStartHour) / span * dayLengthSeconds;
+    }
 
     void Start()
     {
@@ -228,17 +306,37 @@ public class GameController : MonoBehaviour
         end = dayStartTime + dayLengthSeconds;
         //the warning goes up EndOfDayFadeDelay before the end so the fade finishes exactly at `end`
         float endOfDayWarningTime = Mathf.Max(dayStartTime, end - EndOfDayFadeDelay);
-        float countTime = Mathf.Min(dayStartTime + countOffset, endOfDayWarningTime);
 
         schedule.Clear();
-        schedule.Add(new ScheduledEvent { Name = "CountWarning", Time = countTime - CountWarningLeadTime, ExpiresAt = countTime, Fire = CountWarningEvent });
-        schedule.Add(new ScheduledEvent { Name = "CountDeadline", Time = countTime, Fire = CountDeadlineEvent });
-        schedule.Add(new ScheduledEvent { Name = "Commissary", Time = dayStartTime + commissaryOffset, Fire = CommissaryEvent });
-        schedule.Add(new ScheduledEvent { Name = "Mail", Time = dayStartTime + mailOffset, Fire = MailEvent });
+        //counts: a warning a little ahead, then the check; none may land after the end-of-day warning
+        if(countHours != null)
+        {
+            foreach(float hour in countHours)
+            {
+                float countTime = Mathf.Min(HourToTime(hour), endOfDayWarningTime);
+                float lead = Mathf.Max(CountWarningLeadTime, SecondsPerHour * 0.25f);
+                schedule.Add(new ScheduledEvent { Name = "CountWarning " + hour, Time = countTime - lead, ExpiresAt = countTime, Fire = CountWarningEvent });
+                schedule.Add(new ScheduledEvent { Name = "CountDeadline " + hour, Time = countTime, Fire = CountDeadlineEvent });
+            }
+        }
+        if(pillLineHours != null)
+        {
+            foreach(float hour in pillLineHours)
+            {
+                schedule.Add(new ScheduledEvent { Name = "PillLine " + hour, Time = HourToTime(hour), ExpiresAt = endOfDayWarningTime, Fire = PillLineEvent });
+            }
+        }
+        schedule.Add(new ScheduledEvent { Name = "Commissary", Time = HourToTime(commissaryHour), Fire = CommissaryEvent });
+        schedule.Add(new ScheduledEvent { Name = "Mail", Time = HourToTime(mailHour), Fire = MailEvent });
         schedule.Add(new ScheduledEvent { Name = "EndOfDay", Time = endOfDayWarningTime, Fire = EndOfDayEvent });
-        schedule.Add(new ScheduledEvent { Name = "Thoughts", Time = dayStartTime + thoughtsOffset, Fire = ThoughtsEvent });
-        schedule.Add(new ScheduledEvent { Name = "BookBan", Time = dayStartTime + bookBanOffset, Condition = () => enableBookBan && (dayCount == 2 || dayCount == 3), Fire = BookBanEvent });
-        schedule.Add(new ScheduledEvent { Name = "Lockdown", Time = dayStartTime + lockdownOffset, Condition = () => enableLockdown && dayCount == 2, Fire = LockdownEvent });
+        schedule.Add(new ScheduledEvent { Name = "Thoughts", Time = HourToTime(thoughtsHour), Fire = ThoughtsEvent });
+        schedule.Add(new ScheduledEvent { Name = "BookBan", Time = HourToTime(bookBanHour), Condition = () => enableBookBan && (dayCount == 2 || dayCount == 3), Fire = BookBanEvent });
+        schedule.Add(new ScheduledEvent { Name = "Lockdown", Time = HourToTime(lockdownHour), Condition = () => enableLockdown && dayCount == 2, Fire = LockdownEvent });
+        //by time, stable: events due on the same frame keep the order added above, so when a count lands on the
+        //end-of-day warning the end-of-day text (added later) is the one left on screen
+        List<ScheduledEvent> ordered = schedule.OrderBy(e => e.Time).ToList();
+        schedule.Clear();
+        schedule.AddRange(ordered);
 
         Log("BuildSchedule: daystart=" + dayStartTime + " end=" + end);
     }
@@ -272,7 +370,16 @@ public class GameController : MonoBehaviour
             StartCoroutine(StopGuardAfterSeconds(guard, CountGuardWalkDuration));
         }
         ShowEventText("Count is occurring. Stand at your cell door.");
+        ActivityStarted?.Invoke("Count");
         Log("CountWarning triggered at " + Time.time);
+    }
+
+    private void PillLineEvent()
+    {
+        ShowEventText("Pill line is open at the infirmary (" + FormatHour(CurrentHour) + ").");
+        CancelInvoke(nameof(HideEventText));
+        Invoke(nameof(HideEventText), EventTextDuration);
+        ActivityStarted?.Invoke("Pill line");
     }
 
     private void CountDeadlineEvent()
@@ -286,15 +393,19 @@ public class GameController : MonoBehaviour
 
     private void CommissaryEvent()
     {
-        //shows whatever text is already loaded; the commissary message itself is currently disabled
-        SetActiveSafe(eventTextObject, true);
+        //this used to teleport the player to their cell and show stale text, but with the old 1000s offset on a
+        //300s day it never fired; on the clock it does, so it only announces itself
         IsCommissary = true;
-        TeleportPlayer(playerStartingPosition);
+        ShowEventText("Commissary is open.");
+        CancelInvoke(nameof(HideEventText));
+        Invoke(nameof(HideEventText), EventTextDuration);
+        ActivityStarted?.Invoke("Commissary");
     }
 
     private void MailEvent()
     {
         SetActiveSafe(mailObject, true);
+        ActivityStarted?.Invoke("Mail");
         Log("MailEvent triggered at " + Time.time);
     }
 

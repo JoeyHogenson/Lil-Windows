@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +17,30 @@ public class CharacterAnimationDefaults : ScriptableObject
     public RuntimeAnimatorController genericIdle;
     [Tooltip("Given to Humanoid-rig characters with no controller (Police Guy.blend: front desk, jail staff, commissary).")]
     public RuntimeAnimatorController humanoidIdle;
+
+    [Serializable]
+    public class HeldItem
+    {
+        [Tooltip("Name used by the HandOver/ReceiveItem sequencer commands, e.g. Medicine.")]
+        public string name;
+        [Tooltip("Model shown in the hand. Empty = a plain box.")]
+        public GameObject prefab;
+        [Tooltip("Size as a fraction of the holder's arm length.")]
+        public float sizeOfArm = 0.2f;
+        public Color fallbackColor = new Color(0.9f, 0.55f, 0.15f);
+    }
+
+    [Header("Items people hand to each other")]
+    public HeldItem[] heldItems = new HeldItem[0];
+
+    public HeldItem FindItem(string itemName)
+    {
+        foreach(HeldItem item in heldItems)
+        {
+            if(item != null && string.Equals(item.name, itemName, StringComparison.OrdinalIgnoreCase)) return item;
+        }
+        return null;
+    }
 
     [Header("Rig names (MakeHuman Game Engine skeleton)")]
     public string armatureName = "Game_engine";
@@ -52,7 +77,7 @@ public static class CharacterAnimationBootstrap
 
         int idled = 0;
         int stabilized = 0;
-        foreach(Transform armature in Object.FindObjectsByType<Transform>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        foreach(Transform armature in UnityEngine.Object.FindObjectsByType<Transform>(FindObjectsInactive.Include, FindObjectsSortMode.None))
         {
             if(armature.name != defaults.armatureName || armature.parent == null) continue;
 
