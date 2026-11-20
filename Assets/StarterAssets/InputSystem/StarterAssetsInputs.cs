@@ -30,10 +30,9 @@ namespace StarterAssets
 
 		public void OnLook(InputValue value)
 		{
-			if(cursorInputForLook)
-			{
-				LookInput(value.Get<Vector2>());
-			}
+			//zeroed rather than skipped: skipping left the last mouse delta in `look`, which
+			//FirstPersonController kept applying every frame (camera spinning/pinned down in dialogue)
+			LookInput(cursorInputForLook ? value.Get<Vector2>() : Vector2.zero);
 		}
 
 		public void OnJump(InputValue value)

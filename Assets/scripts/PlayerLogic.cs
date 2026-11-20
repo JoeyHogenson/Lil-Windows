@@ -214,6 +214,9 @@ public class PlayerLogic : MonoBehaviour
         bool lookEnabled = _input.cursorInputForLook;
         Cursor.lockState = lookEnabled ? CursorLockMode.Locked : CursorLockMode.None;
         Cursor.visible = !lookEnabled;
+        //no new look event arrives when the mouse goes still, so a stale delta must be cleared here too
+        //(runs in Update, before FirstPersonController.LateUpdate applies it)
+        if(!lookEnabled) _input.look = Vector2.zero;
     }
 
     private void UpdateLookTarget()
