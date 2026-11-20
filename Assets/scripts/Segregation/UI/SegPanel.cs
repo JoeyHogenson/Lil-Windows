@@ -10,7 +10,12 @@ public abstract class SegPanel : MonoBehaviour
     public static SegPanel CurrentlyOpen { get; private set; }
 
     [Tooltip("Canvas sort order. Higher draws on top.")]
-    [SerializeField] private int sortingOrder = 50;
+    [SerializeField] protected int sortingOrder = 50;
+
+    //a panel that opens over another (the book reader over the cart prompt) instead of closing it, and hands
+    //control back to it when closed
+    protected bool opensOnTop;
+    private SegPanel underneath;
 
     private GameObject root;
     private PlayerLogic playerLogic;
@@ -32,7 +37,11 @@ public abstract class SegPanel : MonoBehaviour
 
     public void Open()
     {
-        if(CurrentlyOpen != null && CurrentlyOpen != this) CurrentlyOpen.Close();
+        if(CurrentlyOpen != null && CurrentlyOpen != this)
+        {
+            if(opensOnTop) underneath = CurrentlyOpen;
+            else CurrentlyOpen.Close();
+        }
         root.SetActive(true);
         CurrentlyOpen = this;
         if(playerLogic != null) playerLogic.LockCursor();
@@ -43,8 +52,13 @@ public abstract class SegPanel : MonoBehaviour
     {
         if(!IsOpen) return;
         root.SetActive(false);
-        if(CurrentlyOpen == this) CurrentlyOpen = null;
-        if(playerLogic != null) playerLogic.UnlockCursor();
+        if(CurrentlyOpen == this)
+        {
+            //back to the panel this one opened over, if it's still up
+            CurrentlyOpen = underneath != null && underneath.IsOpen ? underneath : null;
+        }
+        underneath = null;
+        if(playerLogic != null && CurrentlyOpen == null) playerLogic.UnlockCursor();
     }
 
     public void Toggle()
