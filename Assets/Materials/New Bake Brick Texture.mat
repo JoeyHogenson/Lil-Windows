@@ -21,17 +21,17 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Bake Brick Texture
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: 4800000, guid: 18e9b5f6c98642f4a1ea817f22e5c1c0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _INVERTHEIGHT_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Opaque
+  stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -82,6 +82,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _WallTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -102,8 +106,21 @@ Material:
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
+    - _BumpStrength: 1
+    - _CavityOcclusion: 0.35
+    - _ChipAmount: 0.156
+    - _ChipDepth: 0.8
+    - _ChipMortarBias: 0.45
+    - _ChipRimDarken: 0.35
+    - _ChipScale: 9
+    - _ChipSharpness: 18
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _CrackAmount: 0.35
+    - _CrackDepth: 1.5
+    - _CrackJitter: 0.35
+    - _CrackScale: 3.5
+    - _CrackWidth: 0.018
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -114,25 +131,36 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
+    - _GrimeAmount: 0.3
+    - _GrimeScale: 1.5
+    - _HeightContrast: 6
+    - _HeightMidpoint: 0.92
+    - _InvertHeight: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _SelfIllumination: 0.15
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
+    - _TextureScale: 0.055
     - _UVSec: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BrickTint: {r: 0.434, g: 0.434, b: 0.434, a: 1}
+    - _ChipColor: {r: 0.43, g: 0.41, b: 0.38, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _CrackColor: {r: 0.08, g: 0.07, b: 0.07, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GrimeColor: {r: 0.32, g: 0.29, b: 0.24, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

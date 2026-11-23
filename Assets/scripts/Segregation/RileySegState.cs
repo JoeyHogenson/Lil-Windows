@@ -152,6 +152,14 @@ public class RileySegState : SegDayListener
         return true;
     }
 
+    /// <summary>Permanently shifts a base stat (e.g. +mood from reading).</summary>
+    public void AdjustStat(RileyStat stat, int amount)
+    {
+        if(stat == RileyStat.None || amount == 0) return;
+        SetBaseStat(stat, BaseStat(stat) + amount);
+        NotifyChanged();
+    }
+
     public void AddBook(string title)
     {
         books.Add(title);
