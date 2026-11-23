@@ -37,8 +37,13 @@ public sealed class RetroStylize : VolumeComponent, IPostProcessComponent
     [Header("PSX")]
     [Tooltip("Renders at this many vertical pixels and scales up blocky. 0 = native resolution. PS1 ran at 240.")]
     public ClampedIntParameter psxVerticalResolution = new ClampedIntParameter(0, 0, 1080);
-    [Tooltip("Resolution for UI, sprites, particles and other transparents (needs \"Stylize UI And Sprites\" on the renderer feature). "
-        + "Rounded to a whole multiple of the world resolution so the pixel grids line up. 0 = same as the world. "
+    [Tooltip("Resolution for world sprites, particles and other transparents (not UI). Needs \"Stylize UI And Sprites\" on the renderer feature. "
+        + "Rounded to a whole multiple of the world resolution so the pixel grids line up (set it equal to the world for matching chunky sprites). "
+        + "0 = same as the UI.")]
+    public ClampedIntParameter psxSpriteVerticalResolution = new ClampedIntParameter(0, 0, 1080);
+    [Tooltip("Resolution for screen UI (needs \"Stylize UI And Sprites\" on the renderer feature). "
+        + "Rounded to a whole multiple of the sprite resolution (or the world's, when sprites is 0) so the pixel grids line up; "
+        + "it can't be coarser than the sprites, since UI is pixelated over the finished frame. 0 = same as the sprites/world. "
         + "Small UI text gets hard to read below ~480.")]
     public ClampedIntParameter psxUIVerticalResolution = new ClampedIntParameter(480, 0, 1080);
     [Tooltip("Bits per color channel. 8 = off. PS1 framebuffer was 5 (15-bit color).")]
@@ -50,6 +55,31 @@ public sealed class RetroStylize : VolumeComponent, IPostProcessComponent
     public bool OutlinesActive => outlineStrength.value > 0f;
     public bool PixelateActive => psxVerticalResolution.value > 0;
     public bool QuantizeActive => psxColorBits.value < 8;
+
+    /// <summary>
+    /// Sprite and UI pixel grids as whole multiples of the world grid, so each later pass splits every earlier block
+    /// into whole blocks and leaves it untouched. The UI multiple is also a multiple of the sprite one.
+    /// </summary>
+    public void GridMultiples(out int sprite, out int ui)
+    {
+        int world = psxVerticalResolution.value;
+        sprite = 1;
+        ui = 1;
+        if(world <= 0) return;
+
+        int spriteHeight = psxSpriteVerticalResolution.value;
+        int uiHeight = psxUIVerticalResolution.value;
+        if(spriteHeight <= 0)
+        {
+            //sprites follow the UI grid: one pass at the end covers both
+            sprite = uiHeight > 0 ? Mathf.Max(1, Mathf.RoundToInt((float)uiHeight / world)) : 1;
+            ui = sprite;
+            return;
+        }
+        sprite = Mathf.Max(1, Mathf.RoundToInt((float)spriteHeight / world));
+        int uiOverSprite = uiHeight > 0 ? Mathf.Max(1, Mathf.RoundToInt((float)uiHeight / (world * sprite))) : 1;
+        ui = sprite * uiOverSprite;
+    }
 
     public bool IsActive()
     {

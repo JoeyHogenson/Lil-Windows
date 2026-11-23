@@ -26,6 +26,8 @@ Shader "Hidden/Lil Windows/Retro Stylize"
             float4 _Retro_OutlineColor;
             float4 _Retro_OutlineFade;   // x start, y end (0 = no fade)
             float4 _Retro_Psx;           // x virtual height (0 = native), y levels per channel (0 = off), z dither, w virtual width
+            float4 _Retro_Sample;        // x 1 = one point tap per cell: this pass refines a grid an earlier pass already
+                                         // pixelated, and blurring would smear those blocks' edges
 
             static const float Bayer4x4[16] =
             {
@@ -47,7 +49,7 @@ Shader "Hidden/Lil Windows/Retro Stylize"
 
             float3 SampleColor(float2 uv, float2 virtualSize)
             {
-                if (_Retro_Psx.x <= 0.0)
+                if (_Retro_Psx.x <= 0.0 || _Retro_Sample.x > 0.5)
                     return SAMPLE_TEXTURE2D_X(_BlitTexture, sampler_PointClamp, uv).rgb;
 
                 // 4 bilinear taps spread over the big pixel: an average of ~16 source pixels, so the
@@ -125,7 +127,13 @@ Shader "Hidden/Lil Windows/Retro Stylize"
                 float steps = levels - 1.0;
                 // dither 0 = plain rounding, 1 = full ordered dither
                 float offset = lerp(0.5, threshold, _Retro_Psx.z);
-                color = floor(saturate(color) * steps + offset) / steps;
+                float3 x = saturate(color) * steps;
+                float3 level = round(x);
+                // already on a level (an earlier pass quantized it, then the 8-bit target rounded it): keep it, so each
+                // layer keeps the dither of its own grid instead of being re-dithered at this pass's
+                float tolerance = 0.01 + steps / 400.0;
+                float3 onLevel = step(abs(x - level), tolerance);
+                color = lerp(floor(x + offset), level, onLevel) / steps;
 
                 #if !defined(UNITY_COLORSPACE_GAMMA)
                 color = SRGBToLinear(color);

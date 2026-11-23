@@ -36,10 +36,10 @@ MonoBehaviour:
     m_Value: 5
   celSoftness:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   outlineStrength:
     m_OverrideState: 1
-    m_Value: 0.85
+    m_Value: 1
   outlineColor:
     m_OverrideState: 1
     m_Value: {r: 0.06, g: 0.05, b: 0.07, a: 1}
@@ -58,9 +58,12 @@ MonoBehaviour:
   psxVerticalResolution:
     m_OverrideState: 1
     m_Value: 320
-  psxUIVerticalResolution:
+  psxSpriteVerticalResolution:
     m_OverrideState: 1
     m_Value: 320
+  psxUIVerticalResolution:
+    m_OverrideState: 1
+    m_Value: 1080
   psxColorBits:
     m_OverrideState: 1
     m_Value: 3

@@ -846,8 +846,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jail Cell Door
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 315426993940163616, guid: 6bc49622bdf1d0c44957d18d6f23bbc1, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
