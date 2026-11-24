@@ -134,6 +134,11 @@ public class FirstPersonHands : MonoBehaviour
     //scale so the eyes are at camera height, face the player's forward, and stand a little behind the camera
     private void Fit(Transform player)
     {
+        //the copy starts in whatever pose the scene's NPC was in (e.g. DC sitting); measure the body in its own
+        //idle pose instead, or bent legs and a lowered head give the wrong facing and height
+        animator.Rebind();
+        animator.Update(0f);
+
         head = animator.GetBoneTransform(HumanBodyBones.Head);
         rightShoulder = animator.GetBoneTransform(HumanBodyBones.RightUpperArm);
         rightHand = animator.GetBoneTransform(HumanBodyBones.RightHand);
@@ -144,11 +149,16 @@ public class FirstPersonHands : MonoBehaviour
         Transform leftToes = animator.GetBoneTransform(HumanBodyBones.LeftToes);
         if(head == null || rightShoulder == null || rightHand == null || leftFoot == null) return;
 
-        //face forward: rotate so the toes point along the player's forward
-        if(leftToes != null)
+        //face forward: the humanoid body's forward (toes as a fallback) along the player's, turning only around
+        //the vertical (FromToRotation between near-opposite vectors can pick a sideways axis and tip the body over)
+        Vector3 facing = Vector3.ProjectOnPlane(animator.bodyRotation * Vector3.forward, Vector3.up);
+        if(facing.sqrMagnitude < 1e-6f && leftToes != null) facing = Vector3.ProjectOnPlane(leftToes.position - leftFoot.position, Vector3.up);
+        Vector3 playerForward = Vector3.ProjectOnPlane(player.forward, Vector3.up);
+        if(facing.sqrMagnitude > 1e-8f && playerForward.sqrMagnitude > 1e-8f)
         {
-            Vector3 toes = Vector3.ProjectOnPlane(leftToes.position - leftFoot.position, Vector3.up);
-            if(toes.sqrMagnitude > 1e-8f) transform.rotation = Quaternion.FromToRotation(toes.normalized, player.forward) * transform.rotation;
+            float turn = Vector3.SignedAngle(facing, playerForward, Vector3.up);
+            transform.rotation = Quaternion.AngleAxis(turn, Vector3.up) * transform.rotation;
+            animator.Update(0f);
         }
 
         float feet = Mathf.Min(leftFoot.position.y, transform.position.y);
