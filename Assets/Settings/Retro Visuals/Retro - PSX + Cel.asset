@@ -33,7 +33,7 @@ MonoBehaviour:
     m_Value: 1
   celBands:
     m_OverrideState: 1
-    m_Value: 5
+    m_Value: 7
   celSoftness:
     m_OverrideState: 1
     m_Value: 1
@@ -45,13 +45,13 @@ MonoBehaviour:
     m_Value: {r: 0.06, g: 0.05, b: 0.07, a: 1}
   outlineThickness:
     m_OverrideState: 1
-    m_Value: 0.6
+    m_Value: 0.72
   depthSensitivity:
     m_OverrideState: 1
-    m_Value: 0.005
+    m_Value: 0.3
   normalSensitivity:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.3
   outlineFade:
     m_OverrideState: 1
     m_Value: {x: 0, y: 743.5896}
