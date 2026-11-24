@@ -45,16 +45,16 @@ MonoBehaviour:
     m_Value: {r: 0.06, g: 0.05, b: 0.07, a: 1}
   outlineThickness:
     m_OverrideState: 1
-    m_Value: 1.27
+    m_Value: 0.6
   depthSensitivity:
     m_OverrideState: 1
-    m_Value: 0.08
+    m_Value: 0.005
   normalSensitivity:
     m_OverrideState: 1
     m_Value: 0.2
   outlineFade:
     m_OverrideState: 1
-    m_Value: {x: 0, y: 1000}
+    m_Value: {x: 0, y: 743.5896}
   psxVerticalResolution:
     m_OverrideState: 1
     m_Value: 320

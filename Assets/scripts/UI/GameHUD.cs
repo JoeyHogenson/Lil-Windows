@@ -5,23 +5,30 @@ using UnityEngine.UI;
 
 /// <summary>
 /// Top-right HUD: the in-game clock ("Sun 6:40 AM - Day 1"), the next scheduled activity ("Next: Count at
-/// 12:00 PM"), and any urgent timers other systems post (e.g. OG's medicine). Built in code and created
-/// automatically in any scene with a <see cref="GameController"/>.
+/// 12:00 PM"), and any urgent timers other systems post (e.g. OG's medicine).
+/// To lay it out by hand, put it on a canvas with Lil Windows > Add HUD Clock To Canvas (or add this component
+/// and assign the labels yourself): those objects are then used as-is. Without one in the scene, it's built
+/// in code automatically in any scene with a <see cref="GameController"/>.
 /// </summary>
 public class GameHUD : MonoBehaviour
 {
     public static GameHUD Instance { get; private set; }
 
-    private GameController game;
-    private TextMeshProUGUI clockLabel;
-    private TextMeshProUGUI nextLabel;
-    private RectTransform urgentColumn;
+    [Tooltip("Optional; found automatically.")]
+    [SerializeField] private GameController game;
+    [Tooltip("Shows \"Sun 6:40 AM  -  Day 1\". Leave empty to build the whole HUD in code.")]
+    [SerializeField] private TextMeshProUGUI clockLabel;
+    [Tooltip("Shows \"Next: Count at 12:00 PM\". Optional.")]
+    [SerializeField] private TextMeshProUGUI nextLabel;
+    [Tooltip("Urgent timers are added here as labels. Optional; created under the clock's parent if empty.")]
+    [SerializeField] private RectTransform urgentColumn;
     private readonly Dictionary<string, TextMeshProUGUI> urgent = new Dictionary<string, TextMeshProUGUI>();
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void Bootstrap()
     {
-        if(Instance != null) return;
+        //a hand-placed HUD (even an inactive one) wins
+        if(Instance != null || FindFirstObjectByType<GameHUD>(FindObjectsInactive.Include) != null) return;
         GameController controller = FindFirstObjectByType<GameController>();
         if(controller == null) return;
         var go = new GameObject("Game HUD");
@@ -32,6 +39,21 @@ public class GameHUD : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        if(clockLabel != null)
+        {
+            if(urgentColumn == null)
+            {
+                urgentColumn = SegUIKit.Rect("Urgent", clockLabel.transform.parent);
+                urgentColumn.gameObject.layer = clockLabel.gameObject.layer;
+                SegUIKit.Column(urgentColumn, 2f, 0).childAlignment = TextAnchor.UpperRight;
+            }
+            return;
+        }
+        BuildInCode();
+    }
+
+    private void BuildInCode()
+    {
         Canvas canvas = SegUIKit.CreateCanvas("Game HUD Canvas", 10);
         canvas.transform.SetParent(transform, false);
 
@@ -60,10 +82,13 @@ public class GameHUD : MonoBehaviour
     {
         if(game == null) game = FindFirstObjectByType<GameController>();
         if(game == null) return;
-        clockLabel.text = game.ClockText + "  -  Day " + game.dayCount;
-        nextLabel.text = game.TryGetNextActivity(out string activity, out float hour)
-            ? "Next: " + activity + " at " + GameController.FormatHour(hour)
-            : "";
+        if(clockLabel != null) clockLabel.text = game.ClockText + "  -  Day " + game.dayCount;
+        if(nextLabel != null)
+        {
+            nextLabel.text = game.TryGetNextActivity(out string activity, out float hour)
+                ? "Next: " + activity + " at " + GameController.FormatHour(hour)
+                : "";
+        }
     }
 
     /// <summary>Shows or updates an urgent line (by key). Severity 0..1 fades it from amber to red.</summary>
@@ -72,6 +97,13 @@ public class GameHUD : MonoBehaviour
         if(!urgent.TryGetValue(key, out TextMeshProUGUI label))
         {
             label = SegUIKit.Label(urgentColumn, "", 22f, Color.white, FontStyles.Bold, TextAlignmentOptions.Right);
+            label.gameObject.layer = urgentColumn.gameObject.layer;
+            //match a hand-styled clock's font
+            if(clockLabel != null)
+            {
+                label.font = clockLabel.font;
+                label.fontSharedMaterial = clockLabel.fontSharedMaterial;
+            }
             urgent[key] = label;
         }
         label.text = text;
